@@ -1,0 +1,47 @@
+ body .Polaris-Page{
+            /*max-width: 80.8rem;*/
+        }
+        .header-data .Polaris-Heading{
+            line-height: unset;
+           
+        }
+        .header-data {
+             display: flex;
+        }
+        .head-title{
+            width: 95%;
+        }
+        .Polaris-Heading-number{  
+            line-height: 15px;
+            font-size: 15px;
+        }
+        .cls-page-pagination {
+        width: 100%;
+        text-align: center;
+        margin-top: 2.0rem; 
+        } 
+        .cls-tip {
+        display: inline;
+        position: relative; 
+        }
+         .popover-body {
+        font-size: 14px;
+        }
+        .Polaris-Button{
+        text-decoration: none !important;   
+        }
+        .Polaris-Button.bootstrap-navbar {
+        display: none;
+        }
+            @media screen and (max-width: 1150px) {
+        .Polaris-Page-Header__MainContent>.Polaris-Page-Header__PrimaryAction{
+            display: none !important;
+        }
+        .Polaris-Button.bootstrap-navbar,.Polaris-Page-Header__MainContent>.Polaris-Page-Header__PrimaryAction.forcefullshowonmobile {
+            display: block !important;
+        }
+        }
+        .Polaris-Card .text-editer{
+            margin-bottom: 10px;
+        }
+      
