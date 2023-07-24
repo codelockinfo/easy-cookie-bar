@@ -1,13 +1,16 @@
 <?php
-include "cls_header.php";
-include_once('dashboard_header.php');
+    include "cls_header.php";
+    include_once('dashboard_header.php');
 ?>
 <html>
-    <style>
-
-    </style>
-    <body>
-        <div class="Polaris-Page">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/polaris.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../assets/css/style.css" rel="stylesheet"> 
+</head>    
+<body>
+        <div class="Polaris-Page max_width_change">
             <div class="Polaris-Page__Content">
                 <div class="Polaris-Layout">
                     <div class="Polaris-Layout__AnnotatedSection">
@@ -16,11 +19,11 @@ include_once('dashboard_header.php');
                                 <div class="Polaris-Card__Section">     
                                     <div class="Polaris-Card">
                                         <div class="Polaris-Card__Header">
-                                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
-                                                <h2 class="Polaris-Heading"><div class="allist"> Blog's list</div></h2>
+                                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline jus_con_sp_bt_new jus-con-sp-bt">
+                                                <h2 class="Polaris-Heading"><div class="allist">Article's list</div></h2>
                                                 <div class="btnadd">
-                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show"  onclick="loading_show('.save_loader_show')" href="addblog.php?store=<?php echo $_SESSION['store']; ?>">
-                                                        <span>Add Blog</span>
+                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show editor-btn-width"  onclick="loading_show('.save_loader_show')" href="addblog.php?store=<?php echo $_SESSION['store']; ?>">
+                                                        <span>Add Article</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -33,7 +36,7 @@ include_once('dashboard_header.php');
                                                             <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20"><path d="M8 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm9.707 4.293l-4.82-4.82C13.585 10.493 14 9.296 14 8c0-3.313-2.687-6-6-6S2 4.687 2 8s2.687 6 6 6c1.296 0 2.492-.415 3.473-1.113l4.82 4.82c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414z" fill="#95a7b7" fill-rule="evenodd"></path></svg>
                                                         </span>
                                                     </div>
-                                                    <input type="text" id="blogpostDataSearchKeyword" name="blogpost_list" class="Polaris-TextField__Input browse_buy_product_search" onkeyup="js_loadShopifyDATA('blogpostData')" aria-invalid="false" placeholder="Search blogpost" autocomplete="off">                                            
+                                                    <input type="text" id="blogpostDataSearchKeyword" name="blogpost_list" class="Polaris-TextField__Input browse_buy_product_search" onkeyup="js_loadShopifyDATA('blogpostData')" aria-invalid="false" placeholder="Search Article" autocomplete="off">                                            
                                                     <div class="Polaris-TextField__Backdrop"></div>
                                                 </div>
                                             </div>
@@ -45,9 +48,9 @@ include_once('dashboard_header.php');
                                                         <table id="blogpostData" data-search="title" data-listing="true" data-from="table" data-apiName="articles" class="table">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>ID</th>
+                                                                    <!-- <th>ID</th>
+                                                                    <th>Article Id</th> -->
                                                                     <th>Images</th>
-                                                                    <th>BlogPost Id</th>
                                                                     <th>Title</th> 
                                                                     <th>Description</th>                                                                                
                                                                     <th width="220">Action</th>
@@ -69,13 +72,22 @@ include_once('dashboard_header.php');
                         </div>
                     </div>
                 </div>
-                </body>
-                </html>  
-                <script>
-                    $(document).ready(function () {
-                        var routineName = 'get_store_blog';
-                        var shopify_api = $('#blogpostData').attr('data-apiName');
-                        get_api_data(routineName, shopify_api);
-                    });
-                </script>
-                <?php include_once('dashboard_footer.php'); ?>
+            </div>
+        </div>
+</body>
+</html>  
+<script>
+    $(document).ready(function () {
+        var routineName = 'get_store_article';
+        var shopify_api = $('#blogpostData').attr('data-apiName');
+        get_api_data(routineName, shopify_api);
+        
+    });
+</script>
+<style>
+/* Header spacing issue for spacific page cls015 */
+.Polaris-Page-Header__Header--hasBreadcrumbs{
+    padding: 0;
+}
+</style>
+<?php include_once('dashboard_footer.php'); ?>

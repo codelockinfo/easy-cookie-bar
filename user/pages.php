@@ -2,7 +2,15 @@
 include "cls_header.php";
 include_once('dashboard_header.php');
 ?>
-<div class="Polaris-Page">
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/polaris.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" rel="stylesheet">  
+    </head>    
+    <body>
+<div class="Polaris-Page max_width_change">
     <div class="Polaris-Page__Content">
         <div class="Polaris-Layout">
             <div class="Polaris-Layout__AnnotatedSection">
@@ -11,10 +19,10 @@ include_once('dashboard_header.php');
                         <div class="Polaris-Card__Section">     
                             <div class="Polaris-Card">
                                 <div class="Polaris-Card__Header">
-                                    <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
+                                    <div class="Polaris-Stack Polaris-Stack--alignmentBaseline jus-con-sp-bt">
                                         <h2 class="Polaris-Heading"><div class="allist"> Page's list</div></h2>
                                         <div class="btnadd">
-                                            <a  class="Polaris-Button Polaris-Button--primary save_loader_show" onclick="loading_show('.save_loader_show')" href="addpages.php?store=<?php echo $_SESSION['store']; ?>">
+                                            <a  class="Polaris-Button Polaris-Button--primary save_loader_show editor-btn-width" onclick="loading_show('.save_loader_show')" href="addpages.php?store=<?php echo $_SESSION['store']; ?>">
                                                 <span>Add Page</span>
                                             </a>
                                         </div>
@@ -40,11 +48,11 @@ include_once('dashboard_header.php');
                                                 <table id="pagesData"   data-listing="true" data-search="title" data-from="table" data-apiName="pages" class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th>ID</th>
-                                                            <th>Pages ID</th>
+                                                            <!-- <th>ID</th>
+                                                            <th>Pages ID</th> -->
                                                             <th>Title</th>
                                                             <th>Description</th>
-                                                            <th width="220">Action</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="allpagesData">                                                              
@@ -63,6 +71,8 @@ include_once('dashboard_header.php');
                 </div>
             </div>
         </div>
+    </body>
+        
         <script>
             $(document).ready(function () {
                 var routineName = 'get_store_pages';
@@ -70,4 +80,11 @@ include_once('dashboard_header.php');
                 get_api_data(routineName, shopify_api);
             });
         </script>
+         <style>
+            /* Header spacing issue for spacific page cls015*/
+            .Polaris-Page-Header__Header--hasBreadcrumbs{
+                padding: 0;
+            }
+        </style>
+    </html>
 <?php include_once('dashboard_footer.php'); ?>

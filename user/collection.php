@@ -6,12 +6,11 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/shopify_client.css" rel="stylesheet">  
-    <link rel="stylesheet" href="../assets/css/polaris.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../assets/css/polaris.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" rel="stylesheet">  
     </head>    
 <body>
-<div class="Polaris-Page">
+<div class="Polaris-Page max_width_change">
     <div class="Polaris-Page__Content">
         <div class="Polaris-Layout">
             <div class="Polaris-Layout__AnnotatedSection">
@@ -20,11 +19,11 @@
                             <div class="Polaris-Card__Section">     
                             <div class="Polaris-Card">
                                 <div class="Polaris-Card__Header">
-                                    <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
-                                        <div class="Polaris-Stack__Item Polaris-Stack__Item--fill">
+                                    <div class="Polaris-Stack Polaris-Stack--alignmentBaseline jus-con-sp-bt">
+                                        <div class="Polaris-Stack__Item Polaris-Stack__Item--fill dis_flex_jus_sp_bt_coll">
                                             <h2 class="Polaris-Heading">Collection's list</h2>
-                                              <div class="btncollection">
-                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show"  onclick="loading_show('.save_loader_show')" href="addcollection.php?store=<?php echo $_SESSION['store']; ?>">
+                                              <div class="btncollection mar_left_and_mar_top">
+                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show editor-btn-width"  onclick="loading_show('.save_loader_show')" href="addcollection.php?store=<?php echo $_SESSION['store']; ?>">
                                                         <span>Add Collection</span>
                                                     </a>
                                                 </div>
@@ -51,7 +50,8 @@
                                                 <table id="collectionData" data-listing="true" data-from="table" data-apiName="custom_collections" class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th>ID</th>
+                                                            <!-- <th>ID</th> -->
+                                                            <th>Image</th>
                                                             <th>Title</th>
                                                             <th>Description</th>                                                   
                                                             <th width="220">Action</th>
@@ -81,5 +81,12 @@
                 get_api_data(routineName, shopify_api);
             });
         </script>
+         <style>
+                   /* Header spacing issue for spacific page cls015 */
+                    .Polaris-Page-Header__Header--hasBreadcrumbs{
+                        padding: 0;
+                    }
+        </style>
 </html>    
+
 <?php  include_once('dashboard_footer.php'); ?>

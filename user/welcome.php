@@ -9,7 +9,7 @@
                 <div class="Polaris-EmptyState__Actions">
                     <div class="Polaris-ButtonGroup">
                         <div class="Polaris-ButtonGroup__Item step-1">
-                            <a  class="Polaris-Button Polaris-Button--primary dash-view-btn" href="<?php echo SITE_CLIENT_URL . 'dashboard.php?store=' . $store . '&key=' . $key ?>" target="_blank" > 
+                            <a  class="Polaris-Button Polaris-Button--primary dash-view-btn" href="<?php echo SITE_CLIENT_URL . 'dashboard.php?store=' . $store . '&key=' . $key ?>" > 
                                 <span class="Polaris-Button__Content">
                                     <span>View Dashboard</span>
                                 </span>
@@ -21,7 +21,7 @@
             </div>
             <br>
                 <div class="Polaris-EmptyState__Content">
-                <p>ReWriter is the most advanced WYSIWYG HTML editor designed to advanced description content.</p>
+                <p>ReWriter is the most advanced WYSIWYG (What You See Is What You Get) HTML editor designed to advanced description content.</p>
                 </div>
         </div>
         <div class="Polaris-EmptyState__ImageContainer" style="margin-right: 228px;">

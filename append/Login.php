@@ -107,45 +107,33 @@ class Login extends common_function {
     public function loginWithPostData($email, $password) {
         $flg = 0;
         if (empty($email)) {
-            $this->errors[] = MESSAGE_USERNAME_EMPTY;
+            $this->errors[] = CLS_MESSAGE_USERNAME_EMPTY;
         } else if (empty($password)) {
-            $this->errors[] = MESSAGE_PASSWORD_EMPTY;
+            $this->errors[] = CLS_MESSAGE_PASSWORD_EMPTY;
         } else {
             if ($this->db_connection) {
-                $query_user = $this->db_connection->query("SELECT * FROM " . CLS_TABLE_LOGIN_USER . " WHERE email = '$email' AND password = '$password'");
-                $result_row = $query_user->fetch_object();
-            }
-            
-            if (!isset($result_row->login_user_id)) {
-                $this->errors[] = "Login faild";
-            } else if ($result_row->password == '') {
-                $this->errors[] = MESSAGE_PASSWARD_RESET;
-            } else if (md5($password) != $result_row->password && 1==2) {
-                $sth = $this->db_connection->query("UPDATE " . TABLE_SELLER_USERS . "
-                        SET user_failed_logins = user_failed_logins+1, user_last_failed_login = " . time() . " 
-                        WHERE user_email = '$user_name'");
-
-                $this->errors[] = MESSAGE_PASSWORD_WRONG;
-            }  else {
-                $_SESSION['store']=$_GET['store'];
-                $_SESSION['login_user_id'] = $result_row->login_user_id;
-                $_SESSION['email'] = $result_row->email;
-                $_SESSION['current_user'] = $result_row;
+            $where_query = array(["", "email", "=", "$email"],["AND", "password", "=", "$password"]);
+            $resource_array = array('single' => true);
+            $comeback = $this->select_result(CLS_TABLE_LOGIN_USER, '*', $where_query, $resource_array);
+            if (isset($comeback['status']) && $comeback['status'] == 1) {
+//                $row = $store_information;
+                $_SESSION['store']=$comeback['data']->store;
+                $_SESSION['login_user_id'] = $comeback['data']->login_user_id;
+                $_SESSION['email'] = $comeback['data']->email;
+                $_SESSION['current_user'] = $comeback['data'];
                 $_SESSION['user_logged_in'] = 1;
-                $this->login_user_id = $result_row->login_user_id;
-                $this->email = $result_row->email;
+                $this->login_user_id = $comeback['data']->login_user_id;
+                $this->email = $comeback['data']->email;
                 $this->user_is_logged_in = true;
-                $this->current_user = $result_row;
-                /* if (isset($user_rememberme)) {
-                  $this->newRememberMeCookie();
-                  } else {
-                  // Reset remember-me token
-                  $this->deleteRememberMeCookie();
-                  } */
+                $this->current_user = $comeback['data'];
                 $flg = 1;
                 return $flg;
+            } else {
+                 $this->errors[] =  CLS_LOGIN_MESSAGE ;
             }
+              
         }
+    }
     }
     private function newRememberMeCookie() {
         if ($this->db_connection) {
@@ -506,6 +494,7 @@ class Login extends common_function {
                 $this->current_user = $result_row;
                 $html = '';
                 $flg = 1;
+               
             }
             if ($query_update) {
                 $this->messages[] = MESSAGE_PASSWORD_CHANGED_SUCCESSFULLY;

@@ -1,7 +1,7 @@
 <?php
-include_once  "../cls_shopifyapps/cls_shopify_call.php";
+include_once  ABS_PATH. "/cls_shopifyapps/cls_shopify_call.php";
 class base_function {
-    protected $current_store_obj = null;
+    public $current_store_obj = null;
     public $db_connection = null;
     private $login_user_id = '';
     protected $cls_is_demand_accept = '';
@@ -12,10 +12,10 @@ class base_function {
         if ($this->db_connection == null) {
             $db_connection = new DB_Class();
             $this->db_connection = $GLOBALS['conn'];
-
         }
         if ($shop != '') {
             $this->set_user_data($shop);
+            
         }
     }
     public function get_store_detail_obj() {
@@ -53,15 +53,15 @@ class base_function {
         $this->errors[] = $message;
     }
     public function set_user_data($store) {
-        $where_query = array(["", "store", "=", "$store"]);
+        $where_query = array(["", "shop_name", "=", "$store"]);
         $fields = '*';
         $options_arr = array('single' => true);
-        $comeback = $this->select_result(CLS_TABLE_LOGIN_USER,$fields, $where_query, $options_arr);
+        $comeback = $this->select_result(TABLE_USER_SHOP,$fields, $where_query, $options_arr);
         if ($comeback['status'] == 1) {
             $user_shop = $comeback['data']; 
             $this->current_store_obj= $user_shop;
-            $this->login_user_id = ['login_user_id'];
-              }
+            $this->store_user_id = ['store_user_id'];
+        }
     }
     
      public function get_login_user_data(){
@@ -160,6 +160,7 @@ class base_function {
     }
     function cls_recurring_application_charge($shop, $array) {
         $shopinfo = $this->current_store_obj;
+        $shopinfo = (object)$shopinfo;
         $store_user_id = $shopinfo->store_user_id;
         $recurring_application_charge = cls_shopify_call($shopinfo->password, $shopinfo->store_name, "/admin/recurring_application_charges.json", $array, 'POST');
         $recurring_application_charge = json_decode($recurring_application_charge['response']);
@@ -168,6 +169,7 @@ class base_function {
     function charge_activate($cls_price_id) {
         $flg = 0;
         $shopinfo = $this->current_store_obj;
+        $shopinfo = (object)$shopinfo;
         $store_user_id = $shopinfo->store_user_id;
         $charge = cls_shopify_call($shopinfo->password, $shopinfo->store_name, "/admin/recurring_application_charges/{$cls_price_id}.json", array(), 'GET');
         $charge = json_decode($charge['response']);
@@ -645,13 +647,13 @@ class base_function {
     function remove_from_table() {
         $comeback = array('result' => 'fail', 'message' => 'Something Went Wrong');
         if (isset($_POST['table_name']) && $_POST['table_name'] != '') {
-             $api_fields = array('blog' => array('id' => $_POST['ID'])); 
-            $main_api = array("api_name" => $_POST['api_name'],'id' => $_POST['ID']);
-            $set_position = $this->cls_get_shopify_list3($main_api,$api_fields,'DELETE', 1, array("Content-Type: application/json"));
+            $main_api = array("api_name" => $_POST['api_name'],'id' => $_POST['ID']); 
+            $set_position = $this->cls_get_shopify_list($main_api,'','DELETE', 1, array("Content-Type: application/json"));
             $comeback = array("data" => true);
             
             $shopinfo = $this->current_store_obj;
-            $login_user_id = isset($shopinfo->login_user_id) ? $shopinfo->login_user_id : '0';
+            $shopinfo = (object)$shopinfo;
+            $login_user_id = isset($shopinfo->store_user_id) ? $shopinfo->store_user_id : '0';
             $table_name = $_POST['table_name'];
             $field_name = $this->get_primary_field($table_name);
             if ($field_name !== FALSE && $login_user_id != '' && $login_user_id > 0) {
@@ -661,7 +663,6 @@ class base_function {
                 $is_delete = $this->delete_data($table_name, $where_query);
                 if ($is_delete) {
                      $where_query = array(['', 'store_user_id','=', $login_user_id]);
-//                    $where_query = array("store_user_id" => $login_user_id);
                     $comeback = array(
                         'result' => 'success',
                         'total_record' => $this->get_rank($table_name, $where_query),
@@ -674,20 +675,6 @@ class base_function {
         }
         return $comeback;
     }
-    function cls_get_shopify_list3($shopify_api_name_arr =array(), $shopify_url_param_array = [], $type = 'DELETE', $shopify_is_object = 1) {   
-        $store_name = "managedashboard.myshopify.com";
-        $password = "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";
-        $api_key = "14fceabacb9d3c0d7fca48a9307cab34";
-        $shopify_url_array = array_merge(array('/admin/'.CLS_API_VERSIION),$shopify_api_name_arr);
-        $shopify_main_url = implode('/',$shopify_url_array) . '.json';  
-        $shopify_data_list = cls_api_call($api_key , $password, $store_name, $shopify_main_url,$shopify_url_param_array,$type);
-        if ($shopify_is_object) {
-            return json_encode($shopify_data_list['response']);
-        } else {
-            return json_encode($shopify_data_list['response'], TRUE);
-        }
-    }
-   
     public function make_error_response_block($lable, $total_error, $error_message = '') {
         $comeback = array();
         if ($total_error == 1) {
@@ -784,7 +771,8 @@ class base_function {
         return $html;
     }
      public function take_table_listing_data($table_id, $limit, $offset, $search_word = NULL, $select_seller = NULL) {
-        $current_user = $this->get_login_user_data();  
+         $shopinfo = $this->current_store_obj;
+         $shopinfo = (object)$shopinfo;
         $select_array = array();
         $seller_cond_str = '';
         $select_array_customer = array();
@@ -865,36 +853,36 @@ class base_function {
 //            ),
             'pagesData' =>array(
                 'name' => TABLE_PAGE_MASTER,
-                'fields' => 'id,page_id,created_at,description,status,store_user_id,updated_at,title',
+                'fields' => 'id,page_id,created_at,description,status,store_user_id,updated_at,title,handle',
                 'search_fields' => 'page_id|description|title',
-                'where'  => array("status" => '1'),
+                'where'  => array("status" => '1',"store_user_id" => $shopinfo->store_user_id),
                 'order_by' => 'id ASC',
                 'group_by' => NULL,
                 'join_arr' => array(),  
             ),
             'collectionData' =>array(
                 'name' => TABLE_COLLECTION_MASTER,
-                'fields' => 'id,collection_id,created_at,description,status,store_user_id,updated_at,title',
+                'fields' => 'id,collection_id,created_at,description,status,store_user_id,updated_at,title,image,handle',
                 'search_fields' => 'collection_id|description|title',
-                'where'  => array("status" => '1'),
+                'where'  => array("status" => '1',"store_user_id" => $shopinfo->store_user_id),
                 'order_by' => 'id ASC',
                 'group_by' => NULL,
                 'join_arr' => array(),  
             ),
             'blogpostData' =>array(
                 'name' => TABLE_BLOGPOST_MASTER.' AS b',
-                'fields' => 'b.id,b.created_at,b.blogpost_id,b.description,b.store_user_id,b.status,b.updated_at,b.image,b.title',
+                'fields' => 'b.id,b.created_at,b.blogpost_id,b.description,b.store_user_id,b.status,b.updated_at,b.image,b.title,b.handle,b.blog_id',
                 'search_fields' => 'b.id|b.blogpost_id|b.description|b.title',
-                'where'  => "b.status = '1'",
+                'where'  => array("b.status" => '1',"store_user_id" => $shopinfo->store_user_id),
                 'order_by' => 'id ASC',
                 'group_by' => NULL,
                 'join_arr' => array(array('join_type'=>'LEFT JOIN','table'=>CLS_TABLE_LOGIN_USER.' AS u','join_table_id'=>'u.login_user_id','from_table_id'=>'b.store_user_id')),  
             ),
             'productData' =>array(
                 'name' => TABLE_PRODUCT_MASTER,
-                'fields' => 'title,created_at,product_id,store_user_id,image,id,updated_at,price,vendor,description,status',
+                'fields' => 'title,created_at,product_id,store_user_id,image,id,updated_at,price,vendor,description,status,handle',
                 'search_fields' => 'title',
-                'where'  => array("status" => '1'),
+                'where'  => array("status" => '1',"store_user_id" => $shopinfo->store_user_id),
                 'order_by' => 'id ASC',
                 'group_by' => NULL,
                 'join_arr' => array(),  
@@ -949,9 +937,9 @@ class base_function {
         if (isset($query_arr[$table_id])) {
             $T = (object)$query_arr[$table_id];
             $retrun_arr['api_name'] = $T->name;
-            if($table_id == 'orderData'){
-                $T->where = str_replace('CURRENT_USERID', $current_user['login_user_id'], $T->where);
-            }
+//            if($table_id == 'orderData'){
+                $T->where = str_replace('CURRENT_USERID', $shopinfo->store_user_id, $T->where);
+//            }
             $retrun_arr['filtered_count'] = $retrun_arr['total_prod_cnt'] = $this->get_total_record($T->name, $T->where, $T->group_by, $T->join_arr); 
             if (isset($search_word) && $search_word != '') {
                 $T->where = $this->make_table_search_query($search_word, $T->search_fields, $T->where);  
@@ -1050,6 +1038,13 @@ class base_function {
         }
         $sql .= ";";
         return $this->query($sql);
+    }
+      public function verify_webhook($data, $hmac_header) {
+        $where_query = array(["", "status", "=", "1"]);
+        $comeback= $this->select_result(CLS_TABLE_THIRDPARTY_APIKEY, '*',$where_query);
+        $SHOPIFY_SECRET = (isset($comeback['data'][2]['thirdparty_apikey']) && $comeback['data'][2]['thirdparty_apikey'] !== '') ? $comeback['data'][2]['thirdparty_apikey'] : '';
+        $calculated_hmac = base64_encode(hash_hmac('sha256', $data, $SHOPIFY_SECRET, true));
+        return ($hmac_header == $calculated_hmac);
     }
     
 }

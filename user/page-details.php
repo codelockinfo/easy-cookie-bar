@@ -3,13 +3,14 @@
         include_once('dashboard_header.php');   
     $page_id = isset($_GET['page_id']) ? $_GET['page_id'] : ''; 
 ?>
-<!--<style>
-    
-    textarea:read-only {
-  color: white;
-}
-</style>-->
-    <div class="Polaris-Page login-frm">
+ <style>
+   .mce-notification{
+   
+       display:none;
+   }
+   
+    </style>
+    <div class="Polaris-Page login-frm max_width_change">
         <div class="Polaris-Page__Content">
             <div class="Polaris-Layout">
                 <div class="Polaris-Layout__AnnotatedSection">

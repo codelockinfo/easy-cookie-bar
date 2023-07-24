@@ -1,12 +1,12 @@
 <?php 
 function cls_api_call($api_key , $password, $store, $shopify_endpoint, $query = array(),$type = '', $request_headers = array()) {
     $cls_shopify_url = "https://" . $api_key .":". $password ."@". $store.  $shopify_endpoint;
-    if (!is_array($type) && !is_object($type)) {
+     if (!is_array($type) && !is_object($type)) {
         (array)$type;
     }
 	if (!is_null($query) && in_array($type,array('GET','DELETE'))) $cls_shopify_url = $cls_shopify_url . "?" . http_build_query(array($query));
 	$curl = curl_init($cls_shopify_url);
-        curl_setopt($curl, CURLOPT_HEADER, TRUE);
+	curl_setopt($curl, CURLOPT_HEADER, TRUE);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE);
 	curl_setopt($curl, CURLOPT_MAXREDIRS, 3);
@@ -16,6 +16,8 @@ function cls_api_call($api_key , $password, $store, $shopify_endpoint, $query = 
 	curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 	curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $type);
 	$request_headers[] = "";
+	$request_headers[] ="Content-Security-Policy: frame-ancestors https://admin.shopify.com https://".$store;
+		
 	if (!is_null($password)) $request_headers[] = "X-Shopify-Access-Token: " . $password;
 	curl_setopt($curl, CURLOPT_HTTPHEADER, $request_headers);
 	if ($type != 'GET' && in_array($type, array('POST', 'PUT'))) {
@@ -28,7 +30,7 @@ function cls_api_call($api_key , $password, $store, $shopify_endpoint, $query = 
 	curl_close($curl);
 	if ($error_number) {
 		return $error_message;
-	} else {
+	} else if(!empty($comeback)) {
 		$comeback = preg_split("/\r\n\r\n|\n\n|\r\r/",$comeback, 2);
 		$headers = array();
 		$header_data = explode("\n",$comeback[0]);
@@ -39,11 +41,12 @@ function cls_api_call($api_key , $password, $store, $shopify_endpoint, $query = 
 			$headers[trim($h[0])] = trim($h[1]);
 		}
 		return array('headers' => $headers, 'response' => $comeback[1]);
+	}else{
+		return array('result' => 'fail', 'msg' => CLS_SOMETHING_WENT_WRONG);
 	}
 }
-function shopify_call($token, $shop, $api_endpoint, $query = array(), $method = 'GET', $request_headers = array()) {
-	// Build URL
-	$url = "https://" . $shop . $api_endpoint;
+function shopify_call($token, $store, $api_endpoint, $query = array(), $method = 'GET', $request_headers = array()) {
+	$url = "https://" . $store . $api_endpoint;
         if (!empty($query) && !is_null($query) && in_array($method, array('GET', 'DELETE'))) {
             $url = $url . "?" . http_build_query($query);
         } else {
@@ -63,10 +66,12 @@ function shopify_call($token, $shop, $api_endpoint, $query = array(), $method = 
 	curl_setopt($curl, CURLOPT_TIMEOUT, 60);
 	curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
 	// Setup headers
-	//$request_headers[] = "";
+	$request_headers[] = "";
+	$request_headers[] ="Content-Security-Policy: frame-ancestors https://admin.shopify.com https://".$store;
 	if (!is_null($token)){$request_headers[] = "X-Shopify-Access-Token: " . $token;}
 	curl_setopt($curl, CURLOPT_HTTPHEADER, $request_headers);
 	if ($method != 'GET' && in_array($method, array('POST', 'PUT'))) {
+	    
             if (is_array($query)){
                 $query = json_encode($query);
             }
@@ -74,7 +79,6 @@ function shopify_call($token, $shop, $api_endpoint, $query = array(), $method = 
 	}    
 	// Send request to Shopify and capture any errors
 	$response = curl_exec($curl);
-
         /*added by developer */
         /* Then, after your curl_exec call: https://stackoverflow.com/questions/9183178/can-php-curl-retrieve-response-headers-and-body-in-a-single-request */
         $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);

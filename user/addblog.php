@@ -1,15 +1,11 @@
-<?php    include "cls_header.php"; 
+<?php
+include "cls_header.php";
 include "dashboard_header.php";
-
 ?>
  <style>
-   .mce-notification{
-   
-       display:none;
-   }
-   
-    </style>
-    <div class="Polaris-Page login-frm">
+.mce-notification{display:none;}
+</style>
+    <div class="Polaris-Page login-frm max_width_change">
         <div class="Polaris-Page__Content">
             <div class="Polaris-Layout">
                 <div class="Polaris-Layout__AnnotatedSection">
@@ -29,14 +25,51 @@ include "dashboard_header.php";
                                                 <span class="Polaris-Breadcrumbs__Content">Back</span>
                                             </a>
                                         </nav>
-                                      <div>
-                                           <h2 class="Polaris-Heading" style="    margin-left: 830px; margin-top: -25px;">BLOG</h2>
-                                       </div>
-                                    <form class="m-t" id="addblog_frm" name="register_frm" method="POST"  enctype="multipart/form-data" onsubmit="">
-                                         <div class="">
+                                        <div>
+                                           <h2 class="Polaris-Heading editor-label">Article</h2>
+                                        </div>
+                                    <form class="m-t formforparent" id="addblog_frm" name="register_frm" method="POST"  enctype="multipart/form-data" onsubmit="">
+                                        <div>
+                                            <div class="">
+                                                <div class="Polaris-Labelled__LabelWrapper">
+                                                    <div class="Polaris-Label"><label id="PolarisSelect10Label" for="PolarisSelect10" class="Polaris-Label__Text">Select Blog</label></div>
+                                                </div>
+                                                <div class="Polaris-Select">
+                                                    <select id="select10" class="Polaris-Select__Input" aria-invalid="false" name="blog">
+                                                       <?php
+                                                        $api = array('api_name' => 'blogs');
+                                                        $blogs = $functions->cls_get_shopify_list($api, array(), 'GET');
+                                                        $get_blogs = (isset($blogs->blogs) && $blogs->blogs !== '') ? $blogs->blogs : '';
+                                                        if(empty($get_blogs)){
+                                                            echo '<option >No data found</option>';
+                                                        }else{
+                                                            foreach ($get_blogs as $key => $value) {
+                                                                echo '<option value="' . $value->id . '">' . $value->title . '</option>';
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <div class="Polaris-Select__Content" aria-hidden="true">
+                                                        <span class="Polaris-Select__SelectedOption"></span>
+                                                        <span class="Polaris-Select__Icon">
+                                                            <span class="Polaris-Icon">
+                                                                <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                                                <path d="m10 16-4-4h8l-4 4zm0-12 4 4H6l4-4z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <span class="error-message blogselect"></span>
+                                                    <div class="Polaris-Select__Backdrop"></div>
+                                                </div>
+                                            </div>
+                                            <div id="PolarisPortalsContainer"></div>
+                                        </div>
+                                        
+                                        <div class="">
                                             <div class="Polaris-Labelled__LabelWrapper">
                                                 <div class="Polaris-Label">
-                                                    <label id="PolarisTextField11Label" for="PolarisTextField11" class="Polaris-Label__Text">Title</label>
+                                                    <label id="PolarisTextField11Label" for="PolarisTextField11" class="Polaris-Label__Text ">Title</label>
                                                 </div>
                                             </div>
                                             <div class="Polaris-Connected"><div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary">
@@ -47,11 +80,12 @@ include "dashboard_header.php";
                                                     </div>
                                                 </div>
                                             </div>
+                                             <span class="error-message title"></span>
                                         </div>
                                         <div class="Polaris-Card__Header">
                                             <h2 class="Polaris-Heading">Images</h2>
                                         </div>
-                                        <div class="Polaris-Card__Section">
+                                        <div class=" clsmain_green">
                                             <div class="Polaris-Layout maincontainer">
                                                 <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary" style="width: 50%;">
                                                     <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLarge" >
@@ -70,29 +104,64 @@ include "dashboard_header.php";
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                           
                                                     </div>
                                                 </div>
-                                                <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary" style="width: 50%;margin-top: -2px;">
-                                                        <div class="Polaris-Card__Section ">
+                                                <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary" style="width: 50%;">
+                                                        <div class=" ">
                                                             <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLarge" >
                                                                 <div class="Polaris-DropZone__Container ">
-                                                                            <img id="ImagePreview" class="imagepre" src="<?php echo CLS_SITE_URL; ?>/assets/images/no-image.png" alt="your image" />
-                                                                    </div>
+                                                                    <img id="ImagePreview" class="imagepre newone" src="<?php echo CLS_SITE_URL; ?>/assets/images/drag_drop.jpg" alt="your image" />
+                                                                </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div class="d-flex-alert-box">
+                                                <button class="Polaris-Button Polaris-Button--success get_content_drop" type="button">
+                                                    <span class="Polaris-Button__Content">
+                                                        <span class="Polaris-Button__Text">Generate By ChatGPT</span>
+                                                    </span>
+                                                </button>
+                                                <div class="Polaris-Banner Polaris-Banner--withinPage Polaris-Banner--statusInfo mar_l_padding_change" tabindex="0" role="alert" aria-live="polite" aria-labelledby="Banner7Heading" aria-describedby="Banner7Content">
+                                                    <div class="Polaris-Banner__Ribbon">
+                                                        <span class="Polaris-Icon Polaris-Icon--isColored Polaris-Icon--hasBackdrop Polaris-Icon--colorTeal">
+                                                            <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                                            <circle fill="currentColor" cx="10" cy="10" r="9"></circle>
+                                                            <path d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-13a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1m0 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="Polaris-Banner__Heading">
+                                                        <p class="Polaris-Heading">Quickly generate blog descriptions by leveraging the power of Chat GPT, saving time and effort for businesses.</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="Polaris-Layout">
-                                            <div class="Polaris-Layout__Section">
-                                                    <h2 class="Polaris-Heading text-left text-editer" id="title"></h2> 
-                                                        <input type="hidden" id="" name="store" value="<?php echo $store; ?>">
-                                                        <textarea class="textdetails" name="description" value="">                                          
-                                                        </textarea>
+                                            <div class="content_gtp">
+                                                <input type="hidden"  class="chatGPT_Prerequest" value="Can you write blog post description for"/>
+                                                <div class="Polaris-Connected">
+                                                    <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary">
+                                                        <div class="Polaris-TextField">
+                                                            <input id="chatgptinput" name="" placeholder="Generate auto description by ChatGPT" class="Polaris-TextField__Input" maxlength="255" aria-labelledby="" aria-invalid="false" value="">
+                                                            <div class="Polaris-TextField__Backdrop">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div><button class="Polaris-Button Polaris-Button--primary save_loader_show chatGPTBtn" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order">Search</button></div>
+                                                </div>
+                                                <span class="error-message chatgpterror"></span>
                                             </div>
                                         </div>
-                                        <button type="submit" name="submit" id="addblog"  data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order" class="Polaris-Button Polaris-Button--primary save_loader_show" style="float: right; margin-top: 20px; margin-bottom: 10px;">Save</button>                                                    
+                                        </div>
+                                        <div class="Polaris-Layout padd_2rem_addblog">
+                                            <div class="Polaris-Layout__Section">
+                                                <h2 class="Polaris-Heading text-left text-editer" id="title"></h2>
+                                                <input type="hidden" name="store" value="<?php echo $store; ?>">
+                                                <textarea class="textdetails" name="description" value="">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" name="submit" id="addblog"  data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order" class="Polaris-Button Polaris-Button--primary save_loader_show saveBtn" style="float: right; margin-top: 20px; margin-bottom: 10px;">Save</button>                                                    
+                                        <button type="cancel" name="cancel" class="Polaris-Button Polaris-Button--destructive cancelRequest" data-page="blog_post" style="float: right; margin-top: 20px; margin-bottom: 10px;">Cancel</button>
                                     </form>
                                 </div>
                             </div>
@@ -103,4 +172,3 @@ include "dashboard_header.php";
         </div>
     </div>
 <?php  include_once('dashboard_footer.php'); ?>
-

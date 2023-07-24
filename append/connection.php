@@ -4,31 +4,30 @@ ini_set("error_reporting", E_ALL);
  session_start();
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
     define("DB_SERVER", "localhost");
-    define("DB_DATABASE", "cls_rewriter");
+    define("DB_DATABASE", "cookie_bar");
     define("DB_USERNAME", "root");
     define("DB_PASSWORD", "");
     define("DB_OBJECT", "mysql"); 
     define('MODE', 'dev');
     define('ABS_PATH', dirname(dirname(__FILE__)));
-    define('MAIN_URL', 'http://localhost/cls-rewriter');
-    define('CLS_SITE_URL', 'http://localhost/cls-rewriter');
-    define('SITE_CLIENT_URL', 'http://localhost/cls-rewriter/user/');
-    define('CLS_TRACK_PATH', 'http://codelocksolutions.in/cls-rewriter/logs/');
-    define('SITE_ADMIN_URL', 'http://localhost/cls-rewriter/admin/');
-} elseif ($_SERVER['SERVER_NAME'] == 'codelocksolutions.in') {
+    define('MAIN_URL', 'http://localhost/easy-cookie-bar');
+    define('CLS_SITE_URL', 'http://localhost/easy-cookie-bar');
+    define('SITE_CLIENT_URL', 'http://localhost/easy-cookie-bar/user/');
+    define('CLS_TRACK_PATH', $_SERVER['DOCUMENT_ROOT']);
+    define('SITE_ADMIN_URL', 'http://localhost/easy-cookie-bar/admin/');
+}elseif ($_SERVER['SERVER_NAME'] == 'codelocksolutions.com') {
     define("DB_SERVER", "localhost");
-    define("DB_DATABASE", "u402017191_cls_rewriter");
-    define("DB_USERNAME", "u402017191_rewriter");
+    define("DB_DATABASE", "u402017191_easycookie");
+    define("DB_USERNAME", "u402017191_cookiebar");
     define("DB_PASSWORD", "Codelock@99");
-    
     define("DB_OBJECT", "mysql");
     define('MODE', 'live');
     define('ABS_PATH', dirname(dirname(__FILE__)));
-    define('MAIN_URL', 'http://codelocksolutions.in/cls-rewriter/');
-    define('CLS_SITE_URL', 'http://codelocksolutions.in/cls-rewriter/');
-    define('CLS_TRACK_PATH', 'http://codelocksolutions.in/cls-rewriter/logs/');
-    define('SITE_CLIENT_URL', 'http://codelocksolutions.in/cls-rewriter/user/');
-    define('SITE_ADMIN_URL', 'http://codelocksolutions.in/cls-rewriter/admin/');
+    define('MAIN_URL', 'https://codelocksolutions.com/easy-cookie-bar/');
+    define('CLS_SITE_URL', 'https://codelocksolutions.com/easy-cookie-bar/');
+     define('CLS_TRACK_PATH', $_SERVER['DOCUMENT_ROOT']);
+    define('SITE_CLIENT_URL', 'https://codelocksolutions.com/easy-cookie-bar/user/');
+    define('SITE_ADMIN_URL', 'https://codelocksolutions.com/easy-cookie-bar/admin/');
 } else {
     echo 'Undefine host';
     exit;
@@ -102,18 +101,21 @@ define('CLS_SVG_CIRCLE_PLUS', '<svg class="Polaris-Icon__Svg" viewBox="0 0 510 5
 define('CLS_SVG_CIRCLE_MINUS', '<svg class="Polaris-Icon__Svg" viewBox="0 0 80 80" focusable="false" aria-hidden="true"><path d="M39.769,0C17.8,0,0,17.8,0,39.768c0,21.956,17.8,39.768,39.769,39.768   c21.965,0,39.768-17.812,39.768-39.768C79.536,17.8,61.733,0,39.769,0z M13.261,45.07V34.466h53.014V45.07H13.261z" fill-rule="evenodd" fill="#DE3618"></path></svg>');
 define('TABLE_PAGE_MASTER', 'page_master');
 define('TABLE_PRODUCT_MASTER', 'product_master');
-define('TABLE_BLOGPOST_MASTER','blogpost_master');
+define('TABLE_BLOGPOST_MASTER','article_master');
+define('TABLE_BLOG_MASTER','blog_master');
 define('TABLE_USER_SHOP', 'user_shops');
 define('TABLE_BACKDROPS', 'store_settings');
 define('TABLE_CUSTOMIZE', 'customize');
 define('TABLE_COLLECTION_MASTER', 'collection_master');
+define('TABLE_CUSTOMER_MASTER', 'customer_master');
 
-define("CLS_API_VERSIION",'api/2021-01');
+define("CLS_API_VERSIION",'api/2022-10');
 define('CLS_TABLE_FONT_FAMILYS', 'font_family');
 define('CLS_TABLE_SHIPMENT_METHOD', 'shipping_type');
 define('CLS_TABLE_LOGIN_USER','login_user');
+define('CLS_TABLE_THIRDPARTY_APIKEY','thirdparty_apikey');
 define('DATE', date('Y-m-d H:i:s'));
-define('CLS_PAGE_PER', '5');
+define('CLS_PAGE_PER', '10');
 define("ENTITY_WENT_INCORRECT_report", "Something went incorrect");
 define("BACKDROP_GENERATED_SUCCESS_report", "Report updated successfully");
 define("PRODUCT_WORD_COLOR_REQUIRED_report", "The Product subject text color required");
@@ -147,6 +149,12 @@ define("SENDING_TYPE_RANK_CHANGE_SUCCESS_report", 'Rank changed successfully !')
 define("SENDING_TYPE_REMOVED_SUCCESS_report", 'Remove successfully !');
 define("SENDING_APP_RANK_CHANGE_SUCCESS_report", 'App Remove changed successfully !');
 define("CLS_SOMETHING_WENT_WRONG", "Something went wrong");
+define("CLS_STORE_PASSWORD_EMPTY", "Store password empty");
+define("CLS_MESSAGE_USERNAME_EMPTY", "Username empty");
+define("CLS_MESSAGE_PASSWORD_EMPTY", "Password empty");
+define("CLS_MESSAGE_PASSWARD_RESET", "Password Reset");
+define("CLS_LOGIN_MESSAGE", "Username & Password Invalid");
+
 
 
 if (!isset($__variousLanguageNeeded) || (isset($__variousLanguageNeeded) && $__variousLanguageNeeded === true)) {
@@ -186,20 +194,21 @@ if (!isset($__variousLanguageNeeded) || (isset($__variousLanguageNeeded) && $__v
     $calder_locale_obj = new Calender_Locale();
 }
 function  generate_log($inventory = 'General', $log_information = 'test') {
+
   
     if (MODE == 'live') {
-        $log_filled_track = CLS_TRACK_PATH . $inventory . '/' . date('Y-m-d') . ".txt";
+       $log_filled_track = CLS_TRACK_PATH.'/easy-cookie-bar/logs/'. $inventory . '/'. date('Y-m-d') . ".txt";
         $directoryname = dirname($log_filled_track);
         if (!is_dir($directoryname)) {
-            mkdir($directoryname, 0777, true);
+            mkdir($directoryname,0777, true);
         }
-        
         $cls_myfile = fopen($log_filled_track, "a+") or die("file is not generated");
+        
         $str = "\n\n" . '---------------------' . date('H:i:s') . "\n" . $log_information . "\n" . '-*-*-*-*-*-*-*-*-*';
         fwrite($cls_myfile, $str);
         fclose($cls_myfile);
     } else {
-        echo $str = str_replace('\n', '<br>', "\n\n" . '---------------------' . date('H:i:s') . "\n" . $log_information . "\n" . '-*-*-*-*-*-*-*-*-*');
+        // echo $str = str_replace('\n', '<br>', "\n\n" . '---------------------' . date('H:i:s') . "\n" . $log_information . "\n" . '-*-*-*-*-*-*-*-*-*');
     }
 }
 

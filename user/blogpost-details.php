@@ -1,15 +1,9 @@
 <?php 
     include "cls_header.php"; 
-        include_once('dashboard_header.php');   
+    include_once('dashboard_header.php');   
     $blogpost_id = isset($_GET['blogpost_id']) ? $_GET['blogpost_id'] : ''; 
 ?>
-<!--<style>
-    
-    textarea:read-only {
-  color: white;
-}
-</style>-->
-    <div class="Polaris-Page login-frm">
+    <div class="Polaris-Page login-frm max_width_change">
         <div class="Polaris-Page__Content">
             <div class="Polaris-Layout">
                 <div class="Polaris-Layout__AnnotatedSection">
@@ -30,7 +24,7 @@
                                         </a>
                                     </nav>
                                      <div>
-                                           <h2 class="Polaris-Heading" style="    margin-left: 845px; margin-top: -25px;">Blog</h2>
+                                           <h2 class="Polaris-Heading" style="margin-left: 845px; margin-top: -25px;">Blog</h2>
                                        </div>
                                      <div class="">
                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -48,6 +42,20 @@
                                             </div>
                                         </div>
                                     </br>
+                                      <div class="block2">
+                                    <div class="Polaris-Card__Header">
+                                            <h2 class="Polaris-Heading">Images</h2>
+                                        </div>
+                                                <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary" style="width: 50%;margin-top: -2px;">
+                                                        <div class="Polaris-Card__Section ">
+                                                            <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLarge" >
+                                                                <div class="Polaris-DropZone__Container ">
+                                                                            <img id="ImagePreview" class="imagepre" src="" alt="your image" style="height:100%;width:100%;" />
+                                                                    </div>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                </div>
                                     <div class="Polaris-Layout">
                                         <div class="Polaris-Layout__Section">
                                            <form class="m-t" id="register_frm" name="register_frm" method="POST"  enctype="multipart/form-data" onsubmit="">
@@ -66,9 +74,11 @@
             </div>
         </div>
     </div>
+</body>
+</html>
 <script>
     var routine_name = 'blogpost_select';
     var blogpost_id = "<?php echo $blogpost_id; ?>";
     get_textarea_value(routine_name,store,blogpost_id,"blog");
 </script>
-    <?php  include_once('dashboard_footer.php'); ?>
+<?php  include_once('dashboard_footer.php'); ?>

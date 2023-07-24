@@ -2,9 +2,15 @@
 include "cls_header.php";
 include_once('dashboard_header.php');
 ?>
-<html>  
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/polaris.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../assets/css/style.css" rel="stylesheet"> 
+    </head>    
     <body>
-        <div class="Polaris-Page">
+        <div class="Polaris-Page max_width_change">
             <div class="Polaris-Page__Content">
                 <div class="Polaris-Layout">
                     <div class="Polaris-Layout__AnnotatedSection">
@@ -13,10 +19,10 @@ include_once('dashboard_header.php');
                                 <div class="Polaris-Card__Section">     
                                     <div class="Polaris-Card">
                                         <div class="Polaris-Card__Header">
-                                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
+                                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline jus-con-sp-bt">
                                                 <h2 class="Polaris-Heading"><div class="allist">Product's list</div></h2>
                                                 <div class="btnadd">
-                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show" onclick="loading_show('.save_loader_show')" href="addproduct.php?store=<?php echo $_SESSION['store']; ?>">
+                                                    <a  class="Polaris-Button Polaris-Button--primary save_loader_show editor-btn-width" onclick="loading_show('.save_loader_show')" href="addproduct.php?store=<?php echo $_SESSION['store']; ?>">
                                                         <span>Add Product</span>
                                                     </a>
                                                 </div>
@@ -42,10 +48,11 @@ include_once('dashboard_header.php');
                                                         <table id="productData" data-search="title"  data-listing="true" data-from="table" data-apiName="products" class="table">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>ID</th>                                                            
-                                                                    <th>PRODUCT ID</th>                                                            
+                                                                    <!-- <th>ID</th>                                                            
+                                                                    <th>PRODUCT ID</th>                                                             -->
                                                                     <th>IMAGES</th> 
                                                                     <th>TITLE</th>                                                            
+                                                                    <th width="40%">Description</th>                                                            
                                                                     <th>PRICE</th>
                                                                     <th width="220">ACTION</th>
                                                                 </tr>
@@ -76,4 +83,10 @@ include_once('dashboard_header.php');
                         get_api_data(routineName, shopify_api);
                     });
                 </script>
+                <style>
+                  /* Header spacing issue for spacific page cls015 */
+                    .Polaris-Page-Header__Header--hasBreadcrumbs{
+                        padding: 0;
+                    }
+                </style>
                 <?php include_once('dashboard_footer.php'); ?>
