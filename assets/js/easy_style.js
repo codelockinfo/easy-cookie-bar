@@ -1,4 +1,4 @@
-
+$(document).ready(function () {
     $(document).on('click', '.down', function () {
         var value = $("#myNumber").val();
         if (value != '') {
@@ -6,7 +6,10 @@
         } else {
             value = -1;
         }
-        $("#myNumber").val(value)
+        $("#myNumber").val(value);
+        var borderheightval = $("#myNumber").val();
+        alert(borderheightval);
+       
     });
     $(document).on('click', '.up', function () {
         var value = $("#myNumber").val();
@@ -16,7 +19,11 @@
             value = 0;
     
         }
-        $("#myNumber").val(value)
+        $("#myNumber").val(value);
+        var borderheightval = $("#myNumber").val();
+        alert(borderheightval);
+        var border_height= $('.pagemargin ').find('.preview_set ');
+        border_height.css("height", borderheightval + "px");
     
     });
 
@@ -27,7 +34,10 @@
         } else {
             value = -1;
         }
-        $("#borderrad").val(value)
+        $("#borderrad").val(value);
+        var borderval = $("#borderrad").val();
+        var border_rad= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_rad.css("border-radius", borderval + "px");
     });
     $(document).on('click', '.bup', function () {
         var value = $("#borderrad").val();
@@ -38,7 +48,9 @@
     
         }
         $("#borderrad").val(value)
-    
+        var borderval = $("#borderrad").val();
+        var border_rad= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_rad.css("border-radius", borderval + "px");
     });
 
     $(document).on('click', '.bwdown', function () {
@@ -48,7 +60,10 @@
         } else {
             value = -1;
         }
-        $("#borwidth").val(value)
+        $("#borwidth").val(value);
+        var borderwidthval = $("#borwidth").val();
+        var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_width.css("border-width", borderwidthval + "px");
     });
     $(document).on('click', '.bwup', function () {
         var value = $("#borwidth").val();
@@ -58,6 +73,108 @@
             value = 0;
     
         }
-        $("#borwidth").val(value)
+        $("#borwidth").val(value);
+        var borderwidthval = $("#borwidth").val();
+        var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_width.css("border-width", borderwidthval + "px");
     
+    });
+
+    $(document).on('change','.layoutSelect2',function () {
+        var layout_change=$('.layoutSelect2 option').filter(':selected').val();
+        var layoutchange= $('.pagemargin ').find('.preview-cookie-bar');
+        var layoutbtn= $('.pagemargin ').find('.btn-close');
+        var modalopen= $('.pagemargin ').find('.preview_set');
+       
+        if (layout_change== "Pop-Pop") {
+            alert("if");
+            layoutchange.addClass("modal-wrapper");
+            layoutbtn.removeClass("d-none");
+            modalopen.addClass("modal_preview");
+            $('.modal-wrapper').addClass('open');
+           
+        }
+        else {
+            layoutchange.removeClass("modal-wrapper");
+            layoutbtn.addClass("d-none");
+            modalopen.removeClass("modal_preview");
+            $('.modal-wrapper').removeClass('open')
+        }
+       
+    }); 
+
+        $('.btn-close').on("click",function() {
+            $('.pagemargin ').find('.preview-cookie-bar').removeClass("modal-wrapper");
+            $('.pagemargin ').find('.preview_set').removeClass("modal_preview");
+            $('.pagemargin ').find('.btn-close').addClass("d-none");
+        });
+
+        // banner background color
+        
+         const body1 = document.querySelector(".preview_set");
+         const input1 = document.getElementById("colorPickerbutton3");
+         const colorCode1 = document.getElementById("colorCodebutton3");
+         setColor1();
+         input1.addEventListener("input", setColor1);
+         function setColor1() {
+             body1.style.backgroundColor = input1.value;
+             colorCode1.innerHTML = input1.value;
+         }
+
+        //  banner text color
+        const body2 = document.querySelector(".preview_set");
+         const input2 = document.getElementById("bannerTextback");
+         const colorCode2 = document.getElementById("bannerText");
+         setColor2();
+         input2.addEventListener("input", setColor2);
+         function setColor2() {
+             body2.style.color = input2.value;
+             colorCode2.innerHTML = input2.value;
+         }
+
+          //  banner text link
+        const body3 = document.querySelector(".cc-link");
+        const input3 = document.getElementById("bannertextlink");
+        const colorCode3 = document.getElementById("bannerlink");
+        setColor3();
+        input3.addEventListener("input", setColor3);
+        function setColor3() {
+            body3.style.color = input3.value;
+            colorCode3.innerHTML = input3.value;
+        }
+
+        
+          //  button background color
+          const body4 = document.querySelector(".cc-dismiss");
+          const input4 = document.getElementById("buttonbackcolor");
+          const colorCode4 = document.getElementById("buttoncolor");
+          setColor4();
+          input4.addEventListener("input", setColor4);
+          function setColor4() {
+              body4.style.backgroundColor = input4.value;
+              colorCode4.innerHTML = input4.value;
+          }
+
+            //  button text color
+            const body5 = document.querySelector(".cc-dismiss");
+            const input5 = document.getElementById("buttontextcolor");
+            const colorCode5 = document.getElementById("buttontext");    
+            setColor5();
+            input5.addEventListener("input", setColor5);
+            function setColor5() {
+                body5.style.color = input5.value;
+                colorCode5.innerHTML = input5.value;
+            }
+
+              //  button border color
+            const body6 = document.querySelector(".cc-dismiss");
+            const input6 = document.getElementById("buttonbordercolor");
+            const colorCode6 = document.getElementById("buttonborder");
+            setColor6();
+            input6.addEventListener("input", setColor6); 
+            function setColor6() {
+                body6.style.borderColor = input6.value;
+                colorCode6.innerHTML = input6.value;
+            }
+
     });
