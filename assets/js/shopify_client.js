@@ -242,6 +242,19 @@ $(document).ready(function () {
         var hexVal = color.toHexString();
         $("[data-id='" + id + "']").val(hexVal);
     });
+        /*Transparent colorpicker Start*/
+        $(".spectrumTransparentColor").spectrum({
+            showButtons: false,
+            showAlpha: true
+        });
+    
+        $(".spectrumTransparentColor").on('move.spectrum', function (e, color) {
+            showAlpha: true
+            var id = $(this).data('id');
+            var hexVal = color.toRgbString();
+            $("[data-id='" + id + "']").val(hexVal);
+        });
+        /*Transparent colorpicker End*/
     $(document).on("submit", "#addClientstore_settingFrm", function (e) {
         e.preventDefault();
         var frmData = $(this).serialize();
