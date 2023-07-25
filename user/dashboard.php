@@ -297,28 +297,47 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         <span class="my_background_color_transparent input-group-btn" ><input type='text' data-id="icons_background_color_transparent" class='form-control spectrumTransparentColor' value="#000" /></span>
                                                     </div>
                                                 </div>
-                                                <div class="Polaris-FormLayout__Item">
-                                                    <div class="">
-                                                        <div class="Polaris-Labelled__LabelWrapper">
-                                                            <div class="Polaris-Label">
-                                                                <label id=":R5dn6:Label" for=":R5dn6:" class="Polaris-Label__Text">Maximum order</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Polaris-Connected">
-                                                            <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                                                <div class="Polaris-TextField">
-                                                                    <input id=":R5dn6:" autocomplete="off" class="Polaris-TextField__Input" type="number" aria-labelledby=":R5dn6:Label" aria-invalid="false" value=""placeholder ="Learn More">
-                                                                    
-                                                                    <div class="Polaris-TextField__Backdrop">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Polaris-Layout__AnnotationContent">
+                                <div class="Polaris-Card ">
+                                    <div class="backimg">
+                                        <div class="preview-cookie-bar">
+                                            <div class="preview_set" style="background-color: rgb(244, 143, 177); color: rgb(49, 27, 146);">
+                                                <div class="seven">
+                                                    <span class="bar-text-wrapper">
+                                                    <span class="bar-message">This website uses cookies to ensure you get the best experience on our website.</span>
+                                                    <span class="bar-link"><a class="cc-link" href="https://payalcls.myshopify.com/policies/privacy-policy" target="_blank" style="color: rgb(255, 204, 128);">Learn More</a></span>
+                                                    </span>
+                                                </div>
+                                                <div class="three">
+                                                    <a class="cc-dismiss" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Polaris-Card polarisboxshadow">
+                            <div class="Polaris-ButtonGroup" style="justify-content:center;">
+                                <div class="Polaris-ButtonGroup__Item">
+                                    <button class="Polaris-Button" type="button">
+                                    <span class="Polaris-Button__Content">
+                                        <span class="Polaris-Button__Text">Cancel</span>
+                                    </span>
+                                    </button>
+                                </div>
+                                <div class="Polaris-ButtonGroup__Item">
+                                    <button class="Polaris-Button Polaris-Button--  " type="button">
+                                    <span class="Polaris-Button__Content">
+                                        <span class="Polaris-Button__Text">Save</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
