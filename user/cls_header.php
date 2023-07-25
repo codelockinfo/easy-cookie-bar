@@ -37,5 +37,6 @@
         <script src="<?php echo main_url('assets/js/select2.full.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_client.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_custom.js');?>"></script> 
+        <script src="<?php echo main_url('assets/js/easy_style.js');?>"></script> 
      
    
