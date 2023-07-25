@@ -29,7 +29,7 @@
        
         <script> var store = "<?php echo $store; ?>"; </script>
         <?php  $_SESSION['store'] = $store; ?>
-        <script src="<?php echo main_url('assets/js/jquery-2.1.1.js'); ?>"></script>
+        <script src="<?php echo main_url('assets/js/jquery-3.6.4.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/jquery-ui.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/spectrum.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/popper.min.js'); ?>"></script>
