@@ -305,29 +305,28 @@ $(document).ready(function () {
             }
         });
     });
-$(document).on("click", ".logout", function(event) {
-     event.preventDefault();
-        logout();
+    $(document).on("click", ".logout", function(event) {
+        event.preventDefault();
+            logout();
     });
-function logout()
-{
-	$.ajax({
-		url:"ajax_call.php",
-		type:'POST',
-		data:{
-			action:'logout'
-		},
-		success:function(response)
-		{
-			if(response.trim() == 'success')
-			{
-				window.location.href = 'index.php';
-			}
-		}
+    function logout(){
+        $.ajax({
+            url:"ajax_call.php",
+            type:'POST',
+            data:{
+                action:'logout'
+            },
+            success:function(response)
+            {
+                if(response.trim() == 'success')
+                {
+                    window.location.href = 'index.php';
+                }
+            }
 
-	});
-}
-$(document).on("submit", "#register_frm", function (e) {
+        });
+    }
+    $(document).on("submit", "#register_frm", function (e) {
         e.preventDefault(); 
         var frmData = new FormData($(this)[0]);
         frmData.append('store',store); 
@@ -363,25 +362,7 @@ $(document).on("submit", "#register_frm", function (e) {
         });
     });
 });
-function get_textarea_value(routine_name,store,id,for_data){
-$.ajax({
-        url: "ajax_call.php",
-        type: "post",
-        dataType: "json",
-        data: {'routine_name': routine_name , store: store, 'id'  : id,'for_data' : for_data},
-        success: function (comeback) {
-                if (comeback['code'] != undefined && comeback['code'] == '403') {
-                      redirect403();
-                }else if (comeback['outcome'] == 'true') {
-                        $('#title').val(comeback['data']['title']);
-                        $('#ImagePreview').attr("src",comeback['data']['image']);
-                        $('.textdetails').val(comeback['data']['description']);
-                } else {
-                }
-                  loading_hide('.save_loader_show','save');
-            }
-    });
-}
+
 function btn_enable_disable(){
 $.ajax({
         url: "ajax_call.php",
@@ -443,168 +424,6 @@ setTimeout(function(){
     seeting_enable_disable();
 },50);
 
-function get_api_data(routineName,shopify_api){
-    var routineName = routineName;
-    var shopify_api = shopify_api;
-    $.ajax({
-        url: "ajax_call.php",
-        type: "POST",
-        dataType: "json",
-        data: {
-            routine_name: routineName,
-            shopify_api: shopify_api,
-            store: store,
-        },
-        success: function ($response) {
-                if ($response['code'] != undefined && $response['code'] == '403') {
-                    redirect403();
-                } else if ($response['data'] == 'true') {
-                    $('.numberConvertBlog').html($response["total_record_blog"]);
-                    $('.numberConvertCollection').html($response["total_record_collection"]);
-                    $('.numberConvertProduct').html($response["total_record_product"]);
-                    $('.numberConvertPages').html($response["total_record_pages"]);
-                } else {
-                }
-            }
-    })
-}
-
-$(document).on("click",".cancelRequest",function(e){
-    e.preventDefault();
-    var return_page = $(this).data("page");
-    window.location.href = return_page+".php?store="+ store;
-    return false;
-})
-
-$(document).on("submit", "#addblog_frm", function (e) {
-        e.preventDefault();       
-        var form_data = $("#addblog_frm")[0];
-        var form_data = new FormData(form_data);
-        form_data.append('images',$("#ImagePreview").attr("src"));
-        form_data.append('store',store); 
-        form_data.append('routine_name','addblog');      
-        $.ajax({
-            url: "ajax_call.php",
-            type: "post",
-            dataType: "json",
-            contentType: false,
-            processData: false,
-            data: form_data, 
-             beforeSend: function () {
-                loading_show('.saveBtn.save_loader_show');
-            },
-            success: function (response) {
-                var response = JSON.parse(response);
-                 if (response['code'] != undefined && response['code'] == '403') {
-                    redirect403();
-                } 
-                else if(response['data'] == "fail"){
-                    response["msg"]["title"] !== undefined ? $(".title").html (response["msg"]["title"]) : $(".title").html("");
-                }else{
-                    $(".title").html("");
-                   window.location.href = "blog_post.php?store="+ store;
-                }
-                loading_hide('.saveBtn.save_loader_show','Save');
-            }
-        });
-});
-
-$(document).on("submit", "#addproduct_frm", function (e) {
-        e.preventDefault();       
-        var form_data = $("#addproduct_frm")[0];
-        var form_data = new FormData(form_data);
-        
-        form_data.append('images',$("#ImagePreview").attr("src"));
-        form_data.append('store',store); 
-        form_data.append('routine_name','addproduct');      
-        $.ajax({
-            url: "ajax_call.php",
-            type: "post",
-            dataType: "json",
-            contentType: false,
-            processData: false,
-            data: form_data, 
-              beforeSend: function () {
-                loading_show('.saveBtn.save_loader_show');
-            },
-            success: function (response) {
-                  var response = JSON.parse(response);
-                 if (response['code'] != undefined && response['code'] == '403') {
-                    redirect403();
-                } 
-                else if(response['data'] == "fail"){
-                    response["msg"]["title"] !== undefined ? $(".title").html (response["msg"]["title"]) : $(".title").html("");
-                }else{
-                    $(".title").html("");
-                   window.location.href = "products.php?store="+ store;
-                }
-                loading_hide('.saveBtn.save_loader_show', 'Save');
-            }
-        });
-});
-$(document).on("submit", "#addpages_frm", function (e) {
-        e.preventDefault();       
-        var form_data = $("#addpages_frm")[0];
-        var form_data = new FormData(form_data);
-        form_data.append('store',store); 
-        form_data.append('routine_name','addpages');      
-        $.ajax({
-            url: "ajax_call.php",
-            type: "post",
-            dataType: "json",
-            contentType: false,
-            processData: false,
-            data: form_data, 
-              beforeSend: function () {
-                loading_show('.saveBtn.save_loader_show');
-            },
-            success: function (response) {
-                 var response = JSON.parse(response);
-                 if (response['code'] != undefined && response['code'] == '403') {
-                    redirect403();
-                } 
-                else if(response['data'] == "fail"){
-                    response["msg"]["title"] !== undefined ? $(".title").html (response["msg"]["title"]) : $(".title").html("");
-                }else{
-                    $(".title").html("");
-                   window.location.href = "pages.php?store="+ store;
-                }
-                loading_hide('.saveBtn.save_loader_show', 'Save');
-            }
-        });
-});
-$(document).on("submit", "#addcollection_frm", function (e) {
-        e.preventDefault();       
-        var form_data = $("#addcollection_frm")[0];
-        var form_data = new FormData(form_data);
-        form_data.append('images',$("#ImagePreview").attr("src"));
-        form_data.append('store',store); 
-        form_data.append('routine_name','addcollections');      
-        $.ajax({
-            url: "ajax_call.php",
-            type: "post",
-            dataType: "json",
-            contentType: false,
-            processData: false,
-            data: form_data, 
-              beforeSend: function () {
-                loading_show('.saveBtn.save_loader_show');
-            },
-            success: function (response) {
-                  var response = JSON.parse(response);
-                 if (response['code'] != undefined && response['code'] == '403') {
-                    redirect403();
-                } 
-                else if(response['data'] == "fail"){
-                    response["msg"]["title"] !== undefined ? $(".title").html (response["msg"]["title"]) : $(".title").html("");
-                }else{
-                    $(".title").html("");
-                   window.location.href = "collection.php?store="+ store;
-                }
-                loading_hide('.saveBtn.save_loader_show', 'Save');
-            }
-        });
-});
 function readURL(input) {
 $(".imagesBlock").css("display","block");
     if (input.files && input.files[0]) {
@@ -712,12 +531,6 @@ function preview_image(selector,page)
 
 
 }
-$(document).on("click", ".enable-btn", function(event) {
-    event.preventDefault();
-    var btnval = $(this).val();
-    app_enable_disable(btnval,1);
-});
-
 function app_enable_disable(btnval,call_from){
     $.ajax({
         url: "ajax_call.php",
@@ -767,46 +580,9 @@ function app_enable_disable(btnval,call_from){
         }
     });
 }
-
-$(document).on("click", ".chatGPTBtn", function(event) {
-    event.preventDefault();
-    var chatGPT_Prerequest = $(".chatGPT_Prerequest").val();
-    var chatgptreq = $(this).closest(".Polaris-Connected").find("#chatgptinput").val();
-    $.ajax({
-        url: "ajax_call.php",
-        type: "post",
-        dataType: "json",
-        data: {'store': store,'routine_name' : 'chatgpt_req_res','chatgptreq':chatgptreq,'chatGPT_Prerequest':chatGPT_Prerequest}, 
-            beforeSend: function () {
-            loading_show('.chatGPTBtn.save_loader_show');
-        },
-        success: function (response) {
-            console.log(response);
-            console.log(response['data']);
-            console.log(response['outcome']);
-                if (response['code'] != undefined && response['code'] == '403') {
-                redirect403();
-            }else if(response['data'] == "success"){
-                $(".chatgpterror").html("");
-                var activeEditor = tinyMCE.get('description').getContent();
-                console.log(activeEditor);
-                tinyMCE.activeEditor.setContent(response['outcome']);
-            }else{ 
-                response['outcome']['chatgpt'] !== undefined ? $(".chatgpterror").html(response['outcome']['chatgpt']) : $(".chatgpterror").html(response['outcome']);
-            }
-            loading_hide('.chatGPTBtn.save_loader_show','save');
-        }
-    })
-});
-$(document).on("click",".get_content_drop",function(){
-    console.log("start chat gpt");
-    $(".content_gtp").toggleClass("content_gtp_block");
-});
-$(document).ready(function() {
-    $("#toggleButton").on("click", function() {
-        $(this).toggleClass("on");
-        const value = $(this).hasClass("on") ? 1 : 0;
-        $("#toggleValue").val(value);
-        app_enable_disable(value);
-    });
+$(document).on("click","#toggleButton",function() {
+    $(this).toggleClass("on");
+    const value = $(this).hasClass("on") ? 1 : 0;
+    $("#toggleValue").val(value);
+    app_enable_disable(value);
 });
