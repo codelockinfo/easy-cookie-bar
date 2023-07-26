@@ -253,7 +253,7 @@ class Client_functions extends common_function {
         return $response;
     }
 
-    function btn_enable_disable(){
+    function appstatus(){
         $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
             if (isset($_POST['store']) && $_POST['store'] != '') {
                 $store= $_POST['store'];
@@ -266,12 +266,16 @@ class Client_functions extends common_function {
     function cookies_bar_setting_save() {
         $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
         if (isset($_POST['store']) && $_POST['store'] != '') {
+             $fields_arr = array();
                 $shopinfo = $this->current_store_obj;
                 $shopinfo = (object)$shopinfo;
-                $where_query = array(["", "shop_name", "=", "$shopinfo->store_user_id"]);
-                $comeback= $this->select_result(TABLE_USER_SHOP, '*', $where_query);
+                $where_query = array(["", "store_user_id", "=", $shopinfo->store_user_id]);
+                $comeback= $this->select_result(TABLE_COOKIEBAR_SETTINGS, '*', $where_query);
                 $mysql_date = date('Y-m-d H:i:s');
-                if(empty(comeback)){
+                if(!empty($comeback['data'])){
+                    $where_query = array(
+                        ["", "store_user_id", "=", $shopinfo->store_user_id],
+                    );
                     $fields_arr = array(
                         '`message`' => $_POST["message"],
                         '`privacy_policy_url`' => $_POST["privacy_policy_url"],
@@ -291,11 +295,10 @@ class Client_functions extends common_function {
                         '`color_button_border`' => $_POST["color_button_border"],
                         '`updated_at`' => $mysql_date
                     );
-                    $response_data = $this->put_data(TABLE_COOKIEBAR_SETTINGS, array($fields_arr));
+                    $response_data = $this->put_data(TABLE_COOKIEBAR_SETTINGS, $fields_arr, $where_query);
                     $response_data = array('result' => 'success', 'msg' => "Setting update successfully");
                 }else{
                     $fields_arr = array(
-                        '`id`' => '',
                         '`store_user_id`' => $shopinfo->store_user_id,
                         '`message`' => $_POST["message"],
                         '`privacy_policy_url`' => $_POST["privacy_policy_url"],
@@ -319,6 +322,20 @@ class Client_functions extends common_function {
                 $response_data = $this->post_data(TABLE_COOKIEBAR_SETTINGS, array($fields_arr));
                 $response_data = array('result' => 'success', 'msg' => "Setting add successfully");
             }
+        }
+        $response = json_encode($response_data);
+        return $response;
+    }
+    function cookies_bar_setting_select(){
+        $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
+        if (isset($_POST['store']) && $_POST['store'] != '') {
+                $shopinfo = $this->current_store_obj;
+                $shopinfo = (object)$shopinfo;
+                $where_query = array(["", "store_user_id", "=", $shopinfo->store_user_id]);
+                $comeback= $this->select_result(TABLE_COOKIEBAR_SETTINGS, '*', $where_query);
+                $comebackdata = isset($comeback['data'][0]) ? $comeback['data'][0] : '';
+                $comeback = (object)$comebackdata;
+                $response_data = array('result' => 'success', 'outcome' => $comeback);
         }
         $response = json_encode($response_data);
         return $response;
