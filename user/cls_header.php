@@ -26,7 +26,6 @@
         <link rel="stylesheet" href="<?php echo main_url('assets/css/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/select2.min.css'); ?>" rel="stylesheet"> 
         <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
        
         <script> var store = "<?php echo $store; ?>"; </script>
         <?php  $_SESSION['store'] = $store; ?>
