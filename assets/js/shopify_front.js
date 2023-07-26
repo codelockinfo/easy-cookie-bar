@@ -45,7 +45,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                             console.log(comeback);
                             setTimeout(function(){
                                 $("body").append(
-                                    '<div id="cookies-banner">'+
+                                    '<div id="cookies-banner" style=" display: none;justify-content: center;align-items: center;  padding: 1em;position: fixed;bottom: 0px; width: 100%;background: #fff; border-top: 1px solid #dcdcdc;">'+
                                     '<span>This website uses cookies to ensure you get the best experience on our website.</span>'+
                                     '<button class="handleDecline" style="margin-left: 1em;" >Decline</button>'+
                                     '<button class="handleAccept" style="margin-left: 1em;" >Accept</button>'+
