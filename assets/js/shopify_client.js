@@ -242,49 +242,18 @@ $(document).ready(function () {
         var hexVal = color.toHexString();
         $("[data-id='" + id + "']").val(hexVal);
     });
-        /*Transparent colorpicker Start*/
-        $(".spectrumTransparentColor").spectrum({
-            showButtons: false,
-            showAlpha: true
-        });
-    
-        $(".spectrumTransparentColor").on('move.spectrum', function (e, color) {
-            showAlpha: true
-            var id = $(this).data('id');
-            var hexVal = color.toRgbString();
-            $("[data-id='" + id + "']").val(hexVal);
-        });
-        /*Transparent colorpicker End*/
-    $(document).on("submit", "#addClientstore_settingFrm", function (e) {
-        e.preventDefault();
-        var frmData = $(this).serialize();
-        frmData += '&' + $.param({"method_name": 'set_store_settings', 'shop': shop});
-        $.ajax({
-            url: "responce.php",
-            type: "post",
-            dataType: "json",
-            data: frmData,
-            beforeSend: function () {
-                loading_show('save_loader_show');
-            },
-            success: function (response) {
-                if (response['code'] != undefined && response['code'] == '403') {
-                    redirect403();
-                } else if (response['result'] == 'success') {
-                    $("#errorsmsgBlock").hide();
-                    flashNotice(response['message']);
-                } else if (response['msg_contented'] != undefined && response['msg_manage'] != undefined) {
-                    $("#errorBlockInfo").html(response['msg_contented']);
-                    $("#errorBlockManage").html(response['msg_manage']);
-                    $("#errorsmsgBlock").show();
-                    $("html, body").animate({scrollTop: 0}, "slow");
-                } else {
-                    flashNotice(response['message']);
-                }
-                loading_hide('save_loader_show', 'Save');
-            }
-        });
+    /*Transparent colorpicker Start*/
+    $(".spectrumTransparentColor").spectrum({
+        showButtons: false,
+        showAlpha: true
     });
+    $(".spectrumTransparentColor").on('move.spectrum', function (e, color) {
+        showAlpha: true
+        var id = $(this).data('id');
+        var hexVal = color.toRgbString();
+        $("[data-id='" + id + "']").val(hexVal);
+    });
+    /*Transparent colorpicker End*/
     $(document).on("submit", "#imageExmapleFrm", function (e) {
         e.preventDefault();
         var frmData = new FormData($(this)[0]);
@@ -375,7 +344,6 @@ $(document).ready(function () {
         });
     });
 });
-
 function btn_enable_disable(){
 $.ajax({
         url: "ajax_call.php",
@@ -436,7 +404,6 @@ function seeting_enable_disable(){
 setTimeout(function(){
     seeting_enable_disable();
 },50);
-
 function readURL(input) {
 $(".imagesBlock").css("display","block");
     if (input.files && input.files[0]) {
@@ -598,4 +565,29 @@ $(document).on("click","#toggleButton",function() {
     const value = $(this).hasClass("on") ? 1 : 0;
     $("#toggleValue").val(value);
     app_enable_disable(value);
+});
+$(document).on("submit", "#cookies_bar_setting_save", function (e) {
+    e.preventDefault();       
+    var form_data = $("#cookies_bar_setting_save")[0];
+    var form_data = new FormData(form_data);
+    form_data.append('store',store); 
+    form_data.append('routine_name','cookies_bar_setting_save');      
+    $.ajax({
+        url: "ajax_call.php",
+        type: "post",
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        data: form_data, 
+          beforeSend: function () {
+            loading_show('.save_loader_show');
+        },
+        success: function (response) {
+             var response = JSON.parse(response);
+             if (response['code'] != undefined && response['code'] == '403') {
+                redirect403();
+            } 
+            loading_hide('.saveBtn.save_loader_show', 'Save');
+        }
+    });
 });
