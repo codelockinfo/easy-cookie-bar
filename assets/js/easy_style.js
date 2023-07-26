@@ -87,13 +87,17 @@ $(document).ready(function () {
             layoutchange.addClass("modal-wrapper");
             modalopen.addClass("modal_preview");
             $('.modal-wrapper').addClass('open');
-             $(" .preview_set").css("flex-direction","column");
-             $(" .preview-cookie-bar .seven").css("width","100%");
+            $(" .preview_set").css("flex-direction","column");
+            $(" .preview-cookie-bar .seven").css("width","100%");
+            $('input[name="banner_height"]').val(300) ;    
         }
         else {
             layoutchange.removeClass("modal-wrapper");
             modalopen.removeClass("modal_preview");
-            $('.modal-wrapper').removeClass('open')
+            $('.modal-wrapper').removeClass('open');
+            $(" .preview_set").css("flex-direction","row");
+            $(" .preview-cookie-bar .seven").css("width","70%");
+            $('input[name="banner_height"]').val(70) ; 
         }
     }); 
      // get value of massage
@@ -115,8 +119,7 @@ $(document).ready(function () {
     $(document).on("click",".bannerlayout img",function(){
         var  bannerval  =   $(this).data('value');
         var buttonval  =   $(this).data('set');
-        
-       $(".preview_set").css("background", bannerval);
+        $(".preview_set").css("background", bannerval);
         $(".cc-dismiss").css("background", buttonval);
     });
 
@@ -190,30 +193,35 @@ $(document).ready(function () {
             colorCode6.innerHTML = input6.value;
         }  
 
-        $(document).on("click",".bannerlayout img",function(){
-            var  bannerval  =   $(this).data('value');
-            var buttonval  =   $(this).data('set');
-            $('.color_circle[name="color_banner"]').val(bannerval);
-            $('.color_circle[name="color_button"]').val(buttonval);
-        });
-
+        var contrastColor ="";
+        var contrastColor2 ="";
         $(document).on("click",".bannerlayout img",function(){
             var self = $(this).data("value");
-            var contrastColor = getContrastColor(self);
+            var selfbtn = $(this).data("set");
+            contrastColor = getContrastColor(self);
+            contrastColor2 = getContrastColor(selfbtn);
             $('.preview_set').css({'background-color': self,'color': contrastColor});
             $('.cc-link').css({'background-color': self,'color': contrastColor});
+            $('.cc-dismiss').css({'background-color': selfbtn,'color': contrastColor2 ,'border-color': contrastColor2});
         });
-
         function getContrastColor(color) {
             var hex = color.replace(/#/, '');
             var red = parseInt(hex.substr(0, 2), 16);
             var green = parseInt(hex.substr(2, 2), 16);
             var blue = parseInt(hex.substr(4, 2), 16);
-      
             var luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
             return luminance > 0.5 ? '#000000' : '#ffffff';
         }
       
-          
+        $(document).on("click",".bannerlayout img",function(){
+            var bannerval = $(this).data('value');
+            var buttonval = $(this).data('set');
+            $('.color_circle[name="color_banner"]').val(bannerval);
+            $('.color_circle[name="color_button"]').val(buttonval);
+            $('.color_circle[name="color_button_text"]').val(contrastColor2);
+            $('.color_circle[name="color_button_border"]').val(contrastColor2);
+            $('.color_circle[name="color_banner_text"]').val(contrastColor);
+            $('.color_circle[name="color_banner_link"]').val(contrastColor);
+        });
           
     });
