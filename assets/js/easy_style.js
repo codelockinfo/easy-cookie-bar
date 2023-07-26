@@ -83,7 +83,7 @@ $(document).ready(function () {
         var layoutchange= $('.pagemargin ').find('.preview-cookie-bar');
         var modalopen= $('.pagemargin ').find('.preview_set');
        
-        if (layout_change== "Pop-Pop") {
+        if (layout_change== "Pop-up") {
             layoutchange.addClass("modal-wrapper");
             modalopen.addClass("modal_preview");
             $('.modal-wrapper').addClass('open');
