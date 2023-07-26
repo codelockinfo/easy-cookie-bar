@@ -8,8 +8,7 @@ $(document).ready(function () {
         }
         $("#myNumber").val(value);
         var borderheightval = $("#myNumber").val();
-        alert(borderheightval);
-       
+        
     });
     $(document).on('click', '.up', function () {
         var value = $("#myNumber").val();
@@ -21,7 +20,6 @@ $(document).ready(function () {
         }
         $("#myNumber").val(value);
         var borderheightval = $("#myNumber").val();
-        alert(borderheightval);
         var border_height= $('.pagemargin ').find('.preview_set ');
         border_height.css("height", borderheightval + "px");
     
@@ -83,31 +81,23 @@ $(document).ready(function () {
     $(document).on('change','.layoutSelect2',function () {
         var layout_change=$('.layoutSelect2 option').filter(':selected').val();
         var layoutchange= $('.pagemargin ').find('.preview-cookie-bar');
-        var layoutbtn= $('.pagemargin ').find('.btn-close');
         var modalopen= $('.pagemargin ').find('.preview_set');
        
         if (layout_change== "Pop-Pop") {
-            alert("if");
             layoutchange.addClass("modal-wrapper");
-            layoutbtn.removeClass("d-none");
             modalopen.addClass("modal_preview");
             $('.modal-wrapper').addClass('open');
            
         }
         else {
             layoutchange.removeClass("modal-wrapper");
-            layoutbtn.addClass("d-none");
             modalopen.removeClass("modal_preview");
             $('.modal-wrapper').removeClass('open')
         }
        
     }); 
 
-        $('.btn-close').on("click",function() {
-            $('.pagemargin ').find('.preview-cookie-bar').removeClass("modal-wrapper");
-            $('.pagemargin ').find('.preview_set').removeClass("modal_preview");
-            $('.pagemargin ').find('.btn-close').addClass("d-none");
-        });
+       
 
         // banner background color
         
@@ -176,5 +166,24 @@ $(document).ready(function () {
                 body6.style.borderColor = input6.value;
                 colorCode6.innerHTML = input6.value;
             }
+
+
+            // get value of massage
+
+            $('input[type="text"]').on('keydown, keyup', function () {
+                var texInputValue = $('#massageText').val();
+                $('.bar-text-wrapper .bar-message').html(texInputValue);
+            });
+
+            $('input[type="text"]').on('keydown, keyup', function () {
+                var btnInputValue = $('#buttonText').val();
+                $('.preview_set .cc-dismiss').html(btnInputValue);
+            });
+
+            $('input[type="text"]').on('keydown, keyup', function () {
+                var linkInputValue = $('#linkText').val();
+               $('.preview_set .cc-link').html(linkInputValue);
+            });
+
 
     });

@@ -65,13 +65,14 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                     <div class="">
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label">
-                                                                <label id=":R1l9n6:Label" for=":R1l9n6:" class="Polaris-Label__Text">Message</label>
+                                                                <label id="massagelabel" for="" class="Polaris-Label__Text">Message</label>
                                                             </div>
                                                         </div>
                                                         <div class="Polaris-Connected">
                                                             <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                                                <div class="Polaris-TextField">
-                                                                    <input id=":R1l9n6:" autocomplete="off" class="Polaris-TextField__Input" type="text" aria-labelledby=":R1l9n6:Label" aria-invalid="false" value="">
+                             
+                                                            <div class="Polaris-TextField">
+                                                                    <input id="massageText" autocomplete="off" class="Polaris-TextField__Input" type="text" aria-labelledby=":R1l9n6:Label" aria-invalid="false" value="This website uses cookies to ensure you get the best experience on our websit">
                                                                     <div class="Polaris-TextField__Backdrop">
                                                                     </div>
                                                                 </div>
@@ -107,13 +108,13 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                     <div class="">
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label">
-                                                                <label id=":R3dn6:Label" for=":R3dn6:" class="Polaris-Label__Text">Agreement Text</label>
+                                                                <label id="buttonLabel" for=":R3dn6:" class="Polaris-Label__Text">Agreement Text</label>
                                                             </div>
                                                         </div>
                                                         <div class="Polaris-Connected">
                                                             <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                                                 <div class="Polaris-TextField">
-                                                                    <input id=":R3dn6:" autocomplete="off" class="Polaris-TextField__Input" placeholder="allow" type="number" aria-labelledby=":R3dn6:Label" aria-invalid="false" value="allow">
+                                                                    <input id="buttonText" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false" value="Got it!">
                                                                         <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                             
                                                                         </div>
@@ -128,13 +129,13 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                     <div class="">
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label">
-                                                                <label id=":R5dn6:Label" for=":R5dn6:" class="Polaris-Label__Text">Maximum order</label>
+                                                                <label id=":R5dn6:Label" for=":R5dn6:" class="Polaris-Label__Text">Privacy policy link text</label>
                                                             </div>
                                                         </div>
                                                         <div class="Polaris-Connected">
                                                             <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                                                 <div class="Polaris-TextField">
-                                                                    <input id=":R5dn6:" autocomplete="off" class="Polaris-TextField__Input" type="number" aria-labelledby=":R5dn6:Label" aria-invalid="false" value=""placeholder ="Learn More">
+                                                                    <input id="linkText" autocomplete="off" class="Polaris-TextField__Input" type="text" aria-labelledby=":R5dn6:Label" aria-invalid="false" value="Learn More">
                                                                     
                                                                     <div class="Polaris-TextField__Backdrop">
                                                                     </div>
@@ -314,12 +315,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                         <div role="group" class="Polaris-FormLayout--grouped">
                                             <div class="Polaris-FormLayout__Items" >
                                                 <div class="Polaris-FormLayout__Item colorflex">
-                                                    <!-- <div class="input-group">
-                                                        <input type="text"class="bannerval" data-id="icons_background_color_transparent" value="#000" name="icon_background_color_transparent" class="form-control" aria-describedby="basic-addon1" style="display:none;">
-                                                        <span class="my_background_color_transparent input-group-btn" >
-                                                            <input type='text' data-id="icons_background_color_transparent" class='form-control spectrumTransparentColor' value="#000" id="bannerColor"/>
-                                                        </span>
-                                                    </div> -->
+                                                    
                                                     <div class="MuiGrid-root jss197 MuiGrid-item">
                                                         <div class="fcolor">
                                                             <div>
@@ -434,7 +430,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                 <div class="Polaris-Card ">
                                     <div class="backimg">
                                         <div class="preview-cookie-bar">
-                                            <div class="btn-close d-none"></div>
+                                           
                                             <div class="preview_set" style="background-color: rgb(244, 143, 177); color: rgb(49, 27, 146);">
                                                 <div class="seven">
                                                     <span class="bar-text-wrapper">
@@ -473,6 +469,11 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                 </div>
             </div>
         </div>
+    </div>
+    <div class="frequently_question">
+            <p>Frequently Asked Questions</p>
+            <p>We're available 24/7 and respond in less than a couple of minutes</p>
+            <a class="primary button open-crisp" href="#"><i class="fa-solid fa-user" style="color: #254b8d;padding-right:5px;"></i> Chat to our live support team</a>
     </div>
     <div class="footermargin">
         <div class="Polaris-FooterHelp__Text footermargin footer_border">
