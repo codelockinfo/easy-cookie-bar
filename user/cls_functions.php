@@ -263,64 +263,78 @@ class Client_functions extends common_function {
             }
             return $response;
     }
-    function cookies_bar_setting_save() {
+    function cookies_bar_setting_save_first(){
         $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
-        if (isset($_POST['store']) && $_POST['store'] != '') {
-             $fields_arr = array();
+        if (isset($_POST['store']) && $_POST['store'] != '' ) {
+                $fields_arr = array();
                 $shopinfo = $this->current_store_obj;
                 $shopinfo = (object)$shopinfo;
                 $where_query = array(["", "store_user_id", "=", $shopinfo->store_user_id]);
                 $comeback= $this->select_result(TABLE_COOKIEBAR_SETTINGS, '*', $where_query);
                 $mysql_date = date('Y-m-d H:i:s');
-                if(!empty($comeback['data'])){
-                    $where_query = array(
-                        ["", "store_user_id", "=", $shopinfo->store_user_id],
+                if(empty($comeback['data'])){
+                        $fields_arr = array(
+                            '`store_user_id`' => $shopinfo->store_user_id,
+                            '`message`' => 'This website uses cookies to ensure you get the best experience on our website',
+                            '`privacy_policy_url`' => '',
+                            '`agreement_text`' =>'Got it!',
+                            '`privacy_policy_url_text`' => 'Learn More',
+                            '`banner_height`' => '11',
+                            '`banner_fontsize`' => '20px',
+                            '`button_border_radius`' => '50',
+                            '`button_border_width`' => '11',
+                            '`position`' => '1',
+                            '`layout`' => '0',
+                            '`color_banner`' => '#000000',
+                            '`color_banner_text`' => '#fafafa',
+                            '`color_banner_link`' => '#ffffff',
+                            '`color_button`' => '#ffffff',
+                            '`color_button_text`' =>  '#000000',
+                            '`color_button_border`' =>'#ffffff',
+                            '`created_at`' => $mysql_date,
+                            '`updated_at`' => $mysql_date
                     );
-                    $fields_arr = array(
-                        '`message`' => $_POST["message"],
-                        '`privacy_policy_url`' => $_POST["privacy_policy_url"],
-                        '`agreement_text`' => $_POST["agreement_text"],
-                        '`privacy_policy_url_text`' => $_POST["privacy_policy_url_text"],
-                        '`banner_height`' => $_POST["banner_height"],
-                        '`banner_fontsize`' => $_POST["banner_fontsize"],
-                        '`button_border_radius`' => $_POST["button_border_radius"],
-                        '`button_border_width`' => $_POST["button_border_width"],
-                        '`position`' => $_POST["position"],
-                        '`layout`' => $_POST["layout"],
-                        '`color_banner`' => $_POST["color_banner"],
-                        '`color_banner_text`' => $_POST["color_banner_text"],
-                        '`color_banner_link`' => $_POST["color_banner_link"],
-                        '`color_button`' => $_POST["color_button"],
-                        '`color_button_text`' => $_POST["color_button_text"],
-                        '`color_button_border`' => $_POST["color_button_border"],
-                        '`updated_at`' => $mysql_date
-                    );
-                    $response_data = $this->put_data(TABLE_COOKIEBAR_SETTINGS, $fields_arr, $where_query);
-                    $response_data = array('result' => 'success', 'msg' => "Setting update successfully");
-                }else{
-                    $fields_arr = array(
-                        '`store_user_id`' => $shopinfo->store_user_id,
-                        '`message`' => $_POST["message"],
-                        '`privacy_policy_url`' => $_POST["privacy_policy_url"],
-                        '`agreement_text`' => $_POST["agreement_text"],
-                        '`privacy_policy_url_text`' => $_POST["privacy_policy_url_text"],
-                        '`banner_height`' => $_POST["banner_height"],
-                        '`banner_fontsize`' => $_POST["banner_fontsize"],
-                        '`button_border_radius`' => $_POST["button_border_radius"],
-                        '`button_border_width`' => $_POST["button_border_width"],
-                        '`position`' => $_POST["position"],
-                        '`layout`' => $_POST["layout"],
-                        '`color_banner`' => $_POST["color_banner"],
-                        '`color_banner_text`' => $_POST["color_banner_text"],
-                        '`color_banner_link`' => $_POST["color_banner_link"],
-                        '`color_button`' => $_POST["color_button"],
-                        '`color_button_text`' => $_POST["color_button_text"],
-                        '`color_button_border`' => $_POST["color_button_border"],
-                        '`created_at`' => $mysql_date,
-                        '`updated_at`' => $mysql_date
+                    $response_data = $this->post_data(TABLE_COOKIEBAR_SETTINGS, array($fields_arr));
+                    $response_data = array('result' => 'success', 'msg' => "Setting add successfully");
+                }
+            }
+            $response = json_encode($response_data);
+            return $response;
+    }
+    function cookies_bar_setting_save() {
+        $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
+        if (isset($_POST['store']) && $_POST['store'] != '') {
+            $fields_arr = array();
+            $shopinfo = $this->current_store_obj;
+            $shopinfo = (object)$shopinfo;
+            $where_query = array(["", "store_user_id", "=", $shopinfo->store_user_id]);
+            $comeback= $this->select_result(TABLE_COOKIEBAR_SETTINGS, '*', $where_query);
+            $mysql_date = date('Y-m-d H:i:s');
+            if(!empty($comeback['data'])){
+                $where_query = array(
+                    ["", "store_user_id", "=", $shopinfo->store_user_id],
                 );
-                $response_data = $this->post_data(TABLE_COOKIEBAR_SETTINGS, array($fields_arr));
-                $response_data = array('result' => 'success', 'msg' => "Setting add successfully");
+                $fields_arr = array(
+                    '`message`' => $_POST["message"],
+                    '`privacy_policy_url`' => $_POST["privacy_policy_url"],
+                    '`agreement_text`' => $_POST["agreement_text"],
+                    '`privacy_policy_url_text`' => $_POST["privacy_policy_url_text"],
+                    '`banner_height`' => $_POST["banner_height"],
+                    '`banner_fontsize`' => $_POST["banner_fontsize"],
+                    '`button_border_radius`' => $_POST["button_border_radius"],
+                    '`button_border_width`' => $_POST["button_border_width"],
+                    '`position`' => $_POST["position"],
+                    '`layout`' => $_POST["layout"],
+                    '`color_banner`' => $_POST["color_banner"],
+                    '`color_banner_text`' => $_POST["color_banner_text"],
+                    '`color_banner_link`' => $_POST["color_banner_link"],
+                    '`color_button`' => $_POST["color_button"],
+                    '`color_button_text`' => $_POST["color_button_text"],
+                    '`color_button_border`' => $_POST["color_button_border"],
+                    '`updated_at`' => $mysql_date
+                );
+                $response_data = $this->put_data(TABLE_COOKIEBAR_SETTINGS, $fields_arr, $where_query);
+                $response_data = array('result' => 'success', 'msg' => "Setting update successfully");
             }
         }
         $response = json_encode($response_data);

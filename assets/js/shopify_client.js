@@ -566,6 +566,19 @@ $(document).on("click","#toggleButton",function() {
     $("#toggleValue").val(value);
     app_enable_disable(value);
 });
+
+
+function cookies_bar_setting_save_first(){
+    $.ajax({
+        url: "ajax_call.php",
+        type: "post",
+        dataType: "json",
+        data: {'routine_name': 'cookies_bar_setting_save_first' ,'store' : store},
+        success: function (comeback){
+            console.log(comeback);
+        }
+    });
+}
 $(document).on("submit", "#cookies_bar_setting_save", function (e) {
     e.preventDefault();       
     console.log("COKKIES BAR....");
@@ -610,24 +623,48 @@ function cookies_bar_setting_select(){
             if(comeback  != undefined){
             var comeback = JSON.parse(comeback);
             console.log(comeback);
-
+                console.log(comeback.outcome.banner_fontsize);
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
+                $('.bar-message').html(comeback.outcome.message);
+
                 $('.Polaris-TextField__Input[name="privacy_policy_url"]').val(comeback.outcome.privacy_policy_url);
                 $('.Polaris-TextField__Input[name="agreement_text"]').val(comeback.outcome.agreement_text);
                 $('.Polaris-TextField__Input[name="privacy_policy_url_text"]').val(comeback.outcome.privacy_policy_url_text);
                 $('.Polaris-TextField__Input[name="banner_height"]').val(comeback.outcome.banner_height);
+
                 $('.Polaris-Select__Input[name="banner_fontsize"]').val(comeback.outcome.banner_fontsize);
+                $('.bar-message').css("font-size",comeback.outcome.banner_fontsize);
+                
                 $('.Polaris-Select__Input[name="position"]').val(comeback.outcome.position);
                 $('.Polaris-Select__Input[name="layout"]').val(comeback.outcome.layout);
-                
+                if(comeback.outcome.layout == 1){
+                    $(".preview-cookie-bar").addClass("modal-wrapper open");
+                    $(".preview_set").addClass("modal_preview");
+                }
                 $('.Polaris-TextField__Input[name="button_border_radius"]').val(comeback.outcome.button_border_radius);
+                $('.cc-dismiss').css("border-radius",comeback.outcome.button_border_radius+"px");
+                
                 $('.Polaris-TextField__Input[name="button_border_width"]').val(comeback.outcome.button_border_width);
+                $('.cc-dismiss').css("border",comeback.outcome.button_border_width+"px");
+
                 $('.color_circle[name="color_banner"]').val(comeback.outcome.color_banner);
+                $(".preview_set").css("background-color",comeback.outcome.color_banner);
+
                 $('.color_circle[name="color_banner_text"]').val(comeback.outcome.color_banner_text);
+                $(".preview_set").css("color",comeback.outcome.color_banner_text);
+
                 $('.color_circle[name="color_banner_link"]').val(comeback.outcome.color_banner_link);
+                $(".cc-link").css("color",comeback.outcome.color_banner_link);
+                
                 $('.color_circle[name="color_button"]').val(comeback.outcome.color_button);
+                $(".cc-dismiss").css("background-color",comeback.outcome.color_banner_link);
+                
                 $('.color_circle[name="color_button_text"]').val(comeback.outcome.color_button_text);
+                $(".cc-dismiss").css("color",comeback.outcome.color_button_text);
+                
                 $('.color_circle[name="color_button_border"]').val(comeback.outcome.color_button_border);
+                $(".cc-dismiss").css("border-color",comeback.outcome.color_button_border);
+
             }
         }
     });

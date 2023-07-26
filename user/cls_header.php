@@ -31,12 +31,12 @@
         <?php  $_SESSION['store'] = $store; ?>
         <script src="<?php echo main_url('assets/js/jquery-3.6.4.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/jquery-ui.min.js'); ?>"></script>
+        <script src="<?php echo main_url('assets/js/easy_style.js');?>"></script> 
         <script src="<?php echo main_url('assets/js/spectrum.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/popper.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/star_rating.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/select2.full.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_client.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_custom.js');?>"></script> 
-        <script src="<?php echo main_url('assets/js/easy_style.js');?>"></script> 
      
    
