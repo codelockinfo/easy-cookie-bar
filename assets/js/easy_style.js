@@ -9,7 +9,8 @@ $(document).ready(function () {
         }
         $("#myNumber").val(value);
         var borderheightval = $("#myNumber").val(); 
-     
+        var border_height= $('.pagemargin ').find('.preview_set ');
+        border_height.css("height", borderheightval + "px");
     });
     $(document).on('click', '.up', function (e) {
         e.preventDefault();
