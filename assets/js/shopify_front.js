@@ -48,7 +48,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                                     '<div id="cookies-banner">'+
                                     '<span>This website uses cookies to ensure you get the best experience on our website.</span>'+
                                     '<button class="handleDecline" style="margin-left: 1em;" >Decline</button>'+
-                                    '<button class="handleaccept" style="margin-left: 1em;" >Accept</button>'+
+                                    '<button class="handleAccept" style="margin-left: 1em;" >Accept</button>'+
                                     '</div>'
                                 );
                             },5000); 
@@ -59,11 +59,13 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         });
     });
             
-    $(document).on("click", ".handleDecline", function(event) {
+    $(document).on("click", ".handleDecline", function() {
+        console.log("handleDecline click");
         handleDecline();  
     });
     $(document).on("click", ".handleAccept", function(event) {
-        handleAccept(e);  
+        console.log("handleAccept click ");
+        handleAccept(event);  
     });
     function getBannerEl() {
         return document.getElementById('cookies-banner');
@@ -78,6 +80,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function handleAccept(e) {
+        console.log("handleAccept");
         window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
     
         document.addEventListener('trackingConsentAccepted',function() {
@@ -86,6 +89,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function handleDecline() {
+        console.log("handleDecline");
         window.Shopify.customerPrivacy.setTrackingConsent(false,hideBanner);
       }
     
