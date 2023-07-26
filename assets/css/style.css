@@ -80,6 +80,7 @@ button, input {
   padding: 13px 6px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .preview-cookie-bar .seven {
   width: 70%;
@@ -186,7 +187,8 @@ hr.hrline {
 }
 .modal_preview{
   width: 500px;
-    height: 400px;
+    height: 300px;
+    /* height: auto; */
 }
 .fcolor button {
   border: none;
