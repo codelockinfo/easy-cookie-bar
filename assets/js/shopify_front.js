@@ -17,7 +17,7 @@ function include(filename, onload) {
     head.appendChild(script);
 }
 
-include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-2.1.1.js', function() {
+include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.min.js', function() {
     $(document).ready(function() {
         var shop = Shopify.shop;
         $.ajax({
