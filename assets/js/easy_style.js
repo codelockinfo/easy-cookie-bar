@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $(document).on('click', '.down', function () {
+    $(document).on('click', '.down', function (e) {
+        e.preventDefault();
         var value = $("#myNumber").val();
         if (value != '') {
             value = parseInt(value) - 1;
@@ -8,8 +9,10 @@ $(document).ready(function () {
         }
         $("#myNumber").val(value);
         var borderheightval = $("#myNumber").val(); 
+     
     });
-    $(document).on('click', '.up', function () {
+    $(document).on('click', '.up', function (e) {
+        e.preventDefault();
         var value = $("#myNumber").val();
         if (value != '') {
             value = parseInt(value) + 1;
@@ -21,9 +24,10 @@ $(document).ready(function () {
         var border_height= $('.pagemargin ').find('.preview_set ');
         border_height.css("height", borderheightval + "px");
     });
-    $(document).on('click', '.bdown', function () {
+    $(document).on('click', '.bdown', function (e) {
+        e.preventDefault();
         var value = $("#borderrad").val();
-        if (value != '') {
+       if (value != '') {
             value = parseInt(value) - 1;
         } else {
             value = -1;
@@ -33,7 +37,8 @@ $(document).ready(function () {
         var border_rad= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_rad.css("border-radius", borderval + "px");
     });
-    $(document).on('click', '.bup', function () {
+    $(document).on('click', '.bup', function (e) {
+        e.preventDefault();
         var value = $("#borderrad").val();
         if (value != '') {
             value = parseInt(value) + 1;
@@ -46,7 +51,8 @@ $(document).ready(function () {
         var border_rad= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_rad.css("border-radius", borderval + "px");
     });
-    $(document).on('click', '.bwdown', function () {
+    $(document).on('click', '.bwdown', function (e) {
+        e.preventDefault();
         var value = $("#borwidth").val();
         if (value != '') {
             value = parseInt(value) - 1;
@@ -58,7 +64,8 @@ $(document).ready(function () {
         var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_width.css("border-width", borderwidthval + "px");
     });
-    $(document).on('click', '.bwup', function () {
+    $(document).on('click', '.bwup', function (e) {
+        e.preventDefault();
         var value = $("#borwidth").val();
         if (value != '') {
             value = parseInt(value) + 1;
@@ -79,7 +86,9 @@ $(document).ready(function () {
         if (layout_change== "1") {
             layoutchange.addClass("modal-wrapper");
             modalopen.addClass("modal_preview");
-            $('.modal-wrapper').addClass('open'); 
+            $('.modal-wrapper').addClass('open');
+             $(" .preview_set").css("flex-direction","column");
+             $(" .preview-cookie-bar .seven").css("width","100%");
         }
         else {
             layoutchange.removeClass("modal-wrapper");
@@ -106,6 +115,7 @@ $(document).ready(function () {
     $(document).on("click",".bannerlayout img",function(){
         var  bannerval  =   $(this).data('value');
         var buttonval  =   $(this).data('set');
+        
        $(".preview_set").css("background", bannerval);
         $(".cc-dismiss").css("background", buttonval);
     });
@@ -176,7 +186,34 @@ $(document).ready(function () {
         setColor6();
         input6.addEventListener("input", setColor6);
         function setColor6() {
-            body6.style.color = input6.value;
+            body6.style.borderColor = input6.value;
             colorCode6.innerHTML = input6.value;
         }  
+
+        $(document).on("click",".bannerlayout img",function(){
+            var  bannerval  =   $(this).data('value');
+            var buttonval  =   $(this).data('set');
+            $('.color_circle[name="color_banner"]').val(bannerval);
+            $('.color_circle[name="color_button"]').val(buttonval);
+        });
+
+        $(document).on("click",".bannerlayout img",function(){
+            var self = $(this).data("value");
+            var contrastColor = getContrastColor(self);
+            $('.preview_set').css({'background-color': self,'color': contrastColor});
+            $('.cc-link').css({'background-color': self,'color': contrastColor});
+        });
+
+        function getContrastColor(color) {
+            var hex = color.replace(/#/, '');
+            var red = parseInt(hex.substr(0, 2), 16);
+            var green = parseInt(hex.substr(2, 2), 16);
+            var blue = parseInt(hex.substr(4, 2), 16);
+      
+            var luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
+            return luminance > 0.5 ? '#000000' : '#ffffff';
+        }
+      
+          
+          
     });
