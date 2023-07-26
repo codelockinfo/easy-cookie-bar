@@ -624,13 +624,18 @@ function cookies_bar_setting_select(){
             var comeback = JSON.parse(comeback);
             console.log(comeback);
                 console.log(comeback.outcome.banner_fontsize);
+                var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
+
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
                 $('.bar-message').html(comeback.outcome.message);
 
                 $('.Polaris-TextField__Input[name="privacy_policy_url"]').val(comeback.outcome.privacy_policy_url);
+                $('.cc-link').attr("href",privacyURL);
+                
                 $('.Polaris-TextField__Input[name="agreement_text"]').val(comeback.outcome.agreement_text);
                 $('.Polaris-TextField__Input[name="privacy_policy_url_text"]').val(comeback.outcome.privacy_policy_url_text);
                 $('.Polaris-TextField__Input[name="banner_height"]').val(comeback.outcome.banner_height);
+                $('.preview_set').css("height",comeback.outcome.banner_height);
 
                 $('.Polaris-Select__Input[name="banner_fontsize"]').val(comeback.outcome.banner_fontsize);
                 $('.bar-message').css("font-size",comeback.outcome.banner_fontsize);
