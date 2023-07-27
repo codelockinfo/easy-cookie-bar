@@ -279,7 +279,7 @@ class Client_functions extends common_function {
                             '`privacy_policy_url`' => '',
                             '`agreement_text`' =>'Got it!',
                             '`privacy_policy_url_text`' => 'Learn More',
-                            '`banner_height`' => '11',
+                            '`banner_height`' => '150',
                             '`banner_fontsize`' => '20px',
                             '`button_border_radius`' => '50',
                             '`button_border_width`' => '11',
