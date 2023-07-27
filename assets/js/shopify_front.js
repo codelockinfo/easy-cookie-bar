@@ -50,11 +50,11 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                                     '<div class="seven">'+
                                     '<span class="bar-text-wrapper">'+
                                     '<span class="bar-message" style="font-size:'+  comeback.outcome.banner_fontsize +'">'+ comeback.outcome.message +'</span>&nbsp;'+
-                                    '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url +'" target="_blank" style="color:'+ comeback.outcome.color_banner_link  +'">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
+                                    '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url +'" target="_blank" style="text-decoration: underline;color:'+ comeback.outcome.color_banner_link  +'">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
                                     '</span>'+
                                 '</div>'+
                                 ' <div class="three" style="width: 30%;">'+
-                                    '<a class="cc-dismiss handleAccept" style="padding: 10px;float: right;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
+                                    '<a class="cc-dismiss handleAccept" style="padding: 7px 15pxpx;float: right;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
                                 '</div>'+
                                 '</div>'
                                 );
