@@ -92,11 +92,12 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function initCookieBanner() {
+        console.log("initCookieBanner");
         const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
         const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
     
-        console.log(userTrackingConsent);
-        console.log(userCanBeTracked);
+        console.log(userTrackingConsent + "   TRACKING " );
+        console.log(userCanBeTracked + "   TRACKED ");
         if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
             console.log("show banner");
           showBanner();
