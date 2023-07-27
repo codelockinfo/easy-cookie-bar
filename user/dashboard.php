@@ -13,10 +13,10 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
 ?>
 
 <body>
-    <div class="Polaris-Page pagemargin max_width_change">
-        <div class="Polaris-Page__Title">
-            <div class="Polaris-Banner Polaris-Banner--statusSuccess  Polaris-Banner--withinPage" tabindex="0" role="alert" aria-live="polite" aria-labelledby="Banner7Heading" aria-describedby="Banner7Content">
-                <div class="cookiebanner">
+    <div class="Polaris-Page pagemargin max_width_change" style="margin-top: 2%;">
+        <!-- <div class="Polaris-Page__Title">
+            <div class="Polaris-Banner Polaris-Banner--statusSuccess  Polaris-Banner--withinPage" tabindex="0" role="alert" aria-live="polite" aria-labelledby="Banner7Heading" aria-describedby="Banner7Content"> -->
+                <!-- <div class="cookiebanner">
                     <div class="Polaris-Banner__Ribbon">
                         <span class="Polaris-Icon Polaris-Icon--colorGreenDark Polaris-Icon--isColored Polaris-Icon--hasBackdrop">
                             <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
@@ -29,9 +29,9 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                         <p class="Polaris-Heading">Activate Cookie Bar </p>
                         <p class="Polaris-Heading">Update colour settings and click "Activate" button to activate Cookie bar on your website. </p>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="Polaris-SettingAction__Action">
+                <!-- <div class="Polaris-SettingAction__Action">
                     <button class="Polaris-Button Polaris-Button--primary" type="button">
                     <span class="Polaris-Button__Content">
                         <span class="Polaris-Button__Text">Activate</span>
@@ -39,7 +39,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <form method="POST" id="cookies_bar_setting_save" onsubmit>
             <div class="Polaris-Page Polaris-Page--fullWidth" style="padding:0;">
                 <div class="Polaris-Page__Content">

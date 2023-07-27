@@ -404,7 +404,7 @@ function seeting_enable_disable(){
         success: function (comeback)
         {
             if (comeback['outcome']['data']['0']['status'] != undefined && comeback['outcome']['data']['0']['status'] == "0") {
-                $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is disabled");
+                $(".clsdesign_for_msg .Polaris-Heading").html("Please active cookie bar.");
                 $(".app-setting-msg").show();
                 $(".enable-btn").val(1);
                 $(".enable-btn").html("Enable");
@@ -418,7 +418,7 @@ function seeting_enable_disable(){
                 $(".enable-btn").addClass(" Polaris-Button--success")
 
             } else { 
-                $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is enabled");
+                $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
                 $(".enable-btn").val(0);
                 $(".enable-btn").html("Disable");
                 $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");
@@ -568,13 +568,13 @@ function app_enable_disable(btnval,call_from){
                     $(".app-setting-msg .Polaris-Banner").addClass("Polaris-Banner--statusWarning");
                     $(".app-setting-msg .Polaris-Banner").removeClass("Polaris-Banner--statusSuccess");
                     $(".clsdesign_for_msg").css("background-color","#fdf7e3");
-                    $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is disabled");
+                    $(".clsdesign_for_msg .Polaris-Heading").html("Please active cookie bar.");
                     $("#toggleButton").removeClass('on');
                     $(".enable-btn").removeClass("Polaris-Button--destructive");
                     $(".enable-btn").addClass(" Polaris-Button--success")
                     
                 } else {
-                    $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is enabled");
+                    $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
                     $(".enable-btn").val(0);
                     $(".enable-btn").html("Disable");
                     $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");

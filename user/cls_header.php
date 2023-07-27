@@ -20,12 +20,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title><?php echo CLS_SITE_NAME; ?></title>
+        <link rel="stylesheet" href="<?php echo main_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/polaris.css'); ?>" rel="stylesheet">
         <link rel="icon" type="image/png" href="<?php echo CLS_SITE_URL; ?>/assets/images/logo-icons.svg.png"/>
         <link rel="stylesheet" href="<?php echo main_url('assets/css/spectrum.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/select2.min.css'); ?>" rel="stylesheet"> 
+        <link rel="stylesheet" href="<?php echo main_url('assets/css/bootstrap-tagsinput.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo main_url('assets/css/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
+       
        
         <script> var store = "<?php echo $store; ?>"; </script>
         <?php  $_SESSION['store'] = $store; ?>
@@ -34,6 +38,7 @@
         <script src="<?php echo main_url('assets/js/spectrum.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/popper.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/star_rating.js'); ?>"></script>
+        <script src="<?php echo main_url('assets/js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/select2.full.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_client.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_custom.js');?>"></script> 
