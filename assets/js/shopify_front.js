@@ -66,6 +66,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         handleAccept(event);  
     });
     function getBannerEl() {
+      console.log("getBannerEl");
         return document.getElementById('cookies-banner');
       }
     
@@ -78,6 +79,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         console.log(myVar);
         if(myVar !== null){
           myVar.style.display = 'block';
+          clearInterval(myVar)
         }
       }
     
