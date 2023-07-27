@@ -55,7 +55,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                 }
             }
         });
-
+    });
             
     $(document).on("click", ".handleDecline", function() {
         console.log("handleDecline click");
@@ -74,7 +74,9 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function showBanner() {
-        document.getElementById('cookies-banner').style.display = 'block';
+        if (getBannerEl() !== null){
+          getBannerEl().style.display = 'block';
+        }
       }
     
       function handleAccept(e) {
@@ -114,9 +116,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         if (error) {
           throw error;
         }
-        setTimeout(function(){
-          initCookieBanner();
-        },1000);
+    
+        initCookieBanner();
     });
-  });
+    
 });
