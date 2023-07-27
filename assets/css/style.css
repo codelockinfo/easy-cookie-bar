@@ -458,9 +458,13 @@ body .space-y-4 > * + * {
 #toggleButton.on .handle {
   left: calc(100% - 22px);
 }
-#toggleButton {
-  /* width: 50px; */
+
+#toggleButton.on {
   width:75px;
+}
+#toggleButton {
+  width: 50px;
+  /* width:75px; */
   height: 25px;
   background-color: #e6391a;
   border-radius: 25px;
@@ -492,7 +496,7 @@ body .space-y-4 > * + * {
   }
 }
 @media (max-width: 1500px) {
-  #toggleButton{
+  #toggleButton.on{
     width: 100px;
   }
 }
@@ -521,8 +525,11 @@ body .space-y-4 > * + * {
   .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusSuccess{
     flex-wrap:wrap;
   }
-  #toggleButton{
+  #toggleButton.on{
     width:50px;
+    margin-left: 0%;
+  }
+  #toggleButton{
     margin-left: 0%;
   }
 } 
@@ -605,7 +612,7 @@ body .space-y-4 > * + * {
   }
   }
   @media (max-width:620px) {
-    #toggleButton {
+    #toggleButton.on {
       width: 200px;
   }
 }
@@ -614,8 +621,11 @@ body .space-y-4 > * + * {
   .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusSuccess{
     flex-wrap: wrap;
   }
-  #toggleButton {
+  #toggleButton.on {
     width: 50px;
     margin-left:0;
+}
+#toggleButton {
+  margin-left:0;
 }
 }
