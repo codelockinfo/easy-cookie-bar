@@ -74,8 +74,10 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function showBanner() {
-        if (getBannerEl() !== null){
-          getBannerEl().style.display = 'block';
+        let myVar = setInterval(getBannerEl, 1000);
+        console.log(myVar);
+        if(myVar !== null){
+          myVar.style.display = 'block';
         }
       }
     
