@@ -45,7 +45,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                           var comeback = JSON.parse(comeback);
                           console.log(comeback);
                                 $("body").append(
-                                    '<div id="cookies-banner" class="preview_set" style="display: none;z-index:99;justify-content: center;align-items: center;padding: 1em;position:fixed;bottom: 0px; width: 100%;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
+                                  '<div id="cookies-banner" style="display: none;z-index:99;justify-content: center;align-items: center;padding: 1em;position:fixed;bottom: 0px; width: 100%;">'+
+                                    '<div  class="preview_set" style="padding: 13px 6px;display: flex;align-items: center;justify-content: center;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
                                     '<div class="seven">'+
                                     '<span class="bar-text-wrapper">'+
                                     '<span class="bar-message" style="font-size:'+  comeback.outcome.banner_fontsize +'">'+ comeback.outcome.message +'</span>'+
