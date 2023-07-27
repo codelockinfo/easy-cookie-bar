@@ -63,51 +63,53 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         console.log("handleAccept click ");
         handleAccept(event);  
     });
-    function getBannerEl() {
-      console.log("getBannerEl");
-        return document.getElementById('cookies-banner');
-      }
-    
-      function hideBanner(res) {
-        getBannerEl().style.display = 'none';
-      }
-    
-      function showBanner() {
-       var getBannerEl =  document.getElementById('cookies-banner');
-       console.log(getBannerEl);
+      
+    function hideBanner(res) {
+      var getBannerEl =  document.getElementById('cookies-banner');
+      console.log(getBannerEl);
         if(getBannerEl !== null){
           console.log("in if ");
-          getBannerEl.style.display = 'block';
+          getBannerEl.style.display = 'none';
           clearInterval($myVar);
         }
+    }
+  
+    function showBanner() {
+      var getBannerEl =  document.getElementById('cookies-banner');
+      console.log(getBannerEl);
+      if(getBannerEl !== null){
+        console.log("in if ");
+        getBannerEl.style.display = 'block';
+        clearInterval($myVar);
       }
+    }
     
-      function handleAccept(e) {
-        console.log("handleAccept");
-        window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
-    
-        document.addEventListener('trackingConsentAccepted',function() {
-          console.log('trackingConsentAccepted event fired');
-        });
+    function handleAccept(e) {
+      console.log("handleAccept");
+      window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+  
+      document.addEventListener('trackingConsentAccepted',function() {
+        console.log('trackingConsentAccepted event fired');
+      });
+    }
+  
+    function handleDecline() {
+      window.Shopify.customerPrivacy.setTrackingConsent(false,hideBanner);
+    }
+  
+    function initCookieBanner() {
+      const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+      const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+  
+      console.log(userTrackingConsent + "   TRACKING " );
+      console.log(userCanBeTracked + "   TRACKED");
+      if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
+          console.log("show banner");
+        showBanner();
+      }else{
+        clearInterval($myVar);
       }
-    
-      function handleDecline() {
-        console.log("handleDecline");
-        window.Shopify.customerPrivacy.setTrackingConsent(false,hideBanner);
-      }
-    
-      function initCookieBanner() {
-        console.log("initCookieBanner");
-        const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
-        const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
-    
-        console.log(userTrackingConsent + "   TRACKING " );
-        console.log(userCanBeTracked + "   TRACKED");
-        if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
-            console.log("show banner");
-          showBanner();
-        }
-      }
+    }
     
       window.Shopify.loadFeatures([
         {
