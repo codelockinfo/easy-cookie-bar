@@ -42,13 +42,19 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                             'routine_name': 'cookies_bar_setting_select' ,
                         },
                         success: function(comeback) {
-                            console.log(comeback);
+                            console.log(comeback.outcome);
                                 $("body").append(
-                                    '<div id="cookies-banner" style="display: none;justify-content: center;align-items: center;  padding: 1em;position: fixed;bottom: 0px; width: 100%;background: #fff; border-top: 1px solid #dcdcdc;">'+
-                                    '<span>This website uses cookies to ensure you get the best experience on our website.</span>'+
-                                    '<button class="handleDecline" style="margin-left: 1em;" >Decline</button>'+
-                                    '<button class="handleAccept" style="margin-left: 1em;" >Accept</button>'+
-                                    '</div>'
+                                    '<div id="cookies-banner" class="preview_set" style="display: none;z-index:99;justify-content: center;align-items: center;  padding: 1em;position: fixed;bottom: 0px; width: 100%;background: #fff; border-top: 1px solid #dcdcdc;">'+
+                                    '<div class="seven">'+
+                                    '<span class="bar-text-wrapper">'+
+                                    '<span class="bar-message">This website uses cookies to ensure you get the best experience on our website.</span>'+
+                                    '<span class="bar-link"><a class="cc-link" href="https://payalcls.myshopify.com/policies/privacy-policy" target="_blank" style="color: rgb(255, 204, 128);">Learn More</a></span>'+
+                                    '</span>'+
+                                '</div>'+
+                                ' <div class="three">'+
+                                    '<a class="cc-dismiss handleAccept" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>'+
+                                '</div>'+
+                                '</div>'
                                 );
                         }
                     });
