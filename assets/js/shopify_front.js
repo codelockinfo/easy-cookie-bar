@@ -53,8 +53,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                                     '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url +'" target="_blank" style="color:'+ comeback.outcome.color_banner_link  +'">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
                                     '</span>'+
                                 '</div>'+
-                                ' <div class="three" style="width: 30%;padding: 0 10px 0 10px;">'+
-                                    '<a class="cc-dismiss handleAccept" style="color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
+                                ' <div class="three" style="width: 30%;">'+
+                                    '<a class="cc-dismiss handleAccept" style="padding: 10px;float: right;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
                                 '</div>'+
                                 '</div>'
                                 );
