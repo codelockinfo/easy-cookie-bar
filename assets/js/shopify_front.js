@@ -45,15 +45,15 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                           var comeback = JSON.parse(comeback);
                           console.log(comeback);
                                 $("body").append(
-                                    '<div id="cookies-banner" class="preview_set" style="display: none;z-index:99;justify-content: center;align-items: center;  padding: 1em;position: fixed;bottom: 0px; width: 100%;background: #fff; border-top: 1px solid #dcdcdc;">'+
+                                    '<div id="cookies-banner" class="preview_set" style="display: none;z-index:99;justify-content: center;align-items: center;padding: 1em;position:fixed;bottom: 0px; width: 100%;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
                                     '<div class="seven">'+
                                     '<span class="bar-text-wrapper">'+
-                                    '<span class="bar-message">'+ comeback.outcome.message +'</span>'+
-                                    '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url+'" target="_blank" style="color: rgb(255, 204, 128);">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
+                                    '<span class="bar-message" style="font-size:'+  comeback.outcome.banner_fontsize +'">'+ comeback.outcome.message +'</span>'+
+                                    '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url +'" target="_blank" style="color:'+ comeback.outcome.color_banner_link  +'">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
                                     '</span>'+
                                 '</div>'+
                                 ' <div class="three">'+
-                                    '<a class="cc-dismiss handleAccept" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">'+ comeback.outcome.agreement_text +'</a>'+
+                                    '<a class="cc-dismiss handleAccept" style="color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.border-radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
                                 '</div>'+
                                 '</div>'
                                 );
