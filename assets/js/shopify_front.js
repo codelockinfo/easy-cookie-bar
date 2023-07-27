@@ -67,21 +67,21 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
     });
     function getBannerEl() {
       console.log("getBannerEl");
-        return document.getElementById('cookies-banner');
-      }
+      return document.getElementById('cookies-banner');
+    }
     
-      function hideBanner(res) {
-        getBannerEl().style.display = 'none';
+    function hideBanner(res) {
+      getBannerEl().style.display = 'none';
+    }
+  
+    function showBanner() {
+      let myVar = setInterval(getBannerEl, 1000);
+      console.log(myVar);
+      if(myVar !== null){
+        // myVar.style.display = 'block';
+        // clearInterval(myVar)
       }
-    
-      function showBanner() {
-        let myVar = setInterval(getBannerEl, 1000);
-        console.log(myVar);
-        if(myVar !== null){
-          myVar.style.display = 'block';
-          clearInterval(myVar)
-        }
-      }
+    }
     
       function handleAccept(e) {
         console.log("handleAccept");
