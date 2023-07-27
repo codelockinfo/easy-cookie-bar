@@ -97,6 +97,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         const checkBannerShow = window.Shopify.customerPrivacy.shouldShowBanner();
         console.log(checkBannerShow + " checkBannerShow");
         const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+       const userDataCanBeSold =  window.Shopify.customerPrivacy.userDataCanBeSold();
+console.log(userDataCanBeSold + " ...userDataCanBeSold");
 
         window.Shopify.customerPrivacy.setTrackingConsent(
           {
