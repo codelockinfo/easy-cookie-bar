@@ -49,7 +49,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                                     '<div  class="preview_set" style="padding: 13px 6px;display: flex;align-items: center;justify-content: center;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
                                     '<div class="seven">'+
                                     '<span class="bar-text-wrapper">'+
-                                    '<span class="bar-message" style="font-size:'+  comeback.outcome.banner_fontsize +'">'+ comeback.outcome.message +'</span>'+
+                                    '<span class="bar-message" style="font-size:'+  comeback.outcome.banner_fontsize +'">'+ comeback.outcome.message +'</span>&nbsp;'+
                                     '<span class="bar-link"><a class="cc-link" href="'+ comeback.outcome.privacy_policy_url +'" target="_blank" style="color:'+ comeback.outcome.color_banner_link  +'">'+ comeback.outcome.privacy_policy_url_text +'</a></span>'+
                                     '</span>'+
                                 '</div>'+
