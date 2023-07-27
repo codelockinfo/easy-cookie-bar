@@ -43,6 +43,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                         },
                         success: function(comeback) {
                             console.log(comeback.outcome + "  OUTCOME");
+                            console.log(comeback['outcome'] + "  OUTCOME");
+                            console.log(comeback['outcome']['message'] + "  OUTCOME MESSAGE");
                                 $("body").append(
                                     '<div id="cookies-banner" class="preview_set" style="display: none;z-index:99;justify-content: center;align-items: center;  padding: 1em;position: fixed;bottom: 0px; width: 100%;background: #fff; border-top: 1px solid #dcdcdc;">'+
                                     '<div class="seven">'+
