@@ -114,8 +114,9 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         if (error) {
           throw error;
         }
-    
-        initCookieBanner();
+        setTimeout(function(){
+          initCookieBanner();
+        },1000);
     });
   });
 });
