@@ -73,7 +73,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       }
     
       function showBanner() {
-       var getBannerEl =  getBannerEl();
+       var getBannerEl =  document.getElementById('cookies-banner');
         if(getBannerEl !== null){
           console.log("in if ");
           getBannerEl().style.display = 'block';
