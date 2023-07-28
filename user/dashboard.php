@@ -277,7 +277,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     </div>
                                 </div>
                             </div>
-                            <div  style=" padding: 2%;"> </div>
+                            <div  style=" padding: 1%;"> </div>
                             <div class="Polaris-Card__Section Polaris-Card">
                                 <div class="quickflex">
                                     <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Choose a color palette:</h2>
@@ -401,7 +401,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     </div>
                                 </div> -->
                             </div>
-                            <div  style=" padding: 2%;"> </div>
+                            <div  style=" padding: 1%;"> </div>
                             <div class="Polaris-Layout__AnnotationWrapper">
                                 <div class="Polaris-Layout__Annotation Polaris-Card polarisboxshadow">
                                     <div class="Polaris-TextContainer">
@@ -557,7 +557,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     </div>
                                 </div>
                             </div>
-                            <div class="Polaris-ButtonGroup" style="justify-content:end;margin: 3% 0 3% 0;">
+                            <div class="Polaris-ButtonGroup buttonbottom">
                                 <div class="Polaris-ButtonGroup__Item">
                                     <button class="Polaris-Button" type="cancel">
                                     <span class="Polaris-Button__Content">
@@ -579,7 +579,6 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
             </div>
         </form>
     </div>
-    
     <div class="footermargin">
         <div class="Polaris-FooterHelp__Text footermargin footer_border">
                 Easy Cookie Banner - GDPR EU©2023 - Developed by<a target="_blank" href="http://codelocksolutions.com/" style="margin:0 5px;">Codelock Solutions</a>  team 

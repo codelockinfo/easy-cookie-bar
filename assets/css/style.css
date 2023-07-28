@@ -219,10 +219,18 @@ hr.hrline {
 .bannerlayout{
   /* width: 24%; */
 }
+.bodycontainer .buttonbottom{
+  padding-top: 1%;
+  /* margin-bottom: 2%; */
+  justify-content:end;
+}
+.bannerbackground {
+  border: 1px solid #00000036;
+}
 .bannerflex{
   display: flex;
-  /* align-items: center;
-  justify-content: space-between; */
+  /* align-items: center; */
+  justify-content: center;
   flex-wrap: wrap;
 }
 .Polaris-Layout__AnnotatedSection.bannerflex {
@@ -252,7 +260,7 @@ input[type="color"]::-webkit-color-swatch {
   gap: 1rem;
 }
 .bannerflex .w-11{
-  width: 4rem;
+  width: 4.4rem;
 }
 .bannerflex .h-8{
   height: 2rem;
