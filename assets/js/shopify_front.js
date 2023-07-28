@@ -73,7 +73,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         });    
     $(document).on("click", ".cc-close", function() {
         console.log("CLOSE click");
-        $("#cookies-banner").CSS("display","none");
+        document.getElementById('cookies-banner').style.display = 'none';
     });
     $(document).on("click", ".handleDecline", function() {
         console.log("handleDecline click");
