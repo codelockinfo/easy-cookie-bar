@@ -50,7 +50,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                             var layoutPopup = "modal-wrapper open";
                             var modalPreview = "modal_preview";
                           }
-                                $("body").append('<style>.preview_set  .seven{    flex: 1 1 auto;}.modal_preview .three{width: 100%;text-align: center;}.modal_preview{width: 500px;flex-wrap: wrap;}.modal-wrapper.open{visibility: visible;opacity: 1;}.modal-wrapper{display: flex;z-index: 999;width: 100%;height: 100%;visibility: hidden;top: 0;left: 0;opacity: 0;filter: alpha(opacity=0);-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}</style>'+
+                                $("body").append('<style>preview_set .cc-close{margin-left: 0.5em;font-size: 20px;font-weight: 700;}.preview_set .seven{flex: 1 1 auto;}.modal_preview .three{width: 100%;text-align: center;}.modal_preview{width: 500px;flex-wrap: wrap;}.modal-wrapper.open{visibility: visible;opacity: 1;}.modal-wrapper{display: flex;z-index: 999;width: 100%;height: 100%;visibility: hidden;top: 0;left: 0;opacity: 0;filter: alpha(opacity=0);-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}</style>'+
                                   '<div id="cookies-banner" class="'+ layoutPopup +'" style="display: none;z-index:99;justify-content: center;align-items: center;padding: 1em;position:fixed;bottom: 0px; width: 100%;">'+
                                     '<div  class="preview_set '+ modalPreview +'" style="justify-content: space-between;padding: 13px 6px;display: flex;align-items: center;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
                                     '<div class="seven">'+
@@ -60,8 +60,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                                     '</span>'+
                                 '</div>'+
                                 ' <div class="three">'+
+                                '<a class="cc-dismiss handleAccept allow" style="padding:7px 15px;margin-left: 0.5em;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.decline_text +'</a>'+
                                     '<a class="cc-dismiss handleDecline deny" style="padding:7px 15px;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.agreement_text +'</a>'+
-                                    '<a class="cc-dismiss handleAccept allow" style="padding:7px 15px;margin-left: 0.5em;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +';border:'+ comeback.outcome.border  +';">'+ comeback.outcome.decline_text +'</a>'+
                                 '</div>'+
                                 '<span class="cc-close">✕</span>'+
                                 '</div>'
