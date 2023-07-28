@@ -9,7 +9,8 @@ $(document).ready(function () {
         }
         $("#myNumber").val(value);
         var borderheightval = $("#myNumber").val(); 
-     
+        var border_height= $('.pagemargin ').find('.preview_set ');
+        border_height.css("height", borderheightval + "px");
     });
     $(document).on('click', '.up', function (e) {
         e.preventDefault();
@@ -87,27 +88,31 @@ $(document).ready(function () {
             layoutchange.addClass("modal-wrapper");
             modalopen.addClass("modal_preview");
             $('.modal-wrapper').addClass('open');
-             $(" .preview_set").css("flex-direction","column");
-             $(" .preview-cookie-bar .seven").css("width","100%");
+            $(" .preview_set").css("flex-direction","column");
+            $(" .preview-cookie-bar .seven").css("width","100%");
+            $('input[name="banner_height"]').val(300) ;    
         }
         else {
             layoutchange.removeClass("modal-wrapper");
             modalopen.removeClass("modal_preview");
-            $('.modal-wrapper').removeClass('open')
+            $('.modal-wrapper').removeClass('open');
+            $(" .preview_set").css("flex-direction","row");
+            $(" .preview-cookie-bar .seven").css("width","70%");
+            $('input[name="banner_height"]').val(70) ; 
         }
     }); 
      // get value of massage
-    $('input[type="text"]').on('keydown, keyup', function () {
+    $('input[name="message"]').on('keydown, keyup', function () {
         var texInputValue = $('#massageText').val();
         $('.bar-text-wrapper .bar-message').html(texInputValue);
     });
 
-    $('input[type="text"]').on('keydown, keyup', function () {
+    $('input[name="agreement_text"]').on('keydown, keyup', function () {
         var btnInputValue = $('#buttonText').val();
-        $('.preview_set .cc-dismiss').html(btnInputValue);
+        $('.preview_set .cc-dismiss.allow').html(btnInputValue);
     });
 
-    $('input[type="text"]').on('keydown, keyup', function () {
+    $('input[name="privacy_policy_url_text"]').on('keydown, keyup', function () {
         var linkInputValue = $('#linkText').val();
        $('.preview_set .cc-link').html(linkInputValue);
     });
@@ -115,8 +120,7 @@ $(document).ready(function () {
     $(document).on("click",".bannerlayout img",function(){
         var  bannerval  =   $(this).data('value');
         var buttonval  =   $(this).data('set');
-        
-       $(".preview_set").css("background", bannerval);
+        $(".preview_set").css("background", bannerval);
         $(".cc-dismiss").css("background", buttonval);
     });
 
@@ -159,24 +163,33 @@ $(document).ready(function () {
     }
 
         //  button background color
-        const body4 = document.querySelector(".cc-dismiss");
+        const body4 = document.querySelectorAll(".cc-dismiss");
         const input4 = document.getElementById("buttonbackcolor");
         const colorCode4 = document.getElementById("buttoncolor");
+        const buttonclose = document.getElementById("buttonclose");
         setColor4();
         input4.addEventListener("input", setColor4);
         function setColor4() {
-            body4.style.backgroundColor = input4.value;
+            for (let i = 0; i < body4.length; i++) {
+                body4[i].style.backgroundColor = input4.value;
+                buttonclose.style.color = input4.value;
+              }
+
+            // body4.style.backgroundColor = input4.value;
             colorCode4.innerHTML = input4.value;
         }
 
         //  button text color
-        const body5 = document.querySelector(".cc-dismiss");
+        const body5 = document.querySelectorAll(".cc-dismiss");
         const input5 = document.getElementById("buttontextcolor");
         const colorCode5 = document.getElementById("buttontext");    
         setColor5();
         input5.addEventListener("input", setColor5);
         function setColor5() {
-            body5.style.color = input5.value;
+            for (let i = 0; i < body5.length; i++) {
+                body5[i].style.color = input5.value;
+              }
+            // body5.style.color = input5.value;
             colorCode5.innerHTML = input5.value;
         }
             //  button border color
@@ -190,30 +203,60 @@ $(document).ready(function () {
             colorCode6.innerHTML = input6.value;
         }  
 
-        $(document).on("click",".bannerlayout img",function(){
-            var  bannerval  =   $(this).data('value');
-            var buttonval  =   $(this).data('set');
-            $('.color_circle[name="color_banner"]').val(bannerval);
-            $('.color_circle[name="color_button"]').val(buttonval);
+        function rgb2hex(rgb){
+            rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+            return (rgb && rgb.length === 4) ? "#" +
+             ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+             ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+             ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+           }
+           
+        var contrastColor ="";
+        var contrastColor2 ="";
+        $(document).on("click",".bannerlayout",function(){
+            $bannercolor = $(this).find(".bannercolor").css("background");
+            $bannerbackground = $(this).find(".bannerbackground").css("background");
+            $(".preview_set").css({"background":$bannerbackground,"color": $bannercolor });
+            $(".cc-dismiss").css({"background":$bannercolor,"color": $bannerbackground });
+            $(".cc-close,.cc-link").css("color", $bannercolor);
+            $hexbannercolor = rgb2hex($bannercolor);
+            $hexbannerbackground = rgb2hex($bannerbackground);
+            $('.color_circle[name="color_banner"],.color_circle[name="color_button_text"]').val($hexbannerbackground);
+            $('.color_circle[name="color_button"],.color_circle[name="color_button_border"],.color_circle[name="color_banner_text"],.color_circle[name="color_banner_link"]').val($hexbannercolor);
+            
+            // var self = $(this).data("value");
+            // var selfbtn = $(this).data("set");
+            // contrastColor = getContrastColor(self);
+            // contrastColor2 = getContrastColor(selfbtn);
+            // $('.preview_set').css({'background-color': self,'color': contrastColor});
+            // $('.cc-link').css({'background-color': self,'color': contrastColor});
+            // $('.cc-dismiss').css({'background-color': selfbtn,'color': contrastColor2 ,'border-color': contrastColor2});
         });
-
-        $(document).on("click",".bannerlayout img",function(){
-            var self = $(this).data("value");
-            var contrastColor = getContrastColor(self);
-            $('.preview_set').css({'background-color': self,'color': contrastColor});
-            $('.cc-link').css({'background-color': self,'color': contrastColor});
-        });
-
         function getContrastColor(color) {
             var hex = color.replace(/#/, '');
             var red = parseInt(hex.substr(0, 2), 16);
             var green = parseInt(hex.substr(2, 2), 16);
             var blue = parseInt(hex.substr(4, 2), 16);
-      
             var luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
             return luminance > 0.5 ? '#000000' : '#ffffff';
         }
       
-          
-          
+        // $(document).on("click",".bannerlayout img",function(){
+        //     var bannerval = $(this).data('value');
+        //     var buttonval = $(this).data('set');
+        //     $('.color_circle[name="color_banner"]').val(bannerval);
+        //     $('.color_circle[name="color_button"]').val(buttonval);
+        //     $('.color_circle[name="color_button_text"]').val(contrastColor2);
+        //     $('.color_circle[name="color_button_border"]').val(contrastColor2);
+        //     $('.color_circle[name="color_banner_text"]').val(contrastColor);
+        //     $('.color_circle[name="color_banner_link"]').val(contrastColor);
+        // });
+        $('input[name="decline_text"]').on('keydown, keyup', function () {
+            console.log("DEcline");
+            var btnInputValue = $('#declinebuttonText').val();
+            $('.preview_set .cc-dismiss.deny').html(btnInputValue);
+        });
+        $('input[name="privacy_policy_url"]').on('keydown, keyup', function () {
+           $('.preview_set .cc-link').attr("href",$(this).val());
+        });
     });

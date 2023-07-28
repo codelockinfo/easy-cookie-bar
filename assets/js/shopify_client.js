@@ -349,7 +349,7 @@ $.ajax({
         url: "ajax_call.php",
         type: "post",
         dataType: "json",
-        data: {'routine_name': 'btn_enable_disable' , store: store},
+        data: {'routine_name': 'appstatus' , store: store},
         success: function (comeback) {
             console.log(comeback +  "status");
                 if (comeback['outcome']['data']['status'] != undefined && comeback['outcome']['data']['status'] == 0) {
@@ -368,11 +368,11 @@ function seeting_enable_disable(){
         url: "ajax_call.php",
         type: "post",
         dataType: "json",
-        data: {'routine_name': 'btn_enable_disable' ,'store' : store},
+        data: {'routine_name': 'appstatus' ,'store' : store},
         success: function (comeback)
         {
             if (comeback['outcome']['data']['0']['status'] != undefined && comeback['outcome']['data']['0']['status'] == "0") {
-                $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is disabled");
+                $(".clsdesign_for_msg .Polaris-Heading").html("Please active cookie bar.");
                 $(".app-setting-msg").show();
                 $(".enable-btn").val(1);
                 $(".enable-btn").html("Enable");
@@ -386,7 +386,7 @@ function seeting_enable_disable(){
                 $(".enable-btn").addClass(" Polaris-Button--success")
 
             } else { 
-                $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is enabled");
+                $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
                 $(".enable-btn").val(0);
                 $(".enable-btn").html("Disable");
                 $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");
@@ -402,7 +402,7 @@ function seeting_enable_disable(){
     });
 }
 setTimeout(function(){
-    // seeting_enable_disable();
+    seeting_enable_disable();
 },50);
 function readURL(input) {
 $(".imagesBlock").css("display","block");
@@ -535,13 +535,13 @@ function app_enable_disable(btnval,call_from){
                     $(".app-setting-msg .Polaris-Banner").addClass("Polaris-Banner--statusWarning");
                     $(".app-setting-msg .Polaris-Banner").removeClass("Polaris-Banner--statusSuccess");
                     $(".clsdesign_for_msg").css("background-color","#fdf7e3");
-                    $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is disabled");
+                    $(".clsdesign_for_msg .Polaris-Heading").html("Please active cookie bar.");
                     $("#toggleButton").removeClass('on');
                     $(".enable-btn").removeClass("Polaris-Button--destructive");
                     $(".enable-btn").addClass(" Polaris-Button--success")
                     
                 } else {
-                    $(".clsdesign_for_msg .Polaris-Heading").html("ReWriter app is enabled");
+                    $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
                     $(".enable-btn").val(0);
                     $(".enable-btn").html("Disable");
                     $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");
@@ -633,6 +633,7 @@ function cookies_bar_setting_select(){
                 $('.cc-link').attr("href",privacyURL);
                 
                 $('.Polaris-TextField__Input[name="agreement_text"]').val(comeback.outcome.agreement_text);
+                $('.Polaris-TextField__Input[name="decline_text"]').val(comeback.outcome.decline_text);
                 $('.Polaris-TextField__Input[name="privacy_policy_url_text"]').val(comeback.outcome.privacy_policy_url_text);
                 $('.Polaris-TextField__Input[name="banner_height"]').val(comeback.outcome.banner_height);
                 $('.preview_set').css("height",comeback.outcome.banner_height);
@@ -663,6 +664,7 @@ function cookies_bar_setting_select(){
                 
                 $('.color_circle[name="color_button"]').val(comeback.outcome.color_button);
                 $(".cc-dismiss").css("background-color",comeback.outcome.color_banner_link);
+                $(".cc-close").css("color",comeback.outcome.color_banner_link);
                 
                 $('.color_circle[name="color_button_text"]').val(comeback.outcome.color_button_text);
                 $(".cc-dismiss").css("color",comeback.outcome.color_button_text);

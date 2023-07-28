@@ -13,33 +13,8 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
 ?>
 
 <body>
-    <div class="Polaris-Page pagemargin max_width_change">
-        <div class="Polaris-Page__Title">
-            <div class="Polaris-Banner Polaris-Banner--statusSuccess  Polaris-Banner--withinPage" tabindex="0" role="alert" aria-live="polite" aria-labelledby="Banner7Heading" aria-describedby="Banner7Content">
-                <div class="cookiebanner">
-                    <div class="Polaris-Banner__Ribbon">
-                        <span class="Polaris-Icon Polaris-Icon--colorGreenDark Polaris-Icon--isColored Polaris-Icon--hasBackdrop">
-                            <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                            <circle fill="currentColor" cx="10" cy="10" r="9"></circle>
-                            <path d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-13a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1m0 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2"></path>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="Polaris-Banner__Heading" id="BannerHeading">
-                        <p class="Polaris-Heading">Activate Cookie Bar </p>
-                        <p class="Polaris-Heading">Update colour settings and click "Activate" button to activate Cookie bar on your website. </p>
-                    </div>
-                </div>
-
-                <div class="Polaris-SettingAction__Action">
-                    <button class="Polaris-Button Polaris-Button--primary" type="button">
-                    <span class="Polaris-Button__Content">
-                        <span class="Polaris-Button__Text">Activate</span>
-                    </span>
-                    </button>
-                </div>
-            </div>
-        </div>
+    <div class="Polaris-Page pagemargin max_width_change bodycontainer">
+     
         <form method="POST" id="cookies_bar_setting_save" onsubmit>
             <div class="Polaris-Page Polaris-Page--fullWidth" style="padding:0;">
                 <div class="Polaris-Page__Content">
@@ -276,7 +251,25 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </div>
                                                     </div>
                                                     <div class="Polaris-FormLayout__Item">
-                                                        
+                                                    <div class="">
+                                                        <div class="Polaris-Labelled__LabelWrapper">
+                                                            <div class="Polaris-Label">
+                                                                <label id="declinebuttonLabel" for=":R3dn6:" class="Polaris-Label__Text">Decline Text</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Polaris-Connected">
+                                                            <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
+                                                                <div class="Polaris-TextField">
+                                                                    <input id="declinebuttonText" name="decline_text" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false" value="Decline">
+                                                                        <div class="Polaris-TextField__Spinner" aria-hidden="true">
+                                                                            
+                                                                        </div>
+                                                                        <div class="Polaris-TextField__Backdrop">
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,12 +280,101 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                             <div  style=" padding: 2%;"> </div>
                             <div class="Polaris-Card__Section Polaris-Card">
                                 <div class="quickflex">
-                                    <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Quick Themes</h2>
-                                    <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                        <p>Click to apply</p>
+                                    <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Choose a color palette:</h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 bannerflex">
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground  h-8 w-11 p-1" style="background: rgb(255, 255, 255);">
+                                            <div class="bannercolor  h-3 w-4 mt-2 ml-5" style="background: rgb(0, 0, 0);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(255, 252, 252);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(0, 239, 255);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: rgb(99, 113, 199);">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(0, 0, 0);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(241, 214, 0);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(234, 247, 247);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(86, 203, 219);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(37, 46, 57);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(20, 167, 208);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(0, 0, 0);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(0, 255, 0);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(57, 55, 163);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(230, 37, 118);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(35, 122, 252);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(248, 168, 255);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(250, 236, 236);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(109, 136, 138);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(56, 59, 117);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(241, 214, 0);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(29, 138, 138);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(98, 255, 170);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(237, 239, 245);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(75, 129, 232);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(52, 60, 102);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(247, 21, 89);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(33, 105, 66);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(175, 237, 113);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(60, 64, 77);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(139, 237, 79);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(235, 108, 68);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(245, 217, 72);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(239, 239, 239);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(142, 199, 96);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
+                                        <div class="bannerbackground h-8 w-11 p-1" style="background: rgb(245, 245, 245);">
+                                            <div class="bannercolor h-3 w-4 mt-2 ml-5" style="background: rgb(106, 25, 125);"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div role="group" class="Polaris-Layout__AnnotatedSection bannerflex">
+                                <!-- <div role="group" class="Polaris-Layout__AnnotatedSection bannerflex">
                                     <div class="bannerlayout">
                                         <img src="..\assets\images\12.jpg" alt="" data-set="#22155D" data-value="#B3214F" class="banner1">
                                     </div>
@@ -317,7 +399,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     <div class="bannerlayout">
                                         <img src="..\assets\images\14.webp" alt="" data-set="#D19487" data-value="#A37988" class="banner1">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div  style=" padding: 2%;"> </div>
                             <div class="Polaris-Layout__AnnotationWrapper">
@@ -454,7 +536,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     </div>
                                 </div>
                                 <div class="Polaris-Layout__AnnotationContent">
-                                    <div class="Polaris-Card  " style="height:100%;">
+                                    <div class="Polaris-Card" style="height:100%;">
                                         <div class="backimg">
                                             <div class="preview-cookie-bar">
                                                 <div class="preview_set" style="background-color: rgb(244, 143, 177); color: rgb(49, 27, 146);">
@@ -465,8 +547,10 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </span>
                                                     </div>
                                                     <div class="three">
-                                                        <a class="cc-dismiss" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>
+                                                        <a class="cc-dismiss deny" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Decline</a>
+                                                        <a class="cc-dismiss allow" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>
                                                     </div>
+                                                    <span class="cc-close" id="buttonclose">✕</span>
                                                 </div>
                                             </div>
                                         </div>
