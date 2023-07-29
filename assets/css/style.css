@@ -424,7 +424,8 @@ body .space-y-4 > * + * {
   display: flex;
 }
 .Polaris-Page-Header .cls_header_logo_image {
-  width: 20%;
+  /* width: 20%; */
+  width: 26%;
 }
 .cls_enbledisable_btn, .shopifybtn {
   margin-top: 1%;
@@ -472,6 +473,9 @@ body .space-y-4 > * + * {
   position: relative;
   margin-left: 5%;
 }
+.mobileview{
+  display:none;
+}
 #toggleButton.on {
   background-color: #5cb85c;
 }
@@ -482,6 +486,13 @@ body .space-y-4 > * + * {
   margin-top: -3%;
   margin-left: 10%;
   width: 80%;
+}
+.Polaris-Page-Header__TitleAndActions.cls_header_css {
+  display: flex;
+  align-items: center;
+}
+.displaynone{
+  display: none;
 }
 /* header end */
 @media (max-width: 1640px) {
@@ -564,6 +575,14 @@ body .space-y-4 > * + * {
   display: flex !important;
   flex-wrap: wrap;
 }
+.shopifybtn  a.Polaris-Button {
+  margin: 0.5rem;
+}
+.cls_enbledisable_btn.shopifybtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .shopifybtn {
   width: 100%;
   order: 3;
@@ -607,25 +626,44 @@ body .space-y-4 > * + * {
 .cls_header_logo_image .logoimg {
   margin-bottom: 11% !important;
 }
-  .Polaris-Button {
-      width: 49%;
+ .cls_enbledisable_btn.shopifybtn .Polaris-Button {
+      width: 48%;
   }
+  .mobileview{
+    display: block;
   }
-  @media (max-width:620px) {
-    #toggleButton.on {
-      width: 200px;
-  }
-}
-@media (max-width:420px) {
-  .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusWarning ,
-  .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusSuccess{
-    flex-wrap: wrap;
+  .desktopview{
+    display:none;
   }
   #toggleButton.on {
     width: 50px;
-    margin-left:0;
 }
+  }
+@media (max-width:547px) {
+  .cls_enbledisable_btn.shopifybtn  .Polaris-Button {
+      width: 46%;
+  }
+  .footermargin{
+    flex-wrap: wrap;
+  }
+}
+  /* @media (max-width:620px) {
+    #toggleButton.on {
+      width: 200px;
+  }
+} */
+@media (max-width:420px) {
+  /* .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusWarning ,
+  .Polaris-Banner.Polaris-Banner--withinPage.clsdesign_for_msg.Polaris-Banner--statusSuccess{
+    flex-wrap: wrap;
+  } */
+ 
 #toggleButton {
   margin-left:0;
+}
+}
+@media (max-width:360px) {
+  #toggleButton.on , #toggleButton {
+    width: 60px;
 }
 }
