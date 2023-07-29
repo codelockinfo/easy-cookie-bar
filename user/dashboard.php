@@ -96,6 +96,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                         <div class="Polaris-FormLayout">
                                             <div role="group" class="Polaris-FormLayout--grouped">
                                                 <div class="Polaris-FormLayout__Items">
+                                                   
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="">
                                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -117,6 +118,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="">
                                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -135,12 +137,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Polaris-FormLayout">
-                                            <div role="group" class="Polaris-FormLayout--grouped">
-                                                <div class="Polaris-FormLayout__Items">
+                                                
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Banner height (px)</label></div>
@@ -186,12 +183,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Polaris-FormLayout">
-                                            <div role="group" class="Polaris-FormLayout--grouped">
-                                                <div class="Polaris-FormLayout__Items">
+                                                
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Button border radius (px)</label></div>
@@ -224,12 +216,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             <div class="Polaris-TextField__Backdrop"></div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Polaris-FormLayout">
-                                            <div role="group" class="Polaris-FormLayout--grouped">
-                                                <div class="Polaris-FormLayout__Items">
+                                               
                                                 
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="coutnry-select2">

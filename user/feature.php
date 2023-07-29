@@ -81,7 +81,7 @@
                     <div class="box card mb-2 px-5 pt-5 pb-0">
                         <div class="card-header   accordion-header cursor-pointer pb-5 collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                             <h2 class="card-title">
-                            I can create and update Page on online store 8.9.0 themes
+                            I can create and update Cookie Bar on online store 8.9.0 themes
                             </h2>
                            
                         </div>
@@ -89,12 +89,9 @@
                             <div class="card-body">
                                 <div class="videocontent">
                                     <div>
-                                        <!-- <div class="fluid-video">
-                                            <iframe src="https://screenpal.com/player/c0iIjhVgHsY?&ff=1&title=0&controls=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                       </div> -->
-                                        <p><h3 id="step-1-go-to-customize-theme">Step 1: Click Add /Edit Page button.</h3></p>
-                                        <p><h3 id="step-2-select-the-product-page">Step 2:Click Add Page button for add page content.</h3></p>
-                                        <p>Step by step Add information in to form . Choose from a wide selection of font families to give your page descriptions a unique and personalized look that aligns with your brand's style. Enhance page descriptions with vibrant colors: Use a color picker tool to select eye-catching colors that make your descriptions visually appealing and highlight important details.</p>
+                                        <h3 id="step-1-go-to-customize-theme">Step 1: Click Activated Cookie Bar.</h3></p>
+                                        <p>Step by step Add information in to form . </p>
+                                        <p>Choose a color palette</p>
                                         <p>Hit save and then test your  page. If you need any help please email us at <a href="mailto:codelock2021@gmail.com">codelock2021@gmail.com</a> .</p>
                                     </div>            
                                 </div>
