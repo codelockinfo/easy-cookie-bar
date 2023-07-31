@@ -77,7 +77,7 @@ button, input {
 .preview-cookie-bar {
   text-align: left;
   display: flex;
-  /* align-items: center; */
+  align-items: flex-start;
   min-height: 70px;
   width: 100%;
   justify-content: center;
