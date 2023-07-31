@@ -64,6 +64,7 @@ $(document).ready(function () {
         var borderwidthval = $("#borwidth").val();
         var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_width.css("border-width", borderwidthval + "px");
+        border_width.css("border-style", "solid");
     });
     $(document).on('click', '.bwup', function (e) {
         e.preventDefault();
@@ -78,6 +79,7 @@ $(document).ready(function () {
         var borderwidthval = $("#borwidth").val();
         var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_width.css("border-width", borderwidthval + "px");
+        border_width.css("border-style", "solid");
     });
 
     $(document).on('change','.layoutSelect2',function () {
