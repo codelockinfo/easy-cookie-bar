@@ -2,6 +2,7 @@
     include_once('dashboard_header.php');
 ?>
 <div class="Polaris-Page pagemargin max_width_change bodycontainer">
+    
     <div class="Polaris-Page__Header Polaris-Page__Header--hasBreadcrumbs Polaris-Page__Header--hasSecondaryActions Polaris-Page__Header--hasSeparator">
         <div class="Polaris-Page__MainContent">
             <div class="Polaris-Page__TitleAndActions">
@@ -11,13 +12,17 @@
             </div>
         </div>
     </div>
+    <div class="box text-center space-y-2 py-6">
+        <h2 class="text-2xl">Still need help?</h2>
+        <p class="text-lg text-gray-500">Email us at <strong class="font-semibold">codelock2021@gmail.com</strong>. Remember to include your myshopify.com domain.</p>
+    </div>
     <div class="Polaris-Page__Content">
         <div class="Polaris-Layout">
             <div class="Polaris-Layout__Section">
                 <div class="Polaris-Card">
-                    <div class="Polaris-Card__Header">
+                    <!-- <div class="Polaris-Card__Header">
                         <h2 class="Polaris-Heading">FAQ</h2>
-                    </div>
+                    </div> -->
                     <div class="Polaris-Card__Section">
                         <div  class="acc">
                             <div class="acc__card">
@@ -50,71 +55,18 @@
                             <div class="acc__card">
                                 <div class="acc__title">
                                     <a class="card-title">
-                                    How I can create and update Page?
+                                    How to change and edit the text  of your banner?
                                     </a>
                                 </div>
                                 <div  class="acc__panel" >
                                     <div class="card-body">
-                                        <div style="position:relative;padding-top:56.25%;">
-                                            <iframe src="https://screenpal.com/player/c0iIjhVgHsY?&ff=1&title=0&controls=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                        </div>
                                         <div class="videocontent">
                                             <ul>
-                                                <li>Click <b>Add /Edit  Page</b> button.</li>
-                                                <li>Click <b>Add Page</b> button for add page content.</li>
-                                                <li>Step by step Add information in to form .
-                                                    Choose from a wide selection of font families to give your page descriptions a unique and personalized look that aligns with your brand's style.
-                                                    Enhance page descriptions with vibrant colors: Use a color picker tool to select eye-catching colors that make your descriptions visually appealing and highlight important details.</li>
-                                                <li>Click <b>Save</b> button.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc__card">
-                                <div class="acc__title">
-                                    <a class="card-title">
-                                    How I can create and update Product?
-                                    </a>
-                                </div>
-                                <div class="acc__panel" >
-                                    <div class="card-body">
-                                        <div style="position:relative;padding-top:56.25%;">
-                                            <iframe src="https://screenpal.com/player/c0iIjFVgHL2?width=100%&height=100%&ff=1&title=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                        </div>
-                                        https://screenpal.com/watch/c0i3fUVkQ58
-                                        <div class="videocontent">
-                                            <ul>
-                                                <li>Click <b>Add /Edit  Product</b> button.</li>
-                                                <li>Click <b>Add Product</b> button for add product content.</li>
-                                                <li>Step by step Add information in to form.
-                                                    Choose from a wide selection of font families to give your product descriptions a unique and personalized look that aligns with your brand's style.
-                                                    Enhance product descriptions with vibrant colors: Use a color picker tool to select eye-catching colors that make your descriptions visually appealing and highlight important details.</li>
-                                                <li>Click <b>Save</b> button.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc__card">
-                                <div class="acc__title">
-                                    <a class="card-title">
-                                    How I can create and update Collection?
-                                    </a>
-                                </div>
-                                <div class="acc__panel" >
-                                    <div class="card-body">
-                                        <div style="position:relative;padding-top:56.25%;">
-                                            <iframe src="https://screenpal.com/player/c0iI6oVgJ63?width=100%&height=100%&ff=1&title=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                        </div>
-                                        <div class="videocontent">
-                                            <ul>
-                                                <li>Click <b>Add /Edit Collection</b> button.</li>
-                                                <li>Click <b>Add Collection</b> button for add collection.</li>
-                                                <li>Step by step Add information in to form.
-                                                    Choose from a wide selection of font families to give your collection descriptions a unique and personalized look that aligns with your brand's style.
-                                                    Enhance collection descriptions with vibrant colors: Use a color picker tool to select eye-catching colors that make your descriptions visually appealing and highlight important details.</li>
-                                                <li>Click <b>Save</b> button.</li>
+                                                <li><img src="<?php echo CLS_SITE_URL; ?>/assets/images/help/3.png"  alt="doc image"></li>
+                                                <li>You can change text banner on this label message.</li>
+                                                <li>After change agreement text and link text change</li>
+                                                <li>You can also change height of banner and font size of banner size.</li>
+                                                <li>after Click <b>Save</b> button.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -129,7 +81,7 @@
                                 <div class="acc__panel" >
                                     <div class="card-body">
                                             <div class="col-sm-12">
-                                                Very simple, you just need to deactivate the ReWriter App or remove the fonts. it will revert to original font of the theme.
+                                                Very simple, you just need to deactivate the Easy cookie banner App or remove the fonts. it will revert to original font of the theme.
                                             </div>
                                     </div>
                                 </div>

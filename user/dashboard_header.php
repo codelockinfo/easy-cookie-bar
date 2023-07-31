@@ -67,11 +67,11 @@ $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "man
                                     <span>Help </span>
                                     </span>
                                 </a>
-                                <a href="feature.php?store=<?php echo $store; ?>"  class="Polaris-Button  Polaris-Button--success" style="text-decoration: none;" >
+                                <!-- <a href="feature.php?store=<?php echo $store; ?>"  class="Polaris-Button  Polaris-Button--success" style="text-decoration: none;" >
                                     <span class="Polaris-Button__Content">
                                     <span>Features </span>
                                     </span>
-                                </a>
+                                </a> -->
                             </div>  
                         </div>
                         <button type="button" class="Polaris-Button bootstrap-navbar cls_menu_mobile" data-toggle="popover"  data-container="body" data-placement="bottom" data-html="true" id="form-components" tabindex="0" aria-haspopup="true" aria-expanded="false">
