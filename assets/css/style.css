@@ -683,6 +683,9 @@ display:none;
 #toggleButton.on {	
 width: 50px;	
 }	
+.preview_set{
+  flex-wrap: wrap;
+}
 }	
 @media (max-width:547px) {	
 .cls_enbledisable_btn.shopifybtn  .Polaris-Button {	
@@ -772,3 +775,9 @@ width: 50px;
 }
  
 /* accordian end */
+.acc__panel img{
+  width:100%;
+}
+.videocontent li{
+  list-style: none;
+}

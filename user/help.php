@@ -23,22 +23,25 @@
                             <div class="acc__card">
                                 <div class="acc__title active">
                                     <a class="card-title">
-                                      How I can create and update Blog articals?
+                                    How to design the app to match your store
                                     </a>
                                 </div>
                                 <div  class="acc__panel" style="display:block;" >
                                     <div class="card-body">
-                                        <div style="position:relative;padding-top:56.25%;">
-                                            <iframe src="https://screenpal.com/player/c0iI15VgHko?&ff=1&title=0&controls=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                        </div>
-                                        <div class="videocontent">
+                                       <div class="videocontent">
                                             <ul>
-                                                <li>Click <b>Add /Edit Blog</b> button.</li>
-                                                <li>Click <b>Add Article</b> button for add article content.</li>
-                                                <li>Step by step Add information in to form .
-                                                    Choose from a wide selection of font families to give your Blogpost descriptions a unique and personalized look that aligns with your brand's style.
-                                                    Enhance blogpost descriptions with vibrant colors: Use a color picker tool to select eye-catching colors that make your descriptions visually appealing and highlight important details.</li>
-                                                <li>Click <b>Save</b> button.</li>
+                                                <li><strong>Option A:</strong> </li><br>
+                                                <li>Using our quick themes.</li>
+                                                <li>We offer pre-made design themes you can use on your store.</li>
+                                                <li> Click any of the following to apply a quick design to your app:</li>
+                                                <p><img src="<?php echo CLS_SITE_URL; ?>/assets/images/help/1.png"  alt="doc image"></p>
+                                                <li><strong>Option B:</strong></li> <br>
+                                                <li>Manually changing the app design.</li>
+                                                <li>Scroll down the settings panel to change colors and fonts.</li>
+                                                <li>We recommend starting from selecting a "Banner" or a "pop-up" layout.</li>
+                                                <p><img src="<?php echo CLS_SITE_URL; ?>/assets/images/help/2.png"  alt="doc image"></p>
+                                                <li>That's it!</li>
+                                                <li>Feel free to reach out and ask for design help - our team is at your service: codelock2021@gmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -131,72 +134,8 @@
                                     </div>
                                 </div>
                             </div>
-                           <div class="acc__card">
-                                <div class="acc__title">
-                                    <a class="card-title">
-                                       How  I can change the font for an element only?
-                                    </a>
-                                </div>
-                                <div  class="acc__panel"  >
-                                    <div class="card-body">
-                                       <div class="row">
-                                            <div class="col-sm-6">
-                                              ​To change font of anywhere on your site, please use Element Picker feature. ​When click on the magnifying icon, you can see your live store, then select all the element that you want to apply the new font. ​If it does not work, please let us know via Live chat. ​Thanks
-                                            </div>
-                                            <div class="col-sm-6">  
-                                                <a href="../assets/images/Screenshot_1.png" target="_BLANK">
-                                                    <img src="../assets/images/Screenshot_1.png" alt="Avatar" class="image">
-                                                    <!-- <div class="overlay"> -->
-                                                        <!-- <div class="text">
-                                                            <h5 class="cover_text">
-                                                                <i class="fa fa-search-plus cover_symbol"></i>
-                                                                <br><?php _e("Click here to zoom"); ?>
-                                                            </h5> 
-                                                        </div> -->
-                                                    <!-- </div> -->
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc__card">
-                                <div class="acc__title">
-                                    <a class="card-title">
-                                     Why I can't find the fonts in Theme Customize?
-                                    </a>
-                                </div>
-                                <div  class="acc__panel" >
-                                    <div class="card-body">
-                                            <div class="col-sm-12">
-                                                The fonts family created by using ReWriter only show in ReWriter app. It will not show on Theme customize. To change or update the fonts, Please using ReWriter  app instead go to Theme customize
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc__card">
-                                <div class="acc__title">
-                                    <a class="card-title">
-                                       How  I can create size chart?
-                                    </a>
-                                </div>
-                                <div class="acc__panel"  >
-                                    <div class="card-body">
-                                        <div style="position:relative;padding-top:56.25%;">
-                                           <iframe src="https://screenpal.com/player/c0i3fUVkQ58?width=100%&height=100%&ff=1&title=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                        </div>
-                                        <div class="videocontent">
-                                            <ul>
-                                                <li>Click <b>Add /Edit  Product</b> button.</li>
-                                                <li>Find <b> Product</b>  for add Size chart.</li>
-                                                <li>Click on edit button.Then Search table on topbar click on Table and Select Row and </li>
-                                                <li>After add Heading and value in Table.</li>
-                                                <li>Click on <b>Save</b> button.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
+                            
                         </div>
                     </div>
                 </div>
