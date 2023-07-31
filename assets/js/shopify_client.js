@@ -386,8 +386,9 @@ function seeting_enable_disable(){
                 $(".enable-btn").addClass(" Polaris-Button--success")
 
             } else { 
-                $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
-                $(".enable-btn").val(0);
+                $(".clsdesign_for_msg .Polaris-Heading.desktopview").html("Activated Cookie Bar: Update colour settings and click Activate button to activated Cookie bar on your website.");
+                $(".clsdesign_for_msg .Polaris-Heading.mobileview").html("Cookie Bar is Activated.");
+               $(".enable-btn").val(0);
                 $(".enable-btn").html("Disable");
                 $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");
                 $(".app-setting-msg .Polaris-Icon").removeClass("Polaris-Icon--colorYellowDark");
@@ -541,8 +542,9 @@ function app_enable_disable(btnval,call_from){
                     $(".enable-btn").addClass(" Polaris-Button--success")
                     
                 } else {
-                    $(".clsdesign_for_msg .Polaris-Heading").html("Activated Cookie Bar.. Update colour settings and click Activate button to activated Cookie bar on your website.");
-                    $(".enable-btn").val(0);
+                    $(".clsdesign_for_msg .Polaris-Heading.desktopview").html("Activated Cookie Bar: Update colour settings and click Activate button to activated Cookie bar on your website.");
+                    $(".clsdesign_for_msg .Polaris-Heading.mobileview").html("Cookie Bar is Activated.");
+                   $(".enable-btn").val(0);
                     $(".enable-btn").html("Disable");
                     $(".app-setting-msg .Polaris-Icon").addClass("Polaris-Icon--colorGreenDark");
                     $(".app-setting-msg .Polaris-Icon").removeClass("Polaris-Icon--colorYellowDark");

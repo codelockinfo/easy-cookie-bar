@@ -2,7 +2,8 @@
     include_once('dashboard_header.php');
 ?>
 
-        <div class="width w-700px pb-8">
+        <!-- <div class="width w-700px pb-8"> -->
+        <div class="Polaris-Page pagemargin max_width_change bodycontainer">
             <div class="space-y-4">
                 <div class="box text-center space-y-2 py-6">
                     <h2 class="text-2xl">Still need help?</h2>

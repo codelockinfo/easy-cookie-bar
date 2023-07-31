@@ -1,4 +1,4 @@
- 
+
 <?php 
 $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "managedashboard.myshopify.com";
 ?>
@@ -10,15 +10,15 @@ $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "man
                     <div class="Polaris-Page-Header__MainContent polaris-nav-menu">
                         <div class="Polaris-Page-Header__TitleAndActions cls_header_css">
                             <div class="Polaris-Page__Title cls_header_logo_image">
-                                <a href="index.php?store=<?php echo $_SESSION['store']; ?>" class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">  <img  src="<?php echo CLS_SITE_URL; ?>/assets/images/logo-icon.png" alt="your image" class="logoimg" /></a>
+                                <a href="index.php?store=<?php echo $_SESSION['store']; ?>" class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">  <img  src="<?php echo CLS_SITE_URL; ?>/assets/images/logo1.png" alt="your image" class="logoimg" /></a>
                             </div>
                             <div class="shopifybtn">
-                                <a  href="https://<?php echo $store; ?>/admin" class="Polaris-Button  Polaris-Button--success" type="button" target="_blank">
+                                <!-- <a  href="https://<?php echo $store; ?>/admin" class="Polaris-Button  Polaris-Button--success" type="button" target="_blank">
                                     <span class="Polaris-Button__Content">
                                         <span class="Polaris-Button__Text">Shopify Admin</span>
                                     </span>
-                                </a>
-                                <a  href="index.php?store=<?php echo $store; ?>" class="Polaris-Button" type="button">
+                                </a> -->
+                                <a  href="index.php?store=<?php echo $store; ?>" class="Polaris-Button desktopview" type="button">
                                     <span class="Polaris-Button__Content">
                                         <span class="Polaris-Button__Text">Home</span>
                                     </span>
@@ -40,8 +40,9 @@ $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "man
                                             </div>
                                             <div class="Polaris-Banner__Heading" id="Banner7Heading">
                                                 <!-- <p class="Polaris-Heading">Activate Cookie Bar </p> -->
-                                                <p class="Polaris-Heading">Activate Cookie Bar Update colour settings and click "Activate" button to activate Cookie bar on your website. </p>
-                                            </div>
+                                                <p class="Polaris-Heading desktopview">Activate Cookie Bar: Update colour settings and click "Activate" button to activate Cookie bar on your website. </p>
+                                                <p class="Polaris-Heading mobileview"> Cookie Bar is Activated. </p>
+                                           </div>
                                             <div id="toggleButton" class="on">
                                                 <div class="handle"></div>
                                             </div>
@@ -51,6 +52,11 @@ $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "man
                                 </div>
                             </div>
                             <div class="cls_enbledisable_btn shopifybtn">
+                                <a  href="index.php?store=<?php echo $store; ?>" class="Polaris-Button mobileview" type="button">
+                                    <span class="Polaris-Button__Content">
+                                        <span class="Polaris-Button__Text">Home</span>
+                                    </span>
+                                </a>
                                 <a href="setting.php?store=<?php echo $store; ?>"  class="Polaris-Button" style="text-decoration: none;">
                                     <span class="Polaris-Button__Content">
                                         <span>Setting</span>

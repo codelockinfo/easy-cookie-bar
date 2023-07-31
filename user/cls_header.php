@@ -21,7 +21,7 @@
 
         <title><?php echo CLS_SITE_NAME; ?></title>
         <link rel="stylesheet" href="<?php echo main_url('assets/css/polaris.css'); ?>" rel="stylesheet">
-        <link rel="icon" type="image/png" href="<?php echo CLS_SITE_URL; ?>/assets/images/logo-icons.svg.png"/>
+        <link rel="icon" type="image/png" href="<?php echo CLS_SITE_URL; ?>/assets/images/logo1.svg.png"/>
         <link rel="stylesheet" href="<?php echo main_url('assets/css/spectrum.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/select2.min.css'); ?>" rel="stylesheet"> 
