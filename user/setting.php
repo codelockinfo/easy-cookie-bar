@@ -3,7 +3,7 @@
     include_once('dashboard_header.php');   
 ?>
 <body>
-    <div class="Polaris-Page">
+    <div class="Polaris-Page pagemargin max_width_change bodycontainer">
         <div class="Polaris-Page__Content">
             <div class="Polaris-Layout">
                 <div class="Polaris-Layout__AnnotatedSection">
