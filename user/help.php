@@ -63,10 +63,10 @@
                                         <div class="videocontent">
                                             <ul>
                                                 <li><img src="<?php echo CLS_SITE_URL; ?>/assets/images/help/3.png"  alt="doc image"></li>
-                                                <li>You can change text banner on this label message.</li>
-                                                <li>After change agreement text and link text change</li>
-                                                <li>You can also change height of banner and font size of banner size.</li>
-                                                <li>after Click <b>Save</b> button.</li>
+                                                <li>You can change the text banner on this label message.</li>
+                                                <li>Then modified the agreement text and link text.</li>
+                                                <li>You can also change the font size of the banner and also change the height of the banner.</li>
+                                                <li>Then click on the <b>Save</b> button.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -75,13 +75,13 @@
                             <div class="acc__card">
                                 <div class="acc__title">
                                     <a class="card-title">
-                                     How I can  revert my font back to original?
+                                    How I can revert my font back to the original?
                                     </a>
                                 </div>
                                 <div class="acc__panel" >
                                     <div class="card-body">
                                             <div class="col-sm-12">
-                                                Very simple, you just need to deactivate the Easy cookie banner App or remove the fonts. it will revert to original font of the theme.
+                                            Very simple, you just need to deactivate the Easy Cookie banner App or remove the fonts. it will revert to original font of the theme.
                                             </div>
                                     </div>
                                 </div>

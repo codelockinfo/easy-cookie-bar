@@ -46,12 +46,6 @@
                                         <img class="pricingIcon" src="https://cdn.shopify.com/s/files/1/0070/3666/5911/files/tick_minor_1.png?v=1584070573" alt="Tick mark">More to sell
                                     </div>
                                     <div class="Polaris-TextContainer">
-                                        <img class="pricingIcon" src="https://cdn.shopify.com/s/files/1/0070/3666/5911/files/tick_minor_1.png?v=1584070573" alt="Tick mark">Write beautiful blog
-                                    </div>
-                                    <div class="Polaris-TextContainer">
-                                        <img class="pricingIcon" src="https://cdn.shopify.com/s/files/1/0070/3666/5911/files/tick_minor_1.png?v=1584070573" alt="Tick mark">Cool product description
-                                    </div>
-                                    <div class="Polaris-TextContainer">
                                         <img class="pricingIcon" src="https://cdn.shopify.com/s/files/1/0070/3666/5911/files/tick_minor_1.png?v=1584070573" alt="Tick mark">Easily create a link to your privacy policy page on your GDPR cookie banner
                                     </div>
                                     <div class="Polaris-TextContainer">
