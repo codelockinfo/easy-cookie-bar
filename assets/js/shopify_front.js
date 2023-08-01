@@ -51,6 +51,11 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                             var layoutPopup = "modal-wrapper open";
                             var modalPreview = "modal_preview";
                           }
+                          if(comeback.outcome.showon == 1){
+                            initCookieBannerforAll();
+                          }else{
+                            initCookieBanner();
+                          }
                                 $("body").append('<style>.preview_set .cc-close{cursor: pointer;margin-left: 0.5em;font-size: 20px;font-weight: 700;}.preview_set .seven{flex: 1 1 auto;}.modal_preview .three{width: 100%;text-align: center;}.modal_preview{width: 500px;flex-wrap: wrap;}.modal-wrapper.open{visibility: visible;opacity: 1;}.modal-wrapper{display: flex;z-index: 999;width: 100%;height: 100%;visibility: hidden;top: 0;left: 0;opacity: 0;filter: alpha(opacity=0);-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}</style>'+
                                   '<div id="cookies-banner" class="'+ layoutPopup +'" style="display: none;z-index:99;justify-content: center;align-items: center;padding: 1em;position:fixed;bottom: 0px; width: 100%;">'+
                                     '<div  class="preview_set '+ modalPreview +'" style="justify-content: space-between;padding: 13px 6px;display: flex;align-items: center;height:'+  comeback.banner_height+';color:'+ comeback.outcome.color_banner_text	+';background:'+ comeback.outcome.color_banner +'; border-top: 1px solid #dcdcdc;">'+
@@ -131,6 +136,19 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         clearInterval($myVar);
       }
     }
+    function initCookieBannerforAll() {
+      const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+      const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+  
+      console.log(userTrackingConsent + "   TRACKING " );
+      console.log(userCanBeTracked + "   TRACKED");
+      if(!userCanBeTracked) {
+          console.log("show banner");
+        showBanner();
+      }else{
+        clearInterval($myVar);
+      }
+    }
     
       window.Shopify.loadFeatures([
         {
@@ -142,7 +160,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
           if (error) {
             throw error;
           }
-        $myVar = setInterval(initCookieBanner, 1000);
+        // $myVar = setInterval(initCookieBanner, 1000);
           // initCookieBanner();
       });
     
