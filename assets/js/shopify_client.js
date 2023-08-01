@@ -625,8 +625,10 @@ function cookies_bar_setting_select(){
             if(comeback  != undefined){
             var comeback = JSON.parse(comeback);
             console.log(comeback);
-                console.log(comeback.outcome.banner_fontsize);
+                console.log(comeback.outcome.showon  +".............");
                 var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
+
+                $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
                 $('.bar-message').html(comeback.outcome.message);

@@ -50,26 +50,28 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                 </div>
                                 <div class="Polaris-Layout__AnnotationContent">
                                     <div class="Polaris-Card polarisboxshadow">
-                                        <div class="code-form-control layout-2-column"data-id="element16" data-default-value="">
-                                            <label class="classic-label globo-label "><span class="label-content" data-label="Radio">Show on</span><span></span></label>
-                                            <ul class="flex-wrap radiobutton">
-                                                <li class="globo-list-control option-1-column">
-                                                    <div class="radio-wrapper">
-                                                        <input class="radio-input" id="false-radio-1-Option 1-" type="radio" data-type="radio" name="showon" value="1">
-                                                        <label class="radio-label globo-option" for="false-radio-1-Option 1-">All Countries</label>
-                                                    </div>
-                                                </li>
-                                                <li class="globo-list-control option-1-column">
-                                                    <div class="radio-wrapper">
-                                                        <input class="radio-input" id="false-radio-1-Option 2-" type="radio" data-type="radio" name="showon" value="0">
-                                                        <label class="radio-label globo-option" for="false-radio-1-Option 2-">EU only</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="Polaris-LegacyCard">
+                                        <div class="Polaris-LegacyCard sectionmessage">
                                             <div class="Polaris-LegacyCard__Section">
                                                 <div class="Polaris-FormLayout">
+                                                    <div class="Polaris-FormLayout__Item">
+                                                        <div class="code-form-control layout-2-column "data-id="element16" data-default-value="">
+                                                            <label class="classic-label globo-label "><span class="label-content" data-label="Radio">Show on</span><span></span></label>
+                                                            <ul class="flex-wrap radiobutton">
+                                                                <li class="globo-list-control option-1-column">
+                                                                    <div class="radio-wrapper">
+                                                                        <input class="radio-input" id="false-radio-1-Option 1-" type="radio" data-type="radio" name="showon" value="1">
+                                                                        <label class="radio-label globo-option" for="false-radio-1-Option 1-">All Countries</label>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="globo-list-control option-1-column">
+                                                                    <div class="radio-wrapper">
+                                                                        <input class="radio-input" id="false-radio-1-Option 2-" type="radio" data-type="radio" name="showon" value="0">
+                                                                        <label class="radio-label globo-option" for="false-radio-1-Option 2-">EU only</label>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="">
                                                             <div class="Polaris-Labelled__LabelWrapper">
