@@ -785,6 +785,11 @@ width: 50px;
 .videocontent li{
   list-style: none;
 }
+@media (max-width:700px) {	
+  .preview-cookie-bar .seven {
+    width: 95%;
+  }
+}
 @media (max-width:500px) {	
   .Polaris-Banner--withinPage .Polaris-Banner__Ribbon{
     padding-right: 0;
