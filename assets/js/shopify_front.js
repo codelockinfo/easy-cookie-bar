@@ -142,7 +142,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
   
       console.log(userTrackingConsent + "   TRACKING FOR ALL" );
       console.log(userCanBeTracked + "   TRACKED FOR ALL");
-      if(!userCanBeTracked) {
+      if(userTrackingConsent === 'no_interaction') {
         showBanner();
       }else{
         clearInterval($myVar);
