@@ -281,6 +281,12 @@ input[type="color"]::-webkit-color-swatch {
 .bannerflex .mt-2{
   margin-top: 0.5rem;
 }
+.radiobutton{
+  padding: 0;
+}
+.radiobutton .globo-list-control{
+  list-style: none;
+}
 /* popup end */
 @media screen and (max-width: 803px) {
   .preview-cookie-bar{

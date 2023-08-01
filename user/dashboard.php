@@ -52,7 +52,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                     <div class="Polaris-Card polarisboxshadow">
                                         <div class="code-form-control layout-2-column"data-id="element16" data-default-value="">
                                             <label class="classic-label globo-label "><span class="label-content" data-label="Radio">Show on</span><span></span></label>
-                                            <ul class="flex-wrap">
+                                            <ul class="flex-wrap radiobutton">
                                                 <li class="globo-list-control option-1-column">
                                                     <div class="radio-wrapper">
                                                         <input class="radio-input" id="false-radio-1-Option 1-" type="radio" data-type="radio" name="showon" value="1">
