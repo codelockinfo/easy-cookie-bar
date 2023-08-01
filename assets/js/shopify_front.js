@@ -44,6 +44,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                         success: function(comeback) {
                           var comeback = JSON.parse(comeback);
                           console.log(comeback);
+                          console.log(comeback.outcome.showon);
                           var layoutPopup = "";
                           var modalPreview = "";
                           if( comeback.outcome.layout == 1){

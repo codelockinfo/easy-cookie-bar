@@ -276,6 +276,7 @@ class Client_functions extends common_function {
                         $fields_arr = array(
                             '`store_user_id`' => $shopinfo->store_user_id,
                             '`message`' => 'This website uses cookies to ensure you get the best experience on our website',
+                            '`showon`' => '0',
                             '`privacy_policy_url`' => '',
                             '`agreement_text`' =>'Got it!',
                             '`decline_text`' =>'Decline',
@@ -317,6 +318,7 @@ class Client_functions extends common_function {
                 );
                 $fields_arr = array(
                     '`message`' => $_POST["message"],
+                    '`showon`' => $_POST["showon"],
                     '`privacy_policy_url`' => $_POST["privacy_policy_url"],
                     '`agreement_text`' => $_POST["agreement_text"],
                     '`decline_text`' =>$_POST["decline_text"],
