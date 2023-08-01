@@ -101,6 +101,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
     }
   
     function showBanner() {
+      console.log("show banner");
       var getBannerEl =  document.getElementById('cookies-banner');
       console.log(getBannerEl);
       if(getBannerEl !== null){
@@ -130,7 +131,6 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       console.log(userTrackingConsent + "   TRACKING " );
       console.log(userCanBeTracked + "   TRACKED");
       if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
-          console.log("show banner");
         showBanner();
       }else{
         clearInterval($myVar);
@@ -140,10 +140,9 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
       const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
   
-      console.log(userTrackingConsent + "   TRACKING " );
-      console.log(userCanBeTracked + "   TRACKED");
+      console.log(userTrackingConsent + "   TRACKING FOR ALL" );
+      console.log(userCanBeTracked + "   TRACKED FOR ALL");
       if(!userCanBeTracked) {
-          console.log("show banner");
         showBanner();
       }else{
         clearInterval($myVar);
