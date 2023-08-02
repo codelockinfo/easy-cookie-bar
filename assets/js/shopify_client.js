@@ -599,7 +599,6 @@ $(document).on("submit", "#cookies_bar_setting_save", function (e) {
             loading_show('.save_loader_show');
         },
         success: function (response) {
-             var response = JSON.parse(response);
              if (response['code'] != undefined && response['code'] == '403') {
                 redirect403();
             } 
