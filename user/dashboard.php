@@ -207,7 +207,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Button border radius (px)</label></div>
                                                         </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="" oninput="showValue3(this.value)">
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="">
                                                             <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                 <button role="button" class="Polaris-TextField__Segment bup" tabindex="-1">
                                                                     <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>

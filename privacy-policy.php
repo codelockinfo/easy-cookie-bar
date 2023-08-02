@@ -11,11 +11,11 @@
                         <div class="Polaris-Layout__AnnotationContent">
                             <div class="Polaris-Card">
                                 <div class="Polaris-Card__Header">
-                                    <h2 class="Polaris-Heading">ReWriter Privacy Policy</h2>
+                                    <h2 class="Polaris-Heading"> Privacy Policy</h2>
                                 </div>
                                 <div class="Polaris-Card__Section display-inline">
                                     <div class="Polaris-Stack__Item seeting-content">
-                                        <div>ReWriter "the App” provides Change Font style& size, add images & video "the Service" to merchants who use Shopify to power their stores. This Privacy Policy describes how personal information is collected, used, and shared when you install or use the App in connection with your Shopify-supported store.</div>
+                                        <div>Easy Cookie Banner - GDPR EU "the App” provides Change Font style& size, add images & video "the Service" to merchants who use Shopify to power their stores. This Privacy Policy describes how personal information is collected, used, and shared when you install or use the App in connection with your Shopify-supported store.</div>
                                         &nbsp;
                                         <div class="Polaris-Heading">Personal Information the App Collects</div>
                                         <div>install or use the App in connection with your Shopify-supported store.
