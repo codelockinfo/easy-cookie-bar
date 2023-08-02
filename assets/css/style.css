@@ -199,8 +199,10 @@ hr.hrline {
   display:none;
 }
 .modal_preview{
-  width: 500px;
+    width: 500px;
     height: 300px;
+    position: absolute;
+    flex-direction: column;
     /* height: auto; */
 }
 .fcolor button {
@@ -257,6 +259,11 @@ input[type="color"]::-webkit-color-swatch {
   font-size: 20px;
   font-weight: 700;
 }
+  .modal_preview .cc-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 .gap-1.bannerflex{
   gap: 1rem;
 }
@@ -280,6 +287,15 @@ input[type="color"]::-webkit-color-swatch {
 }
 .bannerflex .mt-2{
   margin-top: 0.5rem;
+}
+.radiobutton{
+  padding-left: 0;
+}
+.radiobutton .globo-list-control{
+  list-style: none;
+}
+.sectionmessage{
+  margin-top: -1.6rem;
 }
 /* popup end */
 @media screen and (max-width: 803px) {
@@ -713,11 +729,6 @@ width: 50px;
   margin-left:0;
 }
 }
-@media (max-width:360px) {	
-  #toggleButton.on , #toggleButton {	
-    width: 60px;	
-}	
-}
 /* cls015 start */
 .pricewidth  .Polaris-Card__Header .Polaris-TextContainer {
   display: flex;
@@ -781,10 +792,37 @@ width: 50px;
 .videocontent li{
   list-style: none;
 }
+
 .Cookiesett {
   font-size: 2rem;
   font-weight: 600;
 }
 .modal_preview .three {
   margin: 3% 0;
+}
+
+@media (max-width:700px) {	
+  .preview-cookie-bar .seven {
+    width: 95%;
+  }
+}
+@media (max-width:550px) {
+  .modal_preview {
+    width: auto;
+  }	
+}
+@media (max-width:500px) {
+
+  .Polaris-Banner--withinPage .Polaris-Banner__Ribbon{
+    padding-right: 0;
+  }
+  .Polaris-Heading.mobileview{
+    font-size: 1.3rem;
+  }
+  .logoheader{
+    padding: 1rem;
+  }
+  .app-setting-msg .clsdesign_for_msg {
+    padding: 1rem;
+  }
 }

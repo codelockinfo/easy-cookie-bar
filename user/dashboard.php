@@ -50,9 +50,28 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                 </div>
                                 <div class="Polaris-Layout__AnnotationContent">
                                     <div class="Polaris-Card polarisboxshadow">
-                                        <div class="Polaris-LegacyCard">
+                                        <div class="Polaris-LegacyCard sectionmessage">
                                             <div class="Polaris-LegacyCard__Section">
                                                 <div class="Polaris-FormLayout">
+                                                    <div class="Polaris-FormLayout__Item">
+                                                        <div class="code-form-control layout-2-column "data-id="element16" data-default-value="">
+                                                            <label class="classic-label globo-label "><span class="label-content" data-label="Radio">Show on</span><span></span></label>
+                                                            <ul class="flex-wrap radiobutton">
+                                                                <li class="globo-list-control option-1-column">
+                                                                    <div class="radio-wrapper">
+                                                                        <input class="radio-input" id="false-radio-1-Option 1-" type="radio" data-type="radio" name="showon" value="1">
+                                                                        <label class="radio-label globo-option" for="false-radio-1-Option 1-">All Countries</label>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="globo-list-control option-1-column">
+                                                                    <div class="radio-wrapper">
+                                                                        <input class="radio-input" id="false-radio-1-Option 2-" type="radio" data-type="radio" name="showon" value="0">
+                                                                        <label class="radio-label globo-option" for="false-radio-1-Option 2-">EU only</label>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="">
                                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -107,7 +126,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             <div class="Polaris-Connected">
                                                                 <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                                                     <div class="Polaris-TextField">
-                                                                        <input id="buttonText" name="agreement_text" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false" value="Got it!">
+                                                                        <input id="buttonText" name="agreement_text" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false">
                                                                             <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                                 
                                                                             </div>
@@ -150,7 +169,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             <div class="Polaris-Connected">
                                                                 <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                                                     <div class="Polaris-TextField">
-                                                                        <input id="linkText" name="privacy_policy_url_text" autocomplete="off" class="Polaris-TextField__Input" type="text" aria-labelledby=":R5dn6:Label" aria-invalid="false" value="Learn More">
+                                                                        <input id="linkText" name="privacy_policy_url_text" autocomplete="off" class="Polaris-TextField__Input" type="text" aria-labelledby=":R5dn6:Label" aria-invalid="false">
                                                                         <div class="Polaris-TextField__Backdrop">
                                                                         </div>
                                                                     </div>
@@ -163,7 +182,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Banner height (px)</label></div>
                                                         </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false" value="70">
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false">
                                                             <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                 <button role="button" class="Polaris-TextField__Segment up" tabindex="-1">
                                                                     <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
@@ -209,7 +228,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Button border radius (px)</label></div>
                                                         </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="" oninput="showValue3(this.value)">
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="">
                                                             <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                 <button role="button" class="Polaris-TextField__Segment bup" tabindex="-1">
                                                                     <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
@@ -258,6 +277,8 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                         </div>
                                                     </div>
+
+
                                                 </div>
                                             </div>
                                         </div>    
@@ -416,7 +437,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner" value="#beb6b6" id="colorPickerbutton3" class="color_circle">
+                                                                            <input type="color" name="color_banner"  id="colorPickerbutton3" class="color_circle">
                                                                             <input type="hidden" id="colorCodebutton3">
                                                                         </button>
                                                                     </div>
@@ -433,7 +454,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner_text"  value="#121212" id="bannerTextback" class="color_circle">
+                                                                            <input type="color" name="color_banner_text" id="bannerTextback" class="color_circle">
                                                                             <input type="hidden" id="bannerText">
                                                                         </button>
                                                                     </div>
@@ -452,7 +473,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner_link" value="#800000" id="bannertextlink" class="color_circle">
+                                                                            <input type="color" name="color_banner_link"  id="bannertextlink" class="color_circle">
                                                                             <input type="hidden" id="bannerlink">
                                                                         </button>
                                                                     </div>
@@ -469,7 +490,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button"value="#000000" id="buttonbackcolor" class="color_circle">
+                                                                            <input type="color" name="color_button" id="buttonbackcolor" class="color_circle">
                                                                             <input type="hidden" id="buttoncolor">
                                                                         </button>
                                                                     </div>
@@ -488,7 +509,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button_text" value="#f60404" id="buttontextcolor" class="color_circle">
+                                                                            <input type="color" name="color_button_text" id="buttontextcolor" class="color_circle">
                                                                             <input type="hidden" id="buttontext">
                                                                         </button>
                                                                     </div>
@@ -505,7 +526,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button_border" value="#F9471A" id="buttonbordercolor" class="color_circle">
+                                                                            <input type="color" name="color_button_border" id="buttonbordercolor" class="color_circle">
                                                                             <input type="hidden" id="buttonborder">
                                                                         </button>
                                                                     </div>
@@ -534,8 +555,8 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </span>
                                                     </div>
                                                     <div class="three">
-                                                        <a class="cc-dismiss deny" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Decline</a>
-                                                        <a class="cc-dismiss allow" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>
+                                                        <a class="cc-dismiss deny" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);"></a>
+                                                        <a class="cc-dismiss allow" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);"></a>
                                                     </div>
                                                     <span class="cc-close" id="buttonclose">✕</span>
                                                 </div>

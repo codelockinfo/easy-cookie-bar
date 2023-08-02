@@ -264,7 +264,7 @@ class Client_functions extends common_function {
             return $response;
     }
     function cookies_bar_setting_save_first(){
-        $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
+        $response = array('result' => 'fail', 'msg' => __('Something went wrong'));
         if (isset($_POST['store']) && $_POST['store'] != '' ) {
                 $fields_arr = array();
                 $shopinfo = $this->current_store_obj;
@@ -276,14 +276,15 @@ class Client_functions extends common_function {
                         $fields_arr = array(
                             '`store_user_id`' => $shopinfo->store_user_id,
                             '`message`' => 'This website uses cookies to ensure you get the best experience on our website',
+                            '`showon`' => '0',
                             '`privacy_policy_url`' => '',
                             '`agreement_text`' =>'Got it!',
                             '`decline_text`' =>'Decline',
                             '`privacy_policy_url_text`' => 'Learn More',
                             '`banner_height`' => '150',
                             '`banner_fontsize`' => '20px',
-                            '`button_border_radius`' => '50',
-                            '`button_border_width`' => '11',
+                            '`button_border_radius`' => '20',
+                            '`button_border_width`' => '2',
                             '`position`' => '1',
                             '`layout`' => '0',
                             '`color_banner`' => '#000000',
@@ -296,15 +297,15 @@ class Client_functions extends common_function {
                             '`updated_at`' => $mysql_date
                     );
                     $response_data = $this->post_data(TABLE_COOKIEBAR_SETTINGS, array($fields_arr));
-                    $response_data = array('result' => 'success', 'msg' => "Setting add successfully");
+                    $response = array('result' => 'success', 'msg' => "Setting add successfully");
                 }
             }
-            $response = json_encode($response_data);
             return $response;
     }
     function cookies_bar_setting_save() {
-        $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
+        $response = array('result' => 'fail', 'msg' => __('Something went wrong'));
         if (isset($_POST['store']) && $_POST['store'] != '') {
+            generate_log('user_index' , json_encode($_POST)  . " ... POST");
             $fields_arr = array();
             $shopinfo = $this->current_store_obj;
             $shopinfo = (object)$shopinfo;
@@ -317,6 +318,7 @@ class Client_functions extends common_function {
                 );
                 $fields_arr = array(
                     '`message`' => $_POST["message"],
+                    '`showon`' => $_POST["showon"],
                     '`privacy_policy_url`' => $_POST["privacy_policy_url"],
                     '`agreement_text`' => $_POST["agreement_text"],
                     '`decline_text`' =>$_POST["decline_text"],
@@ -336,10 +338,9 @@ class Client_functions extends common_function {
                     '`updated_at`' => $mysql_date
                 );
                 $response_data = $this->put_data(TABLE_COOKIEBAR_SETTINGS, $fields_arr, $where_query);
-                $response_data = array('result' => 'success', 'msg' => "Setting update successfully");
+                $response = array('result' => 'success', 'msg' => "Setting update successfully");
             }
         }
-        $response = json_encode($response_data);
         return $response;
     }
     function cookies_bar_setting_select(){

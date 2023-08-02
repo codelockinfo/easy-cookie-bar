@@ -599,7 +599,6 @@ $(document).on("submit", "#cookies_bar_setting_save", function (e) {
             loading_show('.save_loader_show');
         },
         success: function (response) {
-             var response = JSON.parse(response);
              if (response['code'] != undefined && response['code'] == '403') {
                 redirect403();
             } 
@@ -624,9 +623,13 @@ function cookies_bar_setting_select(){
         success: function(comeback) {
             if(comeback  != undefined){
             var comeback = JSON.parse(comeback);
-            console.log(comeback);
-                console.log(comeback.outcome.banner_fontsize);
+                console.log(comeback);
+                console.log(comeback.outcome.showon  +".............");
                 var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
+                var decline_text = comeback.outcome.decline_text !== '' ? comeback.outcome.decline_text : "Decline";
+                var agreement_text = comeback.outcome.agreement_text !== '' ? comeback.outcome.agreement_text : "Agree";
+
+                $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
                 $('.bar-message').html(comeback.outcome.message);
@@ -653,7 +656,7 @@ function cookies_bar_setting_select(){
                 $('.cc-dismiss').css("border-radius",comeback.outcome.button_border_radius+"px");
                 
                 $('.Polaris-TextField__Input[name="button_border_width"]').val(comeback.outcome.button_border_width);
-                $('.cc-dismiss').css("border",comeback.outcome.button_border_width+"px");
+                $('.cc-dismiss').css("border",comeback.outcome.button_border_width+"px solid");
 
                 $('.color_circle[name="color_banner"]').val(comeback.outcome.color_banner);
                 $(".preview_set").css("background-color",comeback.outcome.color_banner);
@@ -673,6 +676,9 @@ function cookies_bar_setting_select(){
                 
                 $('.color_circle[name="color_button_border"]').val(comeback.outcome.color_button_border);
                 $(".cc-dismiss").css("border-color",comeback.outcome.color_button_border);
+
+                $(".cc-dismiss.deny").html(decline_text);
+                $(".cc-dismiss.allow").html(agreement_text);
 
             }
         }
