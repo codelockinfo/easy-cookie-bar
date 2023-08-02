@@ -203,9 +203,6 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                             <div class="Polaris-Select Polaris-Select--placeholder">
                                                                 <select class="Polaris-Select__Input widthSelect2" name="banner_fontsize">
-                                                                    <option value="8px">8px</option>
-                                                                    <option value="9px">9px</option>
-                                                                    <option value="10px">10px</option>
                                                                     <option value="11px">11px</option>
                                                                     <option value="12px">12px</option>
                                                                     <option value="14px">14px</option>

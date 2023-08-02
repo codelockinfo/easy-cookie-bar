@@ -94,8 +94,6 @@ $(document).ready(function () {
             $('.modal-wrapper').addClass('open');
             $(" .preview_set").css("flex-direction","column");
             $(" .preview-cookie-bar .seven").css("width","100%");
-            $('input[name="banner_height"]').val(300) ;    
-            $(" .preview_set").css("height","300px");
         }
         else {
             layoutchange.removeClass("modal-wrapper");
@@ -103,8 +101,6 @@ $(document).ready(function () {
             $('.modal-wrapper').removeClass('open');
             $(" .preview_set").css("flex-direction","row");
             $(" .preview-cookie-bar .seven").css("width","70%");
-            $('input[name="banner_height"]').val(70) ; 
-            $(" .preview_set").css("height","70px");
         }
     }); 
      // get value of massage
@@ -149,7 +145,6 @@ $(document).ready(function () {
 
     $('input[name="button_border_width"]').on('change', function () {
         var borderwidthval = $("#borwidth").val();
-        alert(borderwidthval);
         var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
         border_width.css("border-width", borderwidthval + "px");
         border_width.css("border-style", "solid");

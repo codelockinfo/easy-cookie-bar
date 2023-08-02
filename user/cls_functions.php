@@ -281,7 +281,8 @@ class Client_functions extends common_function {
                             '`agreement_text`' =>'Got it!',
                             '`decline_text`' =>'Decline',
                             '`privacy_policy_url_text`' => 'Learn More',
-                            '`banner_height`' => '150',
+                            '`banner_height`' => '70',
+                            '`popup_height`' => '300',
                             '`banner_fontsize`' => '20px',
                             '`button_border_radius`' => '20',
                             '`button_border_width`' => '2',
@@ -313,6 +314,8 @@ class Client_functions extends common_function {
             $comeback= $this->select_result(TABLE_COOKIEBAR_SETTINGS, '*', $where_query);
             $mysql_date = date('Y-m-d H:i:s');
             if(!empty($comeback['data'])){
+                $popup_height = (isset($_POST['layout']) && $_POST['layout'] == 1) ? $_POST['banner_height'] : $comeback['data'][0]["popup_height"];
+                $banner_height = (isset($_POST['layout']) && $_POST['layout'] == 0) ? $_POST['banner_height'] : $comeback['data'][0]["banner_height"];
                 $where_query = array(
                     ["", "store_user_id", "=", $shopinfo->store_user_id],
                 );
@@ -323,7 +326,8 @@ class Client_functions extends common_function {
                     '`agreement_text`' => $_POST["agreement_text"],
                     '`decline_text`' =>$_POST["decline_text"],
                     '`privacy_policy_url_text`' => $_POST["privacy_policy_url_text"],
-                    '`banner_height`' => $_POST["banner_height"],
+                    '`banner_height`' => $banner_height,
+                    '`popup_height`' => $popup_height,
                     '`banner_fontsize`' => $_POST["banner_fontsize"],
                     '`button_border_radius`' => $_POST["button_border_radius"],
                     '`button_border_width`' => $_POST["button_border_width"],
