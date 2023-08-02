@@ -82,6 +82,8 @@ $(document).ready(function () {
         border_width.css("border-style", "solid");
     });
 
+
+
     $(document).on('change','.layoutSelect2',function () {
         var layout_change=$('.layoutSelect2 option').filter(':selected').val();
         var layoutchange= $('.pagemargin ').find('.preview-cookie-bar');
@@ -93,6 +95,7 @@ $(document).ready(function () {
             $(" .preview_set").css("flex-direction","column");
             $(" .preview-cookie-bar .seven").css("width","100%");
             $('input[name="banner_height"]').val(300) ;    
+            $(" .preview_set").css("height","300px");
         }
         else {
             layoutchange.removeClass("modal-wrapper");
@@ -101,6 +104,7 @@ $(document).ready(function () {
             $(" .preview_set").css("flex-direction","row");
             $(" .preview-cookie-bar .seven").css("width","70%");
             $('input[name="banner_height"]').val(70) ; 
+            $(" .preview_set").css("height","70px");
         }
     }); 
      // get value of massage
@@ -129,6 +133,27 @@ $(document).ready(function () {
     $('.widthSelect2').change(function () {
         var select=$(this).find(':selected').val();    
         $(".bar-message").css("font-size", select);
+    });
+
+    $('input[name="banner_height"]').on('change', function () {
+        var texInputValue = $('#myNumber').val();
+       var border_height= $('.pagemargin ').find('.preview_set ');
+        border_height.css("height", texInputValue + "px");
+    });
+  
+    $('input[name="button_border_radius"]').on('change', function () {
+        var borderval = $("#borderrad").val();
+        var border_rad= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_rad.css("border-radius", borderval + "px");
+    });
+
+    $('input[name="button_border_width"]').on('change', function () {
+        var borderwidthval = $("#borwidth").val();
+        alert(borderwidthval);
+        var border_width= $('.pagemargin ').find('.preview_set .cc-dismiss');
+        border_width.css("border-width", borderwidthval + "px");
+        border_width.css("border-style", "solid");
+
     });
     // banner background color
     

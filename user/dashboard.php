@@ -39,7 +39,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                             <div class="Polaris-Layout__AnnotationWrapper ">
                                 <div class="Polaris-Layout__Annotation Polaris-Card polarisboxshadow">
                                     <div class="Polaris-TextContainer">
-                                        <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Settings</h2>
+                                        <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl Cookiesett" id="storeDetails">Settings</h2>
                                             <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                 <p>Change and edit the text and settings of your banner.</p>
                                             </div>
@@ -119,6 +119,27 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </div>
                                                     </div>
                                                     
+                                                    <div class="Polaris-FormLayout__Item">
+                                                    <div class="">
+                                                        <div class="Polaris-Labelled__LabelWrapper">
+                                                            <div class="Polaris-Label">
+                                                                <label id="declinebuttonLabel" for=":R3dn6:" class="Polaris-Label__Text">Decline Text</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Polaris-Connected">
+                                                            <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
+                                                                <div class="Polaris-TextField">
+                                                                    <input id="declinebuttonText" name="decline_text" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false" value="Decline">
+                                                                        <div class="Polaris-TextField__Spinner" aria-hidden="true">
+                                                                            
+                                                                        </div>
+                                                                        <div class="Polaris-TextField__Backdrop">
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="">
                                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -236,27 +257,6 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                 <div class="Polaris-Select__Backdrop select-hide"></div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="Polaris-FormLayout__Item">
-                                                    <div class="">
-                                                        <div class="Polaris-Labelled__LabelWrapper">
-                                                            <div class="Polaris-Label">
-                                                                <label id="declinebuttonLabel" for=":R3dn6:" class="Polaris-Label__Text">Decline Text</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Polaris-Connected">
-                                                            <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                                                <div class="Polaris-TextField">
-                                                                    <input id="declinebuttonText" name="decline_text" autocomplete="off" aria-labelledby=":R2l9n6:Label" class="Polaris-TextField__Input" type="text" aria-invalid="false" value="Decline">
-                                                                        <div class="Polaris-TextField__Spinner" aria-hidden="true">
-                                                                            
-                                                                        </div>
-                                                                        <div class="Polaris-TextField__Backdrop">
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>

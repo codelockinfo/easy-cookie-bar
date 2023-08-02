@@ -781,3 +781,10 @@ width: 50px;
 .videocontent li{
   list-style: none;
 }
+.Cookiesett {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.modal_preview .three {
+  margin: 3% 0;
+}
