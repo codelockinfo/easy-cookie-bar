@@ -306,6 +306,7 @@ class Client_functions extends common_function {
     function cookies_bar_setting_save() {
         $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
         if (isset($_POST['store']) && $_POST['store'] != '') {
+            generate_log('user_index' , json_encode($_POST)  . " ... POST");
             $fields_arr = array();
             $shopinfo = $this->current_store_obj;
             $shopinfo = (object)$shopinfo;
