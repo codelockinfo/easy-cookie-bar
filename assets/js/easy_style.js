@@ -195,13 +195,16 @@ $(document).ready(function () {
             colorCode5.innerHTML = input5.value;
         }
             //  button border color
-        const body6 = document.querySelector(".cc-dismiss");
+        const body6 = document.querySelectorAll(".cc-dismiss");
         const input6 = document.getElementById("buttonbordercolor");
         const colorCode6 = document.getElementById("buttonborder");    
         setColor6();
         input6.addEventListener("input", setColor6);
         function setColor6() {
-            body6.style.borderColor = input6.value;
+            for (let i = 0; i < body6.length; i++) {
+                body6[i].style.borderColor = input6.value;
+              }
+            // body6.style.borderColor = input6.value;
             colorCode6.innerHTML = input6.value;
         }  
 

@@ -655,7 +655,7 @@ function cookies_bar_setting_select(){
                 $('.cc-dismiss').css("border-radius",comeback.outcome.button_border_radius+"px");
                 
                 $('.Polaris-TextField__Input[name="button_border_width"]').val(comeback.outcome.button_border_width);
-                $('.cc-dismiss').css("border",comeback.outcome.button_border_width+"px");
+                $('.cc-dismiss').css("border",comeback.outcome.button_border_width+"px solid");
 
                 $('.color_circle[name="color_banner"]').val(comeback.outcome.color_banner);
                 $(".preview_set").css("background-color",comeback.outcome.color_banner);
