@@ -219,7 +219,7 @@ $(document).ready(function () {
             $bannercolor = $(this).find(".bannercolor").css("background");
             $bannerbackground = $(this).find(".bannerbackground").css("background");
             $(".preview_set").css({"background":$bannerbackground,"color": $bannercolor });
-            $(".cc-dismiss").css({"background":$bannercolor,"color": $bannerbackground });
+            $(".cc-dismiss").css({"background":$bannercolor,"color": $bannerbackground ,"border-color":$bannercolor});
             $(".cc-close,.cc-link").css("color", $bannercolor);
             $hexbannercolor = rgb2hex($bannercolor);
             $hexbannerbackground = rgb2hex($bannerbackground);
