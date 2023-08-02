@@ -202,6 +202,7 @@ hr.hrline {
     width: 500px;
     height: 300px;
     position: absolute;
+    flex-direction: column;
     /* height: auto; */
 }
 .fcolor button {
