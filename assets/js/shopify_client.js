@@ -624,7 +624,7 @@ function cookies_bar_setting_select(){
         success: function(comeback) {
             if(comeback  != undefined){
             var comeback = JSON.parse(comeback);
-            console.log(comeback);
+                console.log(comeback);
                 console.log(comeback.outcome.showon  +".............");
                 var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
 
@@ -675,6 +675,9 @@ function cookies_bar_setting_select(){
                 
                 $('.color_circle[name="color_button_border"]').val(comeback.outcome.color_button_border);
                 $(".cc-dismiss").css("border-color",comeback.outcome.color_button_border);
+
+                $(".cc-dismiss.deny").html(comeback.outcome.decline_text);
+                $(".cc-dismiss.allow").html(comeback.outcome.agreement_text);
 
             }
         }

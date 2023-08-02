@@ -435,7 +435,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner" value="#beb6b6" id="colorPickerbutton3" class="color_circle">
+                                                                            <input type="color" name="color_banner"  id="colorPickerbutton3" class="color_circle">
                                                                             <input type="hidden" id="colorCodebutton3">
                                                                         </button>
                                                                     </div>
@@ -452,7 +452,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner_text"  value="#121212" id="bannerTextback" class="color_circle">
+                                                                            <input type="color" name="color_banner_text" id="bannerTextback" class="color_circle">
                                                                             <input type="hidden" id="bannerText">
                                                                         </button>
                                                                     </div>
@@ -471,7 +471,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_banner_link" value="#800000" id="bannertextlink" class="color_circle">
+                                                                            <input type="color" name="color_banner_link"  id="bannertextlink" class="color_circle">
                                                                             <input type="hidden" id="bannerlink">
                                                                         </button>
                                                                     </div>
@@ -488,7 +488,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button"value="#000000" id="buttonbackcolor" class="color_circle">
+                                                                            <input type="color" name="color_button" id="buttonbackcolor" class="color_circle">
                                                                             <input type="hidden" id="buttoncolor">
                                                                         </button>
                                                                     </div>
@@ -507,7 +507,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button_text" value="#f60404" id="buttontextcolor" class="color_circle">
+                                                                            <input type="color" name="color_button_text" id="buttontextcolor" class="color_circle">
                                                                             <input type="hidden" id="buttontext">
                                                                         </button>
                                                                     </div>
@@ -524,7 +524,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                                     <div>
                                                                         <button class="MuiButtonBase-root MuiButton-root fs-14 MuiButton-sizeSmall MuiButton-disableElevation cls-color color-btn c_btn" tabindex="0" type="button" href="">
                                                                             <span class="MuiTouchRipple-root"></span>
-                                                                            <input type="color" name="color_button_border" value="#F9471A" id="buttonbordercolor" class="color_circle">
+                                                                            <input type="color" name="color_button_border" id="buttonbordercolor" class="color_circle">
                                                                             <input type="hidden" id="buttonborder">
                                                                         </button>
                                                                     </div>
@@ -553,8 +553,8 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </span>
                                                     </div>
                                                     <div class="three">
-                                                        <a class="cc-dismiss deny" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Decline</a>
-                                                        <a class="cc-dismiss allow" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);">Got it!</a>
+                                                        <a class="cc-dismiss deny" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);"></a>
+                                                        <a class="cc-dismiss allow" style="color: rgb(2, 136, 209); background-color: rgb(49, 27, 146); border-color: rgb(48, 63, 159);"></a>
                                                     </div>
                                                     <span class="cc-close" id="buttonclose">✕</span>
                                                 </div>
