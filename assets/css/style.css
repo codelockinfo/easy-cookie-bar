@@ -258,6 +258,11 @@ input[type="color"]::-webkit-color-swatch {
   font-size: 20px;
   font-weight: 700;
 }
+  .modal_preview .cc-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 .gap-1.bannerflex{
   gap: 1rem;
 }
@@ -786,11 +791,7 @@ width: 50px;
 .videocontent li{
   list-style: none;
 }
-.modal_preview .cc-close{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
+
 @media (max-width:700px) {	
   .preview-cookie-bar .seven {
     width: 95%;
