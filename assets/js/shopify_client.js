@@ -627,6 +627,8 @@ function cookies_bar_setting_select(){
                 console.log(comeback);
                 console.log(comeback.outcome.showon  +".............");
                 var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
+                var decline_text = comeback.outcome.decline_text !== '' ? comeback.outcome.decline_text : "Decline";
+                var agreement_text = comeback.outcome.agreement_text !== '' ? comeback.outcome.agreement_text : "Agree";
 
                 $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
@@ -676,8 +678,8 @@ function cookies_bar_setting_select(){
                 $('.color_circle[name="color_button_border"]').val(comeback.outcome.color_button_border);
                 $(".cc-dismiss").css("border-color",comeback.outcome.color_button_border);
 
-                $(".cc-dismiss.deny").html(comeback.outcome.decline_text);
-                $(".cc-dismiss.allow").html(comeback.outcome.agreement_text);
+                $(".cc-dismiss.deny").html(decline_text);
+                $(".cc-dismiss.allow").html(agreement_text);
 
             }
         }
