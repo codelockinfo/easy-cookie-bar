@@ -6,7 +6,7 @@ require_once '../cls_shopifyapps/config.php';
 
 $shop = $_SERVER['HTTP_X_SHOPIFY_SHOP_DOMAIN'];
 $hmac_header = $_SERVER['HTTP_X_SHOPIFY_HMAC_SHA256'];
-$user_obj = new Client_functions($shop);
+$cls_functions = new Client_functions($shop);
 
 function verify_webhook($data, $hmac_header, $cls_functions)
 {
@@ -21,7 +21,7 @@ $data = file_get_contents('php://input');
 $verified = verify_webhook($data, $hmac_header, $cls_functions);
 
 if ($verified) {
-    $shopinfo = (array) $user_obj->current_store_obj;
+    $shopinfo = (array) $cls_functions->current_store_obj;
     $store_user_id = $shopinfo['store_user_id'];
     if (!empty($shopinfo)) {
         $fields = array(
