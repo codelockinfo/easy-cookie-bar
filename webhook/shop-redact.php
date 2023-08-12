@@ -39,7 +39,7 @@ if ($verified) {
         );
     
         $where = array(['','store_user_id','=',$store_user_id]);
-        $returrnn = $user_obj->put_data(TABLE_USER_SHOP, $fields, $where);
+        $returrnn = $cls_functions->put_data(TABLE_USER_SHOP, $fields, $where);
         http_response_code(200);
         exit();
     }else{
