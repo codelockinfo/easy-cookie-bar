@@ -101,9 +101,7 @@
                     <p class="Polaris-Heading"><?php _e("Need any other help?"); ?></p>
                 </div>
                 <div class="Polaris-Banner__Content" id="Banner6Content">
-                    <p><?php _e("We are always here to help you. Please "); ?><a class="Polaris-Link openChatBox" href="mailto:codelock2021@gmail.com"><?php _e("email us"); ?></a>
-                        <?php _e(" or contact us ."); ?>
-                    </p>
+                    <p>We are always here to help you. Please contact us on our email codelockinfo@gmail.com</p>
                 </div>
             </div>
         </div>
