@@ -586,7 +586,8 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
     </div>
     <div class="footermargin">
         <div class="Polaris-FooterHelp__Text footermargin footer_border">
-                Easy Cookie Banner - GDPR EU©2023 - Developed by<a target="_blank" href="http://codelocksolutions.com/" style="margin:0 5px;">Codelock Solutions</a>  team 
+                Easy Cookie Bar - GDPR EU©2023 
+                <!-- - Developed by<a target="_blank" href="http://codelocksolutions.com/" style="margin:0 5px;">Codelock Solutions</a>  team  -->
         </div> 
     </div>
 </body>
