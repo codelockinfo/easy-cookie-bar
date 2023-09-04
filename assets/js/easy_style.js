@@ -130,7 +130,7 @@ $(document).ready(function () {
         var select=$(this).find(':selected').val();    
         $(".bar-message").css("font-size", select);
     });
-    $('.positionSelect2').change(function () {
+    $(document).on("change",".positionSelect2",function(){
         var select=$(this).find(':selected').val();    
         console.log(select);
         var select_text = select == 1 ? "top" : "";

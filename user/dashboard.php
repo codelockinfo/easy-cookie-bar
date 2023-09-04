@@ -285,7 +285,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                             <div  style=" padding: 1%;"> </div>
                             <div class="Polaris-Card__Section Polaris-Card">
                                 <div class="quickflex">
-                                    <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Choose a color palette::</h2>
+                                    <h2 class="Polaris-Text--root Polaris-Text--headingMd Polaris-Text--headingXl" id="storeDetails">Choose a color palette:</h2>
                                 </div>
                                 <div class="flex flex-wrap gap-1 bannerflex">
                                     <div class="w-14 p-1 border-2 mr-1 border-solid bannerlayout" style="border-color: transparent;">
