@@ -130,6 +130,7 @@ $(document).ready(function () {
         var select=$(this).find(':selected').val();    
         $(".bar-message").css("font-size", select);
     });
+    
     $(document).on("change",".positionSelect2",function(){
         var select=$(this).find(':selected').val();    
         console.log(select);
