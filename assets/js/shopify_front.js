@@ -62,7 +62,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                 }
                 var decline_text = comeback.outcome.decline_text !== '' ? comeback.outcome.decline_text : "Decline";
                 var agreement_text = comeback.outcome.agreement_text !== '' ? comeback.outcome.agreement_text : "Agree";
-                var popupoaition = comeback.outcome.position == 1 ? "top" : "bottom";
+                var popupoaition = comeback.outcome.position == 1 ? top : bottom;
                 if(comeback.outcome.showon == 1){
                   $myVar = setInterval(initCookieBannerforAll, 1000);
                 }else{
