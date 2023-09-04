@@ -656,6 +656,7 @@ function cookies_bar_setting_select(){
                 var decline_text = comeback.outcome.decline_text !== '' ? comeback.outcome.decline_text : "Decline";
                 var agreement_text = comeback.outcome.agreement_text !== '' ? comeback.outcome.agreement_text : "Agree";
                 var position = comeback.outcome.position == 1 ? "top" : "bottom";
+                console.log(position);
                 $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);

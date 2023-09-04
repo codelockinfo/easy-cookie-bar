@@ -597,4 +597,5 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
 <script>
     cookies_bar_setting_save_first();
     cookies_bar_setting_select();
+    console.log("On load dashbaord page");
 </script>
