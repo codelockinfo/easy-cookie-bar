@@ -242,7 +242,7 @@ class Client_functions extends common_function {
             $shop = $_POST['store'];
             $where_query = array(["", "shop_name", "=", "$shop"]);
             $btnval = (isset($_POST['btnval']) && $_POST['btnval'] !== '') ? $_POST['btnval'] : 0;
-            $fields['status'] = ($btnval == 1) ? 1 : 0 ;
+            $fields['application_status'] = ($btnval == 1) ? 1 : 0 ;
             $comeback = $this->put_data(TABLE_USER_SHOP, $fields, $where_query);
             $response = array(
                 "result" => 'success',
