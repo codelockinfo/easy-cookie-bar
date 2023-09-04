@@ -130,6 +130,16 @@ $(document).ready(function () {
         var select=$(this).find(':selected').val();    
         $(".bar-message").css("font-size", select);
     });
+    $('.positionSelect2').change(function () {
+        var select=$(this).find(':selected').val();    
+        console.log(select);
+        var select_text = select == 1 ? "top" : "";
+        if(select_text == ""){
+            $(".preview_set").css({"bottom": "0","top":"unset"});
+        }else{
+            $(".preview_set").css("top", "0");
+        }
+    });
 
     $('input[name="banner_height"]').on('change', function () {
         var texInputValue = $('#myNumber').val();

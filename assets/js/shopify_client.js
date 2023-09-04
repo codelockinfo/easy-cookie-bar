@@ -655,7 +655,7 @@ function cookies_bar_setting_select(){
                 var privacyURL = comeback.outcome.privacy_policy_url !== '' ? comeback.outcome.privacy_policy_url : "#";
                 var decline_text = comeback.outcome.decline_text !== '' ? comeback.outcome.decline_text : "Decline";
                 var agreement_text = comeback.outcome.agreement_text !== '' ? comeback.outcome.agreement_text : "Agree";
-
+                var position = comeback.outcome.position == 1 ? "top" : "bottom";
                 $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
@@ -669,6 +669,7 @@ function cookies_bar_setting_select(){
                 $('.Polaris-TextField__Input[name="privacy_policy_url_text"]').val(comeback.outcome.privacy_policy_url_text);
                 // $('.Polaris-TextField__Input[name="banner_height"]').val(comeback.outcome.banner_height);
                 $('.preview_set').css("height",comeback.outcome.banner_height);
+                $('.preview_set').css(position,0);
 
                 $('.Polaris-Select__Input[name="banner_fontsize"]').val(comeback.outcome.banner_fontsize);
                 $('.bar-message').css("font-size",comeback.outcome.banner_fontsize);
