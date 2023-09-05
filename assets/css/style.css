@@ -527,8 +527,7 @@ body .space-y-4 > * + * {
   width:75px;
 }
 #toggleButton {
-  width: 50px;
-  /* width:75px; */
+  width:75px;
   height: 25px;
   background-color: #e6391a;
   border-radius: 25px;
@@ -556,6 +555,9 @@ body .space-y-4 > * + * {
 }
 .displaynone{
   display: none;
+}
+.app-setting-msg .msgwidth{
+  width: 100%;
 }
 /* header end */
 @media (max-width: 1640px) {
@@ -613,6 +615,9 @@ body .space-y-4 > * + * {
   }
   .Polaris-Page-Header .cls_enbledisable_msg {
       width: 45%;
+  }
+  .app-setting-msg .msgwidth{
+    width:unset;
   }
   .Polaris-Page-Header .cls_enbledisable_btn, .shopifybtn {
       width: 30%;

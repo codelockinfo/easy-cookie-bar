@@ -38,7 +38,7 @@ $store = (isset($_GET['store']) && $_GET['store'] != '') ? $_GET['store'] : "man
                                                     </span>
                                                 </a>
                                             </div>
-                                            <div class="Polaris-Banner__Heading" id="Banner7Heading">
+                                            <div class="Polaris-Banner__Heading msgwidth" id="Banner7Heading">
                                                 <!-- <p class="Polaris-Heading">Activate Cookie Bar </p> -->
                                                 <p class="Polaris-Heading desktopview">Activate Cookie Bar: Update color settings and click "Activate" button to activate Cookie bar on your website. </p>
                                                 <p class="Polaris-Heading mobileview"> The cookie bar is activated. </p>

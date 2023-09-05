@@ -371,7 +371,7 @@ function seeting_enable_disable(){
         data: {'routine_name': 'appstatus' ,'store' : store},
         success: function (comeback)
         {
-            if (comeback['outcome']['data']['0']['status'] != undefined && comeback['outcome']['data']['0']['status'] == "0") {
+            if (comeback['outcome']['data']['0']['application_status'] != undefined && comeback['outcome']['data']['0']['application_status'] == "0") {
                 $(".clsdesign_for_msg .Polaris-Heading").html("Please active cookie bar.");
                 $(".app-setting-msg").show();
                 $(".enable-btn").val(1);
