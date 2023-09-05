@@ -38,6 +38,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
               console.log(comeback.outcome.data[0].application_status);
               console.log(comeback.outcome.application_status +".....STATUS");
               console.log(comeback.outcome.status +".....STATUS");
+              console.log(comeback['outcome']['data']['0']['application_status']);
               $status = comeback.outcome.application_status !== undefined ? comeback.outcome.application_status : '';
               if ($status == 1) {
                   cookiesbarSettingSelect();
