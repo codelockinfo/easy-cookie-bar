@@ -62,8 +62,7 @@ if ($_GET['shop'] != "") {
             $asset = array("script_tag" =>
                 array(
                     "event" => "onload",
-                    "src" => "https://codelocksolutions.com/easy-cookie-bar/assets/js/shopify_front.js",
-                    "defer" => true
+                    "src" => "https://codelocksolutions.com/easy-cookie-bar/assets/js/shopify_front.js"
                 )
             );
             
