@@ -33,11 +33,11 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
               console.log("COMEBACK");
               console.log(comeback);
               console.log(comeback.outcome);
-                $status = comeback.outcome.application_status !== undefined ? comeback.outcome.application_status : '';
-                console.log(comeback.outcome.application_status +".....STATUS");
-                if ($status == 1) {
-                    cookiesbarSettingSelect();
-                }
+              $status = comeback.outcome.application_status !== undefined ? comeback.outcome.application_status : '';
+              console.log(comeback.outcome.application_status +".....STATUS");
+              if ($status == 1) {
+                  cookiesbarSettingSelect();
+              }
             }
         });    
         function  cookiesbarSettingSelect(){
