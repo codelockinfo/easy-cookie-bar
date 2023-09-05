@@ -33,7 +33,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
               console.log("COMEBACK");
               console.log(comeback);
               console.log(comeback.outcome);
-              console.log(comeback.outcome[0].application_status);
+              console.log(comeback.outcome.data[0]);
+              console.log(comeback.outcome.data[0].application_status);
               console.log(comeback.outcome.application_status +".....STATUS");
               $status = comeback.outcome.application_status !== undefined ? comeback.outcome.application_status : '';
               if ($status == 1) {
