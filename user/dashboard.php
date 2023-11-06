@@ -13,6 +13,28 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
 ?>
 
 <body>
+    <div>
+        <div class="custom-model-main">
+            <div class="custom-model-inner">        
+                <div class="close-btn">×</div>
+                <div class="custom-model-wrap">
+                    <div class="pop-up-content-wrap">
+                        <video autoplay="" loop="" controls="" width="100%">
+                            <source type="video/mp4" src="<?php echo CLS_SITE_URL; ?>/assets/images/show_popup.mp4">
+                        </video>
+                        <div class="videocontent">
+                            <ul>
+                                <li>Click <b>Online Store -> Preferences</b> button.</li>
+                                <li>Find <b>Customer privacy</b> section.</li>
+                                <li>Select <b>Collected after consent</b> Radio button.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+            <div class="bg-overlay"></div>
+        </div> 
+    </div>
     <div class="Polaris-Page pagemargin max_width_change bodycontainer">
      
         <form method="POST" id="cookies_bar_setting_save" onsubmit>

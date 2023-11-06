@@ -343,7 +343,39 @@ $(document).ready(function () {
             }
         });
     });
+    get_is_show_popup();
+    $(".close-btn, .bg-overlay").click(function(){
+        console.log("CLOSE BTN");
+        $(".custom-model-main").removeClass('model-open');
+        showpopup();
+    });
 });
+function get_is_show_popup(){
+    console.log("IS SHOW POPUP");
+    $.ajax({
+        url: "ajax_call.php",
+        type: "post",
+        dataType: "json",
+        data: {'routine_name': 'appstatus' ,'store' : store},
+        success: function (comeback){
+            if(comeback['outcome']['data']['0']['is_popup_show']  != undefined && comeback['outcome']['data']['0']['is_popup_show'] == "0" ){
+                console.log("SHOW POPUP");
+                $(".custom-model-main").addClass('model-open');
+            }
+        }
+    });
+}
+function showpopup(){
+    console.log("SHOW POPUP");
+    $.ajax({
+        url: "ajax_call.php",
+        type: "post",
+        dataType: "json",
+        data: {'routine_name': 'change_is_show_popup' , store: store},
+        success: function (comeback) {
+            }
+    });
+}
 function btn_enable_disable(){
 $.ajax({
         url: "ajax_call.php",

@@ -87,7 +87,7 @@ if ($_GET['shop'] != "") {
            
             $message = file_get_contents('user/thankemail_template.php');
             $to = $shopuinfo->shop->email;	
-            $subject = "Rewriter App"; 
+            $subject = "Easy Cokkie Bar App"; 
             $headers ="From:codelockinfo@gmail.com"." \r\n";     
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -114,7 +114,7 @@ else{
     generate_log('URL_TRACKING', "NOT GET SHOP");
     generate_log('URL_TRACKING', $_POST['shop']."POST DATA");
     generate_log('URL_TRACKING', $_GET['shop']."GET DATA");
-    header('Location: https://apps.shopify.com/ReWriter-Mega-Description');
+    header('Location: https://apps.shopify.com/easy-cookie-banner-gdpr-eu');
     exit;
 }
 ?>

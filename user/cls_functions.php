@@ -263,6 +263,23 @@ class Client_functions extends common_function {
             }
             return $response;
     }
+    function change_is_show_popup(){
+        $response_data = array('result' => 'fail', 'msg' => __('Something went wrong'));
+        $fields = array();
+        if (isset($_POST['store']) && $_POST['store'] != '') {
+            $shopinfo = $this->current_store_obj;
+            $shopinfo = (object)$shopinfo;
+            $where_query = array(["", "store_user_id", "=", $shopinfo->store_user_id]);
+            $fields['is_popup_show'] = 1;
+            $comeback = $this->put_data(TABLE_USER_SHOP, $fields, $where_query);
+            $response = array(
+                "result" => 'success',
+                "message" => 'data update successfully',
+                "outcome" => $comeback,
+            );
+        }
+        return $response;
+    }
     function cookies_bar_setting_save_first(){
         $response = array('result' => 'fail', 'msg' => __('Something went wrong'));
         if (isset($_POST['store']) && $_POST['store'] != '' ) {
