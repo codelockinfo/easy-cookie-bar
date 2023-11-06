@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="<?php echo main_url('assets/css/spectrum.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo main_url('assets/css/select2.min.css'); ?>" rel="stylesheet"> 
-        <link rel="stylesheet" href="<?php echo main_url('assets/css/style.css'); ?>" rel="stylesheet"> 
+        <link rel="stylesheet" href="<?php echo main_url('assets/css/style1.css'); ?>" rel="stylesheet"> 
        
         <script> var store = "<?php echo $store; ?>"; </script>
         <?php  $_SESSION['store'] = $store; ?>
@@ -36,7 +36,7 @@
         <script src="<?php echo main_url('assets/js/popper.min.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/star_rating.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/select2.full.min.js'); ?>"></script>
-        <script src="<?php echo main_url('assets/js/shopify_client.js'); ?>"></script>
+        <script src="<?php echo main_url('assets/js/shopify_client_1.js'); ?>"></script>
         <script src="<?php echo main_url('assets/js/shopify_custom.js');?>"></script> 
      
    
