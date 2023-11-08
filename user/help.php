@@ -14,7 +14,7 @@
     </div>
     <div class="box text-center space-y-2 py-6">
         <h2 class="text-2xl">Still need help?</h2>
-        <p class="text-lg text-gray-500">Email us at <strong class="font-semibold">codelock2021@gmail.com</strong>. Remember to include your myshopify.com domain.</p>
+        <p class="text-lg text-gray-500">Email us at <strong class="font-semibold">codelockinfo@gmail.com</strong>. Remember to include your myshopify.com domain.</p>
     </div>
     <div class="Polaris-Page__Content">
         <div class="Polaris-Layout">
@@ -25,13 +25,29 @@
                     </div> -->
                     <div class="Polaris-Card__Section">
                         <div  class="acc">
-                            <div class="acc__card">
+                        <div class="acc__card">
                                 <div class="acc__title active">
+                                    <a class="card-title">
+                                    If Banner is not showing.
+                                    </a>
+                                </div>
+                                <div class="acc__panel" style="display:block;" >
+                                    <div class="card-body">
+                                        <div class="col-sm-12">
+                                            <video autoplay="" loop="" controls="" width="100%">
+                                                <source type="video/mp4" src="<?php echo CLS_SITE_URL; ?>/assets/images/show_popup.mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acc__card">
+                                <div class="acc__title ">
                                     <a class="card-title">
                                     How to design the app to match your store
                                     </a>
                                 </div>
-                                <div  class="acc__panel" style="display:block;" >
+                                <div  class="acc__panel" >
                                     <div class="card-body">
                                        <div class="videocontent">
                                             <ul>
@@ -86,8 +102,6 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            
                         </div>
                     </div>
                 </div>
