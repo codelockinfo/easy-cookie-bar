@@ -87,8 +87,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                     '</span>'+
                 '</div>'+
                 ' <div class="three">'+
-                '<a class="cc-dismiss handleAccept allow" style="cursor: pointer;padding:7px 15px;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +'px;border:'+ comeback.outcome.border  +';">'+ decline_text +'</a>'+
-                    '<a class="cc-dismiss handleDecline deny" style="cursor: pointer;margin-left: 0.5em;padding:7px 15px;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +'px;border:'+ comeback.outcome.border  +';">'+ agreement_text +'</a>'+
+                '<a class="cc-dismiss handleAccept allow" style="cursor: pointer;padding:7px 15px;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +'px;border:'+ comeback.outcome.button_border_width  +';">'+ decline_text +'</a>'+
+                    '<a class="cc-dismiss handleDecline deny" style="cursor: pointer;margin-left: 0.5em;padding:7px 15px;color:'+ comeback.outcome.color_button_text +'; background-color:'+  comeback.outcome.color_button  +'; border-color: '+  comeback.outcome.color_button_border  +';border-radius:'+  comeback.outcome.button_border_radius  +'px;border:'+ comeback.outcome.button_border_width  +';">'+ agreement_text +'</a>'+
                 '</div>'+
                 '<span class="cc-close">✕</span>'+
                 '</div>'
