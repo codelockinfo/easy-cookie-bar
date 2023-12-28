@@ -5,6 +5,7 @@ include_once('cls_header.php');
 $common_function = new common_function();
 
 if (isset($_GET['store']) && $_GET['store'] != '') {
+    $store_name = explode(".",$_GET['store'])[0];
     include_once('dashboard_header.php');
 } else {
     header('Location:https://accounts.shopify.com/store-login');
@@ -28,6 +29,13 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                 <li>Find <b>Customer privacy</b> section.</li>
                                 <li>Select <b>Collected after consent</b> Radio button.</li>
                             </ul>
+                        </div>
+                        <div class="Polaris-ButtonGroup__Item cls-btn-setting">
+                                    <button class="Polaris-Button Polaris-Button--primary cls-main-set" type="submt">
+                                    <span class="Polaris-Button__Content">
+                                    <span class="Polaris-Button__Text"><a class="btn-settings" href="https://admin.shopify.com/store/<?php echo $store_name; ?>/online_store/preferences">Go To Setting</a></span>
+                                    </span>
+                                    </button>
                         </div>
                     </div>
                 </div>  
