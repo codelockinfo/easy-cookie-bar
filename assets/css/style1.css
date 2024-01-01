@@ -956,3 +956,17 @@ width: 50px;
 .bannermargin {
   bottom: 10px;
 }
+
+.Polaris-InlineError {
+  display: flex;
+  color: #8e1f0b;
+  fill:  #8e1f0b;
+}
+
+.Polaris-InlineError__Icon {
+  fill: #8e1f0b;
+}
+
+.bannerheighterror.hide{
+  display: none;
+}

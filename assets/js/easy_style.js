@@ -2,19 +2,25 @@ $(document).ready(function () {
     $(document).on('click', '.down', function (e) {
         e.preventDefault();
         var value = $("#myNumber").val();
-        if (value != '') {
-            value = parseInt(value) - 1;
-        } else {
-            value = -1;
+        if(value > 45){
+            $(".bannerheighterror").addClass("hide");
+            if (value != '') {
+                value = parseInt(value) - 1;
+            } else {
+                value = -1;
+            }
+            $("#myNumber").val(value);
+            var borderheightval = $("#myNumber").val(); 
+            var border_height= $('.pagemargin ').find('.preview_set ');
+            border_height.css("height", borderheightval + "px");
+        }else{
+            $(".bannerheighterror").removeClass("hide");
         }
-        $("#myNumber").val(value);
-        var borderheightval = $("#myNumber").val(); 
-        var border_height= $('.pagemargin ').find('.preview_set ');
-        border_height.css("height", borderheightval + "px");
     });
     $(document).on('click', '.up', function (e) {
         e.preventDefault();
         var value = $("#myNumber").val();
+        $(".bannerheighterror").addClass("hide");
         if (value != '') {
             value = parseInt(value) + 1;
         } else {
@@ -130,6 +136,10 @@ $(document).ready(function () {
         var select=$(this).find(':selected').val();    
         $(".bar-message").css("font-size", select);
     });
+    $('.buttonFontSize').change(function () {
+        var select=$(this).find(':selected').val();    
+        $(".cc-dismiss").css("font-size", select);
+    });
     
     $(document).on("change",".positionSelect2",function(){
         var select=$(this).find(':selected').val();    
@@ -144,6 +154,7 @@ $(document).ready(function () {
 
     $('input[name="banner_height"]').on('change', function () {
         var texInputValue = $('#myNumber').val();
+
        var border_height= $('.pagemargin ').find('.preview_set ');
         border_height.css("height", texInputValue + "px");
     });

@@ -212,7 +212,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         <div class="Polaris-Labelled__LabelWrapper">
                                                             <div class="Polaris-Label"><label class="Polaris-Label__Text">Banner height (px)</label></div>
                                                         </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false">
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false" min="45" aria-describedby="ruleContentError">
                                                             <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                                                 <button role="button" class="Polaris-TextField__Segment up" tabindex="-1">
                                                                     <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
@@ -223,6 +223,27 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                             <div class="Polaris-TextField__Backdrop"></div>
                                                         </div>
+
+
+                                                        <div class="Polaris-Labelled__Error bannerheighterror hide">
+                                                        <div id="ruleContentError" class="Polaris-InlineError">
+                                                            <div class="Polaris-InlineError__Icon">
+                                                            <span class="Polaris-Icon">
+                                                                <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                                                <path d="M10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z">
+                                                                </path>
+                                                                <path d="M11 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">
+                                                                </path>
+                                                                <path fill-rule="evenodd" d="M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                            </div>Value must be greater than or equal to 45</div>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+
+
                                                     </div>
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="coutnry-select2">
@@ -250,21 +271,30 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                
                                                     <div class="Polaris-FormLayout__Item">
-                                                        <div class="Polaris-Labelled__LabelWrapper">
-                                                            <div class="Polaris-Label"><label class="Polaris-Label__Text">Button border radius (px)</label></div>
-                                                        </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="">
-                                                            <div class="Polaris-TextField__Spinner" aria-hidden="true">
-                                                                <button role="button" class="Polaris-TextField__Segment bup" tabindex="-1">
-                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
-                                                                </button>
-                                                                <button role="button" class="Polaris-TextField__Segment bdown" tabindex="-1">
-                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Down"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M5 8l5 5 5-5z" fill-rule="evenodd"></path></svg></span></div>
-                                                                </button>
+                                                        <div class="coutnry-select2">
+                                                            <div class="Polaris-Labelled__LabelWrapper">
+                                                                <div class="Polaris-Label">
+                                                                    <label class="Polaris-Label__Text">Button Font Size (px)</label>
+                                                                </div>
                                                             </div>
-                                                            <div class="Polaris-TextField__Backdrop"></div>
+                                                            <div class="Polaris-Select Polaris-Select--placeholder">
+                                                                <select class="Polaris-Select__Input buttonFontSize" name="button_fontsize">
+                                                                    <option value="11px">11px</option>
+                                                                    <option value="12px">12px</option>
+                                                                    <option value="14px">14px</option>
+                                                                    <option value="16px">16px</option>
+                                                                    <option value="18px">18px</option>
+                                                                    <option value="20px">20px</option>
+                                                                    <option value="22px">22px</option>
+                                                                    <option value="24px">24px</option>
+                                                                    <option value="28px">28px</option>
+                                                                    <option value="32px">32px</option>
+                                                                </select>
+                                                                <div class="Polaris-Select__Icon select-hide">
+                                                                    <span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg></span></div>
+                                                                <div class="Polaris-Select__Backdrop select-hide"></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="Polaris-FormLayout__Item">
@@ -283,7 +313,6 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             <div class="Polaris-TextField__Backdrop"></div>
                                                         </div>
                                                     </div>
-                                               
                                                 
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="coutnry-select2">
@@ -305,7 +334,22 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </div>
                                                     </div>
 
-
+                                                    <div class="Polaris-FormLayout__Item">
+                                                        <div class="Polaris-Labelled__LabelWrapper">
+                                                            <div class="Polaris-Label"><label class="Polaris-Label__Text">Button border radius (px)</label></div>
+                                                        </div>
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="borderrad" name="button_border_radius" class="Polaris-TextField__Input" type="number" aria-labelledby="TextField32Label" aria-invalid="false" value="">
+                                                            <div class="Polaris-TextField__Spinner" aria-hidden="true">
+                                                                <button role="button" class="Polaris-TextField__Segment bup" tabindex="-1">
+                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
+                                                                </button>
+                                                                <button role="button" class="Polaris-TextField__Segment bdown" tabindex="-1">
+                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Down"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M5 8l5 5 5-5z" fill-rule="evenodd"></path></svg></span></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="Polaris-TextField__Backdrop"></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>    

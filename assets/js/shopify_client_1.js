@@ -706,6 +706,9 @@ function cookies_bar_setting_select(){
 
                 $('.Polaris-Select__Input[name="banner_fontsize"]').val(comeback.outcome.banner_fontsize);
                 $('.bar-message').css("font-size",comeback.outcome.banner_fontsize);
+
+                $('.Polaris-Select__Input[name="button_fontsize"]').val(comeback.outcome.button_fontsize);
+                $('.cc-dismiss').css("font-size",comeback.outcome.button_fontsize);
                 
                 $('.Polaris-Select__Input[name="position"]').val(comeback.outcome.position);
                 $('.Polaris-Select__Input[name="layout"]').val(comeback.outcome.layout);
