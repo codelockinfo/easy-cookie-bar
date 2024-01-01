@@ -300,7 +300,7 @@ class Client_functions extends common_function {
                             '`privacy_policy_url_text`' => 'Learn More',
                             '`banner_height`' => '70',
                             '`popup_height`' => '300',
-                            '`banner_fontsize`' => '20px',
+                            '`banner_fontsize`' => '16px',
                             '`button_border_radius`' => '20',
                             '`button_border_width`' => '2',
                             '`position`' => '1',
