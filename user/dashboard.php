@@ -208,43 +208,7 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                         </div>
                                                     </div>
                                                 
-                                                    <div class="Polaris-FormLayout__Item">
-                                                        <div class="Polaris-Labelled__LabelWrapper">
-                                                            <div class="Polaris-Label"><label class="Polaris-Label__Text">Banner height (px)</label></div>
-                                                        </div>
-                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false" min="45" aria-describedby="ruleContentError">
-                                                            <div class="Polaris-TextField__Spinner" aria-hidden="true">
-                                                                <button role="button" class="Polaris-TextField__Segment up" tabindex="-1">
-                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
-                                                                </button>
-                                                                <button role="button" class="Polaris-TextField__Segment down" tabindex="-1">
-                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Down"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M5 8l5 5 5-5z" fill-rule="evenodd"></path></svg></span></div>
-                                                                </button>
-                                                            </div>
-                                                            <div class="Polaris-TextField__Backdrop"></div>
-                                                        </div>
-
-
-                                                        <div class="Polaris-Labelled__Error bannerheighterror hide">
-                                                        <div id="ruleContentError" class="Polaris-InlineError">
-                                                            <div class="Polaris-InlineError__Icon">
-                                                            <span class="Polaris-Icon">
-                                                                <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                                                                <path d="M10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z">
-                                                                </path>
-                                                                <path d="M11 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">
-                                                                </path>
-                                                                <path fill-rule="evenodd" d="M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z">
-                                                                </path>
-                                                                </svg>
-                                                            </span>
-                                                            </div>Value must be greater than or equal to 45</div>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-
-
-                                                    </div>
+                                                    
                                                     <div class="Polaris-FormLayout__Item">
                                                         <div class="coutnry-select2">
                                                             <div class="Polaris-Labelled__LabelWrapper">
@@ -350,6 +314,43 @@ if (isset($_GET['store']) && $_GET['store'] != '') {
                                                             <div class="Polaris-TextField__Backdrop"></div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="Polaris-FormLayout__Item">
+                                                        <div class="Polaris-Labelled__LabelWrapper">
+                                                            <div class="Polaris-Label"><label class="Polaris-Label__Text">Banner height (px)</label></div>
+                                                        </div>
+                                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myNumber" name="banner_height" class="Polaris-TextField__Input" type="number"  aria-labelledby="TextField32Label" aria-invalid="false" min="45" aria-describedby="ruleContentError">
+                                                            <div class="Polaris-TextField__Spinner" aria-hidden="true">
+                                                                <button role="button" class="Polaris-TextField__Segment up" tabindex="-1">
+                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Up"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M15 12l-5-5-5 5z"></path></svg></span></div>
+                                                                </button>
+                                                                <button role="button" class="Polaris-TextField__Segment down" tabindex="-1">
+                                                                    <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon tip" data-hover="Down"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M5 8l5 5 5-5z" fill-rule="evenodd"></path></svg></span></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="Polaris-TextField__Backdrop"></div>
+                                                        </div>
+                                                        
+
+                                                        <div class="Polaris-Labelled__Error bannerheighterror hide">
+                                                        <div id="ruleContentError" class="Polaris-InlineError">
+                                                            <div class="Polaris-InlineError__Icon">
+                                                            <span class="Polaris-Icon">
+                                                                <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                                                <path d="M10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z">
+                                                                </path>
+                                                                <path d="M11 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">
+                                                                </path>
+                                                                <path fill-rule="evenodd" d="M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                            </div>Value must be greater than or equal to 45</div>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>    
