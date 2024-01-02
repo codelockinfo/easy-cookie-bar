@@ -970,3 +970,9 @@ width: 50px;
 .bannerheighterror.hide{
   display: none;
 }
+.displayflex{
+  display: flex;
+}
+.cookie_svg{
+  padding-right:5px;
+}

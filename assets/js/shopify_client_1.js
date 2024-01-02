@@ -438,7 +438,7 @@ setTimeout(function(){
     seeting_enable_disable();
 },50);
 function readURL(input) {
-$(".imagesBlock").css("display","block");
+    $(".imagesBlock").css("display","block");
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -732,6 +732,7 @@ function cookies_bar_setting_select(){
 
                 $('.color_circle[name="color_banner_text"]').val(comeback.outcome.color_banner_text);
                 $(".preview_set").css("color",comeback.outcome.color_banner_text);
+                $('.cookie_svg path').css("fill",comeback.outcome.color_banner_text);
 
                 $('.color_circle[name="color_banner_link"]').val(comeback.outcome.color_banner_link);
                 $(".cc-link").css("color",comeback.outcome.color_banner_link);

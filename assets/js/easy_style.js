@@ -186,13 +186,17 @@ $(document).ready(function () {
 
     //  banner text color
         const body2 = document.querySelector(".preview_set");
+        const cookieSvg = document.querySelectorAll(".cookie_svg path");
         const input2 = document.getElementById("bannerTextback");
         const colorCode2 = document.getElementById("bannerText");
         setColor2();
         input2.addEventListener("input", setColor2);
         function setColor2() {
-            body2.style.color = input2.value;
+            body2.style.color = input2.value; 
             colorCode2.innerHTML = input2.value;
+            cookieSvg.forEach(function(path) {
+                path.style.fill = input2.value;
+            });
         }
 
         //  banner text link
@@ -270,7 +274,7 @@ $(document).ready(function () {
             $hexbannerbackground = rgb2hex($bannerbackground);
             $('.color_circle[name="color_banner"],.color_circle[name="color_button_text"]').val($hexbannerbackground);
             $('.color_circle[name="color_button"],.color_circle[name="color_button_border"],.color_circle[name="color_banner_text"],.color_circle[name="color_banner_link"]').val($hexbannercolor);
-            
+            $('.cookie_svg path').css({"fill":$hexbannercolor});
             // var self = $(this).data("value");
             // var selfbtn = $(this).data("set");
             // contrastColor = getContrastColor(self);
