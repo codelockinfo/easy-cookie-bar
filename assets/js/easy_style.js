@@ -115,6 +115,13 @@ $(document).ready(function () {
         $('.bar-text-wrapper .bar-message').html(texInputValue);
     });
 
+    $('.Polaris-Checkbox__Input[name="enable_svgicon"]').on('change', function () {
+        if (!$(this).is(':checked')) {
+            $(".cookie_svg").removeClass("show");
+        } else {
+            $(".cookie_svg").addClass("show");
+        }
+    });
     $('input[name="agreement_text"]').on('keydown, keyup', function () {
         var btnInputValue = $('#buttonText').val();
         $('.preview_set .cc-dismiss.allow').html(btnInputValue);

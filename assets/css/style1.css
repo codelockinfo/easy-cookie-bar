@@ -975,4 +975,8 @@ width: 50px;
 }
 .cookie_svg{
   padding-right:5px;
+  display: none;
+}
+.cookie_svg.show{
+  display: block;
 }

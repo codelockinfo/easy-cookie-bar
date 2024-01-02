@@ -294,6 +294,7 @@ class Client_functions extends common_function {
                             '`store_user_id`' => $shopinfo->store_user_id,
                             '`message`' => 'This website uses cookies to ensure you get the best experience on our website',
                             '`showon`' => '0',
+                            '`enable_svgicon`' => '1',
                             '`privacy_policy_url`' => '',
                             '`agreement_text`' =>'Got it!',
                             '`decline_text`' =>'Decline',
@@ -334,12 +335,14 @@ class Client_functions extends common_function {
             if(!empty($comeback['data'])){
                 $popup_height = (isset($_POST['layout']) && $_POST['layout'] == 1) ? $_POST['banner_height'] : $comeback['data'][0]["popup_height"];
                 $banner_height = (isset($_POST['layout']) && $_POST['layout'] == 0) ? $_POST['banner_height'] : $comeback['data'][0]["banner_height"];
+                $enable_svgicon = (isset($_POST['enable_svgicon']) && $_POST['enable_svgicon'] == 1) ? $_POST['enable_svgicon'] : '0';
                 $where_query = array(
                     ["", "store_user_id", "=", $shopinfo->store_user_id],
                 );
                 $fields_arr = array(
                     '`message`' => $_POST["message"],
                     '`showon`' => $_POST["showon"],
+                    '`enable_svgicon`' => $enable_svgicon,
                     '`privacy_policy_url`' => $_POST["privacy_policy_url"],
                     '`agreement_text`' => $_POST["agreement_text"],
                     '`decline_text`' =>$_POST["decline_text"],

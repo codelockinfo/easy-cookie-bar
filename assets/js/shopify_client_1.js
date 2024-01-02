@@ -691,6 +691,11 @@ function cookies_bar_setting_select(){
                 console.log(position);
                 $('.radio-input[name="showon"][value="'+ comeback.outcome.showon +'"]').attr("checked", "checked");
 
+                if(comeback.outcome.enable_svgicon == 1){
+                    $('.Polaris-Checkbox__Input[name="enable_svgicon"]').attr("checked", true);
+                    $('.cookie_svg').addClass("show");
+                }
+
                 $('.Polaris-TextField__Input[name="message"]').val(comeback.outcome.message);
                 $('.bar-message').html(comeback.outcome.message);
 
