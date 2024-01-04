@@ -44,7 +44,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
                   cookiesbarSettingSelect();
               }
             }
-        });    
+        }); 
+
         function  cookiesbarSettingSelect(){
             $.ajax({
               url: "https://codelocksolutions.com/easy-cookie-bar/user/ajax_call.php",
@@ -103,84 +104,88 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
               }
           });
         }
-    $(document).on("click", ".cc-close", function() {
-        console.log("CLOSE click");
-        document.getElementById('cookies-banner').style.display = 'none';
-    });
-    $(document).on("click", ".handleDecline", function() {
-        console.log("handleDecline click");
-        handleDecline();  
-    });
-    $(document).on("click", ".handleAccept", function(event) {
-        console.log("handleAccept click ");
-        handleAccept(event);  
-    });
-      
-    function hideBanner(res) {
-      var getBannerEl =  document.getElementById('cookies-banner');
-      console.log(getBannerEl);
-        if(getBannerEl !== null){
-          console.log("in if ");
-          getBannerEl.style.display = 'none';
-          clearInterval($myVar);
-        }
-    }
-  
-    function showBanner() {
-      console.log("show banner");
-      var getBannerEl =  document.getElementById('cookies-banner');
-      console.log(getBannerEl);
-      if(getBannerEl !== null){
-        console.log("in if ");
-        getBannerEl.style.display = 'block';
-        clearInterval($myVar);
-      }
-    }
-    
-    function handleAccept(e) {
-      console.log("handleAccept");
-      window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
-  
-      document.addEventListener('trackingConsentAccepted',function() {
-        console.log('trackingConsentAccepted event fired');
-      });
-    }
-  
-    function handleDecline() {
-      window.Shopify.customerPrivacy.setTrackingConsent(false,hideBanner);
-    }
-  
-    function initCookieBanner() {
-      const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
-      const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
-  
-      console.log(userTrackingConsent + "   TRACKING " );
-      console.log(userCanBeTracked + "   TRACKED");
-      if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
-        showBanner();
-      }else{
-        clearInterval($myVar);
-      }
-    }
-    function initCookieBannerforAll() {
-      const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
-      var userCanBeTracked_var = window.Shopify.customerPrivacy.userCanBeTracked();
-      if (userCanBeTracked_var) {
-          console.log("The customer can be tracked.");
-      } else {
-          console.log("The customer cannot be tracked.");
-      }
 
-      const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
-      console.log(Shopify.customerPrivacy.getTrackingConsent());
-      console.log(userTrackingConsent + "   TRACKING FOR ALL" );
-      console.log(userCanBeTracked + "   TRACKED FOR ALL");
-      if(userTrackingConsent === 'no_interaction') {
-        showBanner();
-      }else{
-        clearInterval($myVar);
-      }
-    }
+        $(document).on("click", ".cc-close", function() {
+            console.log("CLOSE click");
+            document.getElementById('cookies-banner').style.display = 'none';
+        });
+
+        $(document).on("click", ".handleDecline", function() {
+            console.log("handleDecline click");
+            handleDecline();  
+        });
+
+        $(document).on("click", ".handleAccept", function(event) {
+            console.log("handleAccept click ");
+            handleAccept(event);  
+        });
+          
+        function hideBanner(res) {
+          var getBannerEl =  document.getElementById('cookies-banner');
+          console.log(getBannerEl);
+            if(getBannerEl !== null){
+              console.log("in if ");
+              getBannerEl.style.display = 'none';
+              clearInterval($myVar);
+            }
+        }
+      
+        function showBanner() {
+          console.log("show banner");
+          var getBannerEl =  document.getElementById('cookies-banner');
+          console.log(getBannerEl);
+          if(getBannerEl !== null){
+            console.log("in if ");
+            getBannerEl.style.display = 'block';
+            clearInterval($myVar);
+          }
+        }
+        
+        function handleAccept(e) {
+          console.log("handleAccept");
+          window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+      
+          document.addEventListener('trackingConsentAccepted',function() {
+            console.log('trackingConsentAccepted event fired');
+          });
+        }
+      
+        function handleDecline() {
+          window.Shopify.customerPrivacy.setTrackingConsent(false,hideBanner);
+        }
+      
+        function initCookieBanner() {
+          const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+          const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+      
+          console.log(userTrackingConsent + "   TRACKING " );
+          console.log(userCanBeTracked + "   TRACKED");
+          if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
+            showBanner();
+          }else{
+            clearInterval($myVar);
+          }
+        }
+
+        function initCookieBannerforAll() {
+          const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+          var userCanBeTracked_var = window.Shopify.customerPrivacy.userCanBeTracked();
+          if (userCanBeTracked_var) {
+              console.log("The customer can be tracked.");
+          } else {
+              console.log("The customer cannot be tracked.");
+          }
+
+          const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+          console.log(Shopify.customerPrivacy.getTrackingConsent());
+          console.log(userTrackingConsent + "   TRACKING FOR ALL" );
+          console.log(userCanBeTracked + "   TRACKED FOR ALL");
+          if(userTrackingConsent === 'no_interaction') {
+            showBanner();
+          }else{
+            // clearInterval($myVar);
+          }
+        }
     
       window.Shopify.loadFeatures([
         {
