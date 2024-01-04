@@ -183,7 +183,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
           if(userTrackingConsent === 'no_interaction') {
             showBanner();
           }else{
-            // clearInterval($myVar);
+            clearInterval($myVar);
           }
         }
     
@@ -195,6 +195,8 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
       ],
       function(error) {
           if (error) {
+            console.log(error);
+            console.log("---------------------------------");
             throw error;
           }
         // $myVar = setInterval(initCookieBanner, 1000);
