@@ -194,6 +194,7 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
         }
       ],
       function(error) {
+        console.log("==========================");
           if (error) {
             console.log(error);
             console.log("---------------------------------");
