@@ -164,6 +164,13 @@ include('https://codelocksolutions.com/easy-cookie-bar/assets/js/jquery-3.6.4.mi
     }
     function initCookieBannerforAll() {
       const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+      var userCanBeTracked_var = window.Shopify.customerPrivacy.userCanBeTracked();
+      if (userCanBeTracked_var) {
+          console.log("The customer can be tracked.");
+      } else {
+          console.log("The customer cannot be tracked.");
+      }
+
       const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
       console.log(Shopify.customerPrivacy.getTrackingConsent());
       console.log(userTrackingConsent + "   TRACKING FOR ALL" );
